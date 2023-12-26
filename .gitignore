@@ -6,7 +6,10 @@
 *.exe
 *.o
 *.so
-*.vs
+.vs/
+bin/
+obj/
+packages/
 
 # Packages #
 ############
