@@ -152,6 +152,8 @@
     <Content Include="Input\2023\day21.txt" />
     <Content Include="Input\2023\day22.txt" />
     <Content Include="Test\2015\day4.txt" />
+    <Content Include="Test\2015\day7.txt" />
+    <Content Include="Test\2015\day8.txt" />
     <Content Include="Test\2023\day22.txt" />
     <Content Include="Test\2023\day23.txt" />
     <Content Include="Test\2023\day25.txt" />

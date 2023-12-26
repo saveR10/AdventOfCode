@@ -18,7 +18,7 @@ namespace AOC
         static void Main(string[] args)
         {
             string part = "2"; //2, 1, 1T, 2T
-            Solver solver = new Solver(2015,7,part);
+            Solver solver = new Solver(2015,8,part);
             object input = solver.FetchInput(Model.InputType.Text);
             solver.RunPuzzle(input);
             Console.WriteLine($"Solution for part {part} is {solver.solution}");
