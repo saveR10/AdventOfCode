@@ -1,0 +1,3 @@
+Questo è il risultato dell'esercizio ThreeSum con input 2Kints.txt :
+Il risultato è 528
+Execution time in milliseconds: 4667

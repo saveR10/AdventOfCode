@@ -1,0 +1,15 @@
+Questo è il risultato dell'esercizio HeapSort con input tiny.txt :
+A
+E
+E
+L
+M
+O - elemento centrale
+P
+R
+S
+T
+X
+
+Execution time in milliseconds: 660
+Execution time in seconds: 0

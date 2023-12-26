@@ -1,0 +1,6 @@
+Questo è il risultato dell'esercizio MinPQ con input tinyPQ.txt :
+E A E 
+(6 left on pq)
+Execution time in ticks: 69428
+Execution time in milliseconds: 6
+Execution time in seconds: 0

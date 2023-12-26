@@ -1,0 +1,2 @@
+Questo è il risultato dell'esercizio LinkedQueue con input tobe.txt :
+Il risultato è to be or not to be 

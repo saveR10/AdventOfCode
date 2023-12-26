@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\AOC2023\packages\NUnit.4.0.1\build\NUnit.props" Condition="Exists('..\..\AOC2023\packages\NUnit.4.0.1\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73B670E7-22E9-4B15-8AC9-3E85AFFCA88D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AOC</RootNamespace>
+    <AssemblyName>AOC</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=4.0.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\AOC2023\packages\NUnit.4.0.1\lib\net462\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework.legacy, Version=4.0.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\AOC2023\packages\NUnit.4.0.1\lib\net462\nunit.framework.legacy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataStructures\PriorityQueue\Board.cs" />
+    <Compile Include="DataStructures\PriorityQueue\MinPQ.cs" />
+    <Compile Include="DataStructures\PriorityQueue\MinPQBoard.cs" />
+    <Compile Include="DataStructures\PriorityQueue\Solver.cs" />
+    <Compile Include="DataStructures\Sorting\HeapSort.cs" />
+    <Compile Include="DataStructures\Sorting\InsertionSort.cs" />
+    <Compile Include="DataStructures\LinkedList\LinkedQueue.cs" />
+    <Compile Include="DataStructures\LinkedList\LinkedStack.cs" />
+    <Compile Include="DataStructures\PriorityQueue\MaxPQ.cs" />
+    <Compile Include="DataStructures\Sorting\MergeSort.cs" />
+    <Compile Include="DataStructures\Clustering\Percolazione.cs" />
+    <Compile Include="DataStructures\Clustering\QuickFindUF.cs" />
+    <Compile Include="DataStructures\Sorting\QuickSort.cs" />
+    <Compile Include="DataStructures\Clustering\QuickUnionFindUF.cs" />
+    <Compile Include="DataStructures\Searching\BinarySearchST.cs" />
+    <Compile Include="DataStructures\Searching\BST.cs" />
+    <Compile Include="DataStructures\Sorting\SelectionSort.cs" />
+    <Compile Include="DataStructures\Sorting\ShellSort.cs" />
+    <Compile Include="DataStructures\AlghoritmsOptimization\ThreeSum.cs" />
+    <Compile Include="DataStructures\AlghoritmsOptimization\ThreeSumFast.cs" />
+    <Compile Include="DataStructures\AlghoritmsOptimization\TwoStackAlghoritms.cs" />
+    <Compile Include="DataStructures\Clustering\WeightedQuickUnionFindUF.cs" />
+    <Compile Include="IDay.cs" />
+    <Compile Include="Model\Delimiter.cs" />
+    <Compile Include="Model\InputType.cs" />
+    <Compile Include="ReaderInput.cs" />
+    <Compile Include="SearchAlghoritmhs\ResearchAlghoritms.cs" />
+    <Compile Include="Solver.cs" />
+    <Compile Include="Sources\2015\Day1.cs" />
+    <Compile Include="Sources\2015\Day8.cs" />
+    <Compile Include="Sources\2015\Day7.cs" />
+    <Compile Include="Sources\2015\Day6.cs" />
+    <Compile Include="Sources\2015\Day5.cs" />
+    <Compile Include="Sources\2015\Day4.cs" />
+    <Compile Include="Sources\2015\Day3.cs" />
+    <Compile Include="Sources\2015\Day2.cs" />
+    <Compile Include="Sources\2023\Day25.cs" />
+    <Compile Include="Sources\2023\Day23.cs" />
+    <Compile Include="Sources\2023\Day22.cs" />
+    <Compile Include="Sources\2023\Day19.cs" />
+    <Compile Include="Sources\2023\Day21.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Dynamic\Movement.cs" />
+    <Compile Include="Utilities\Math\Combinatorial.cs" />
+    <Compile Include="Utilities\Math\Extensions.cs" />
+    <Content Include="DataStructures\IO\Input\16Kints.txt" />
+    <Content Include="DataStructures\IO\Input\1KInts.txt" />
+    <Content Include="DataStructures\IO\Input\1Mints.txt" />
+    <Content Include="DataStructures\IO\Input\2Kints.txt" />
+    <Content Include="DataStructures\IO\Input\32Kints.txt" />
+    <Content Include="DataStructures\IO\Input\4Kints.txt" />
+    <Content Include="DataStructures\IO\Input\8Kints.txt" />
+    <Content Include="DataStructures\IO\Input\largeUF.txt" />
+    <Content Include="DataStructures\IO\Input\mathExpression.txt" />
+    <Content Include="DataStructures\IO\Input\mediumUF.txt" />
+    <Content Include="DataStructures\IO\Input\percolazione.txt" />
+    <Content Include="DataStructures\IO\Input\Three8Ints.txt" />
+    <Content Include="DataStructures\IO\Input\tiny.txt" />
+    <Content Include="DataStructures\IO\Input\tinyPQ.txt" />
+    <Content Include="DataStructures\IO\Input\tinyUF.txt" />
+    <Content Include="DataStructures\IO\Input\tobe.txt" />
+    <Content Include="DataStructures\IO\Input\words.txt" />
+    <Content Include="DataStructures\IO\Output\Board_3.txt" />
+    <Content Include="DataStructures\IO\Output\HeapSort_tiny.txt" />
+    <Content Include="DataStructures\IO\Output\HeapSort_words.txt" />
+    <Content Include="DataStructures\IO\Output\InsertionSort_tiny.txt" />
+    <Content Include="DataStructures\IO\Output\InsertionSort_words.txt" />
+    <Content Include="DataStructures\IO\Output\LinkedQueue_tobe.txt" />
+    <Content Include="DataStructures\IO\Output\LinkedStack_tobe.txt" />
+    <Content Include="DataStructures\IO\Output\MaxPQ_tinyPQ.txt" />
+    <Content Include="DataStructures\IO\Output\MergeSort_tiny.txt" />
+    <Content Include="DataStructures\IO\Output\MergeSort_words.txt" />
+    <Content Include="DataStructures\IO\Output\MinPQ_tinyPQ.txt" />
+    <Content Include="DataStructures\IO\Output\Percolazione_percolazione.txt" />
+    <Content Include="DataStructures\IO\Output\QuickFindUF_largeUF.txt" />
+    <Content Include="DataStructures\IO\Output\QuickFindUF_mediumUF.txt" />
+    <Content Include="DataStructures\IO\Output\QuickFindUF_tinyUF.txt" />
+    <Content Include="DataStructures\IO\Output\QuickSort_tiny.txt" />
+    <Content Include="DataStructures\IO\Output\QuickUnionFindUF_largeUF.txt" />
+    <Content Include="DataStructures\IO\Output\SelectionSort_words.txt" />
+    <Content Include="DataStructures\IO\Output\ShellSort_words.txt" />
+    <Content Include="DataStructures\IO\Output\ThreeSumFast_16Kints.txt" />
+    <Content Include="DataStructures\IO\Output\ThreeSum_2Kints.txt" />
+    <Content Include="DataStructures\IO\Output\ThreeSum_4Kints.txt" />
+    <Content Include="DataStructures\IO\Output\ThreeSum_Three8Ints.txt" />
+    <Content Include="DataStructures\IO\Output\TwoStackAlgorithm_mathExpression.txt" />
+    <Content Include="DataStructures\IO\Output\WeightedQuickUnionFindUF_largeUF.txt" />
+    <Content Include="Input\2015\day1.txt" />
+    <Content Include="Input\2015\day2.txt" />
+    <Content Include="Input\2015\day3.txt" />
+    <Content Include="Input\2015\day4.txt" />
+    <Content Include="Input\2015\day5.txt" />
+    <Content Include="Input\2015\day6.txt" />
+    <Content Include="Input\2015\day7.txt" />
+    <Content Include="Input\2023\day19.txt" />
+    <Content Include="Input\2023\day20.txt" />
+    <Content Include="Input\2023\day21.txt" />
+    <Content Include="Input\2023\day22.txt" />
+    <Content Include="Test\2015\day4.txt" />
+    <Content Include="Test\2023\day22.txt" />
+    <Content Include="Test\2023\day23.txt" />
+    <Content Include="Test\2023\day25.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Documents\15_04_Calcolo_combinatorio_1_0.pdf" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Input\2016\" />
+    <Folder Include="Input\2017\" />
+    <Folder Include="Input\2018\" />
+    <Folder Include="Input\2019\" />
+    <Folder Include="Input\2020\" />
+    <Folder Include="Input\2021\" />
+    <Folder Include="Input\2022\" />
+    <Folder Include="Sources\2016\" />
+    <Folder Include="Sources\2017\" />
+    <Folder Include="Test\2016\" />
+    <Folder Include="Test\2017\" />
+    <Folder Include="Test\2018\" />
+    <Folder Include="Test\2019\" />
+    <Folder Include="Test\2020\" />
+    <Folder Include="Test\2021\" />
+    <Folder Include="Test\2022\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\AOC2023\packages\NUnit.4.0.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\AOC2023\packages\NUnit.4.0.1\build\NUnit.props'))" />
+  </Target>
+</Project>

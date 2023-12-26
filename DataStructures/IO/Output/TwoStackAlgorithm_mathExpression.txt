@@ -1,0 +1,2 @@
+Questo è il risultato dell'esercizio TwoStackAlgorithm con input mathExpression.txt :
+Il risultato è 101

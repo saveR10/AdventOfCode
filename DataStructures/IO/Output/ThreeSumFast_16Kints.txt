@@ -1,0 +1,3 @@
+Questo è il risultato dell'esercizio ThreeSumFast con input 16Kints.txt :
+Il risultato è 255181
+Execution time in milliseconds: 7355

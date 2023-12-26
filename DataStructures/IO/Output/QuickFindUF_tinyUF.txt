@@ -1,0 +1,4 @@
+Questo è il risultato dell'esercizio QuickFindUF con input tinyUF.txt :
+Il numero di cluster è: 2
+Execution time in milliseconds: 14008
+Execution time in seconds: 14

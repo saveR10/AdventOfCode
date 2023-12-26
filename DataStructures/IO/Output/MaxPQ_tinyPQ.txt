@@ -1,0 +1,8 @@
+This is the result of exercise MaxPQ with input tinyPQ.txt:
+
+Q X P 
+(6 left on pq)
+
+Execution time in ticks: 120620
+Execution time in milliseconds: 12
+Execution time in seconds: 0

@@ -1,0 +1,10 @@
+Questo è il risultato dell'esercizio QuickFindUF con input mediumUF.txt :
+100 566 565
+200 515 490
+300 509 484
+400 162 187
+500 217 216
+600 455 430
+Il numero di cluster è: 3
+Execution time in milliseconds: 9
+Execution time in seconds: 0

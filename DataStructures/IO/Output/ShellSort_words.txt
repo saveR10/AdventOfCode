@@ -1,0 +1,39 @@
+Questo è il risultato dell'esercizio ShellSort con input words.txt :
+all
+bad
+bed
+bug
+dad
+dim
+dug
+egg
+fee
+few
+for
+gig
+hut
+ilk
+jam
+jay
+jot
+joy
+men
+nob
+now
+owl
+rap
+sky
+sob
+tag
+tap
+tar
+tip
+wad
+was
+wee
+yes
+yet
+zoo
+
+Execution time in milliseconds: 6
+Execution time in seconds: 0,006
