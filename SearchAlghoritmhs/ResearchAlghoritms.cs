@@ -20,7 +20,8 @@ namespace AOC.SearchAlghoritmhs
         public enum TypologyEnum
         {
             Hashing,
-            BinaryOperation
+            BinaryOperation,
+            Escaping
         }
 
         public static List<string> SearchFolder(TypologyEnum typology)
