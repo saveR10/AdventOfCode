@@ -78,6 +78,7 @@
     <Compile Include="IDay.cs" />
     <Compile Include="Model\Delimiter.cs" />
     <Compile Include="Model\InputType.cs" />
+    <Compile Include="ReaderInput.cs" />
     <Compile Include="SearchAlghoritmhs\ResearchAlghoritms.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Sources\2015\Day1.cs" />
