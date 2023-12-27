@@ -78,7 +78,6 @@
     <Compile Include="IDay.cs" />
     <Compile Include="Model\Delimiter.cs" />
     <Compile Include="Model\InputType.cs" />
-    <Compile Include="ReaderInput.cs" />
     <Compile Include="SearchAlghoritmhs\ResearchAlghoritms.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Sources\2015\Day1.cs" />
@@ -127,6 +126,7 @@
     <Content Include="DataStructures\IO\Output\HeapSort_words.txt" />
     <Content Include="DataStructures\IO\Output\InsertionSort_tiny.txt" />
     <Content Include="DataStructures\IO\Output\InsertionSort_words.txt" />
+    <Content Include="DataStructures\IO\Output\LinearProbingHashST_tinyST.txt" />
     <Content Include="DataStructures\IO\Output\LinkedQueue_tobe.txt" />
     <Content Include="DataStructures\IO\Output\LinkedStack_tobe.txt" />
     <Content Include="DataStructures\IO\Output\MaxPQ_tinyPQ.txt" />
@@ -162,6 +162,7 @@
     <Content Include="Test\2015\day4.txt" />
     <Content Include="Test\2015\day7.txt" />
     <Content Include="Test\2015\day8.txt" />
+    <Content Include="Test\2015\day9.txt" />
     <Content Include="Test\2023\day22.txt" />
     <Content Include="Test\2023\day23.txt" />
     <Content Include="Test\2023\day25.txt" />
