@@ -1,0 +1,26 @@
+This is the result of exercise BST with input tinyST.txt:
+S 0
+E 12
+X 7
+A 8
+R 3
+C 4
+H 5
+M 9
+L 11
+P 10
+
+A 8
+C 4
+E 12
+H 5
+L 11
+M 9
+P 10
+R 3
+S 0
+X 7
+
+Execution time in ticks: 456913
+Execution time in milliseconds: 45
+Execution time in seconds: 0

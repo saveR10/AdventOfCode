@@ -56,6 +56,7 @@
     <Compile Include="DataStructures\PriorityQueue\MinPQ.cs" />
     <Compile Include="DataStructures\PriorityQueue\MinPQBoard.cs" />
     <Compile Include="DataStructures\PriorityQueue\Solver.cs" />
+    <Compile Include="DataStructures\Searching\LinearProbingHashST.cs" />
     <Compile Include="DataStructures\Sorting\HeapSort.cs" />
     <Compile Include="DataStructures\Sorting\InsertionSort.cs" />
     <Compile Include="DataStructures\LinkedList\LinkedQueue.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="SearchAlghoritmhs\ResearchAlghoritms.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Sources\2015\Day1.cs" />
+    <Compile Include="Sources\2015\Day9.cs" />
     <Compile Include="Sources\2015\Day8.cs" />
     <Compile Include="Sources\2015\Day7.cs" />
     <Compile Include="Sources\2015\Day6.cs" />
@@ -112,10 +114,15 @@
     <Content Include="DataStructures\IO\Input\Three8Ints.txt" />
     <Content Include="DataStructures\IO\Input\tiny.txt" />
     <Content Include="DataStructures\IO\Input\tinyPQ.txt" />
+    <Content Include="DataStructures\IO\Input\tinyST.txt" />
+    <Content Include="DataStructures\IO\Input\tinyTale.txt" />
     <Content Include="DataStructures\IO\Input\tinyUF.txt" />
     <Content Include="DataStructures\IO\Input\tobe.txt" />
     <Content Include="DataStructures\IO\Input\words.txt" />
+    <Content Include="DataStructures\IO\Output\BinarySearchST_tinyST.txt" />
+    <Content Include="DataStructures\IO\Output\BinarySearchST_tinyTale.txt" />
     <Content Include="DataStructures\IO\Output\Board_3.txt" />
+    <Content Include="DataStructures\IO\Output\BST_tinyST.txt" />
     <Content Include="DataStructures\IO\Output\HeapSort_tiny.txt" />
     <Content Include="DataStructures\IO\Output\HeapSort_words.txt" />
     <Content Include="DataStructures\IO\Output\InsertionSort_tiny.txt" />
@@ -140,6 +147,7 @@
     <Content Include="DataStructures\IO\Output\ThreeSum_Three8Ints.txt" />
     <Content Include="DataStructures\IO\Output\TwoStackAlgorithm_mathExpression.txt" />
     <Content Include="DataStructures\IO\Output\WeightedQuickUnionFindUF_largeUF.txt" />
+    <Content Include="DataStructures\IO\Output\WeightedQuickUnionFindUF_tinyUF.txt" />
     <Content Include="Input\2015\day1.txt" />
     <Content Include="Input\2015\day2.txt" />
     <Content Include="Input\2015\day3.txt" />

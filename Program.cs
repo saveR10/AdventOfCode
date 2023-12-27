@@ -3,6 +3,7 @@ using AOC.DataStructures.AlghoritmsOptimization;
 using AOC.DataStructures.Clustering;
 using AOC.DataStructures.LinkedList;
 using AOC.DataStructures.PriorityQueue;
+using AOC.DataStructures.Searching;
 using AOC.DataStructures.Sorting;
 using AOC.SearchAlghoritmhs;
 using System;
@@ -17,16 +18,38 @@ namespace AOC
     {
         static void Main(string[] args)
         {
-            string part = "2"; //2, 1, 1T, 2T
-            Solver solver = new Solver(2015,8,part);
-            object input = solver.FetchInput(Model.InputType.Text);
-            solver.RunPuzzle(input);
-            Console.WriteLine($"Solution for part {part} is {solver.solution}");
-            Console.ReadLine();
+            Console.WriteLine("Choose the option:");
+            Console.WriteLine("1 - DataStructures tests:");
+            Console.WriteLine("2 - Search Alghoritms:");
+            Console.WriteLine("3 - Run Puzzles:");
+            var k = Console.ReadKey().Key;
+            while (k != ConsoleKey.D1 && k != ConsoleKey.D2 && k != ConsoleKey.D3)
+            {
+                Console.WriteLine("\r\nOption not possible");
+                k = Console.ReadKey().Key;
+            }
 
-            //Search Alghoritms
-            //List<string> InterestedClasses = ResearchAlghoritmsAttribute.SearchFolder(ResearchAlghoritmsAttribute.TypologyEnum.Hashing);
-
+            switch (k)
+            {
+                case ConsoleKey.D1:
+                    //DATASTRUCTURES TESTS
+                    //BST<string, int>.Example();
+                    LinearProbingHashST<string, int>.Example();
+                    break;
+                case ConsoleKey.D2:
+                    //SEARCH ALGHORITMS
+                    List<string> InterestedClasses = ResearchAlghoritmsAttribute.SearchFolder(ResearchAlghoritmsAttribute.TypologyEnum.Hashing);
+                    break;
+                case ConsoleKey.D3:
+                    //RUN PUZZLES
+                    string part = "1T"; //2, 1, 1T, 2T
+                    Solver solver = new Solver(2015, 9, part);
+                    object input = solver.FetchInput(Model.InputType.Text);
+                    solver.RunPuzzle(input);
+                    Console.WriteLine($"Solution for part {part} is {solver.solution}");
+                    Console.ReadLine();
+                    break;
+            }
         }
     }
 }

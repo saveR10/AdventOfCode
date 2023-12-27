@@ -1,0 +1,16 @@
+Questo è il risultato dell'esercizio BinarySearchST con input tinyST.txt :
+A 2
+C 4
+E 1
+H 5
+L 11
+M 9
+P 10
+R 3
+S 0
+X 7
+
+
+Execution time in ticks: -638391012403340796
+Execution time in milliseconds: -63839101240334
+Execution time in seconds: -63839101240

@@ -1,19 +1,21 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace corsobackend.lezione3.search
+namespace AOC.DataStructures.Searching
 {
     public class BST<Key, Value> where Key : IComparable<Key>
     {
+        // root of BST
         private Node root;
 
         private class Node
         {
-            public Key key;
-            public Value val;
-            public Node left, right;
-            public int size;
+            public Key key;// sorted by key
+            public Value val;// associated data
+            public Node left, right; // left and right subtrees
+            public int size;// number of nodes in subtree
 
             public Node(Key key, Value val, int size)
             {
@@ -73,7 +75,7 @@ namespace corsobackend.lezione3.search
                 return;
             }
             root = Put(root, key, val);
-            // assert check();
+            //Assert Check();
         }
 
         private Node Put(Node x, Key key, Value val)
@@ -87,11 +89,15 @@ namespace corsobackend.lezione3.search
             return x;
         }
 
+        /// <summary>
+        /// Removes the smallest key and associated value from the symbol table.
+        /// </summary>
+        /// <exception cref="InvalidOperationException"></exception>
         public void DeleteMin()
         {
             if (IsEmpty()) throw new InvalidOperationException("Symbol table underflow");
             root = DeleteMin(root);
-            // assert check();
+            //Assert check();
         }
 
         private Node DeleteMin(Node x)
@@ -106,7 +112,7 @@ namespace corsobackend.lezione3.search
         {
             if (IsEmpty()) throw new InvalidOperationException("Symbol table underflow");
             root = DeleteMax(root);
-            // assert check();
+            //Assert check();
         }
 
         private Node DeleteMax(Node x)
@@ -121,7 +127,7 @@ namespace corsobackend.lezione3.search
         {
             if (key == null) throw new ArgumentException("calls delete() with a null key");
             root = Delete(root, key);
-            // assert check();
+            //Assert check();
         }
 
         private Node Delete(Node x, Key key)
@@ -358,24 +364,20 @@ namespace corsobackend.lezione3.search
             return true;
         }
 
-        // Main method here is kept empty, you can replace it with appropriate C# entry point if needed
-        public static void Main(string[] args)
+        public static void Example()
         {
             long startTime = DateTime.Now.Ticks;
 
-            // Initialization of variables
-            string lesson = "lezione3";
-            string subpath = "search";
             string inputName = "tinyST.txt";
             string exercise = "BST";
 
             // Connect to the file; create it if necessary.
-            using (StreamWriter writer = new StreamWriter($"./out/{lesson}/{subpath}/{exercise}_{inputName}"))
+            using (StreamWriter writer = new StreamWriter($"../../DataStructures/IO/Output/{exercise}_{inputName}"))
             {
                 writer.WriteLine($"This is the result of exercise {exercise} with input {inputName}:");
 
                 List<string> lista = new List<string>();
-                using (StreamReader reader = new StreamReader($"./resources/{lesson}/{subpath}/{inputName}"))
+                using (StreamReader reader = new StreamReader($"../../DataStructures/IO/Input/{inputName}"))
                 {
                     string line = reader.ReadLine();
                     while (line != null)

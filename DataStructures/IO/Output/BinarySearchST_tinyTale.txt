@@ -1,0 +1,26 @@
+Questo è il risultato dell'esercizio BinarySearchST con input tinyTale.txt :
+age 15
+belief 29
+best 3
+darkness 47
+despair 59
+epoch 27
+foolishness 23
+hope 53
+incredulity 35
+it 0
+light 41
+of 4
+season 39
+spring 51
+the 2
+times 5
+was 1
+winter 57
+wisdom 17
+worst 9
+
+
+Execution time in ticks: -638391013526551022
+Execution time in milliseconds: -63839101352655
+Execution time in seconds: -63839101352
