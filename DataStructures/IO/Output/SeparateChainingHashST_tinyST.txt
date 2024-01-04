@@ -1,0 +1,15 @@
+Questo è il risultato dell'esercizio SeparateChainingHashST con input tinyST.txt :
+
+C 4
+R 3
+M 9
+L 11
+H 5
+A 8
+E 12
+P 10
+X 7
+S 0
+
+Execution time in milliseconds: 9
+Execution time in seconds: 0

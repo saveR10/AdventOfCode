@@ -57,6 +57,10 @@
     <Compile Include="DataStructures\PriorityQueue\MinPQBoard.cs" />
     <Compile Include="DataStructures\PriorityQueue\Solver.cs" />
     <Compile Include="DataStructures\Searching\LinearProbingHashST.cs" />
+    <Compile Include="DataStructures\Searching\RedBlackBST.cs" />
+    <Compile Include="DataStructures\Searching\SeparateChainingHashST.cs" />
+    <Compile Include="DataStructures\Searching\SequentialSearchST.cs" />
+    <Compile Include="DataStructures\Searching\ST.cs" />
     <Compile Include="DataStructures\Sorting\HeapSort.cs" />
     <Compile Include="DataStructures\Sorting\InsertionSort.cs" />
     <Compile Include="DataStructures\LinkedList\LinkedQueue.cs" />
@@ -140,8 +144,12 @@
     <Content Include="DataStructures\IO\Output\QuickFindUF_tinyUF.txt" />
     <Content Include="DataStructures\IO\Output\QuickSort_tiny.txt" />
     <Content Include="DataStructures\IO\Output\QuickUnionFindUF_largeUF.txt" />
+    <Content Include="DataStructures\IO\Output\RedBlackBST_tinyST.txt" />
     <Content Include="DataStructures\IO\Output\SelectionSort_words.txt" />
+    <Content Include="DataStructures\IO\Output\SeparateChainingHashST_tinyST.txt" />
+    <Content Include="DataStructures\IO\Output\SequentialSearchST_tinyST.txt" />
     <Content Include="DataStructures\IO\Output\ShellSort_words.txt" />
+    <Content Include="DataStructures\IO\Output\ST_tinyST.txt" />
     <Content Include="DataStructures\IO\Output\ThreeSumFast_16Kints.txt" />
     <Content Include="DataStructures\IO\Output\ThreeSum_2Kints.txt" />
     <Content Include="DataStructures\IO\Output\ThreeSum_4Kints.txt" />

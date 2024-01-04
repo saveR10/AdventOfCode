@@ -22,7 +22,8 @@ namespace AOC.SearchAlghoritmhs
             Hashing,
             BinaryOperation,
             Escaping,
-            AlphaStar
+            AlphaStar,
+            Dijkstra
         }
 
         public static List<string> SearchFolder(TypologyEnum typology)
