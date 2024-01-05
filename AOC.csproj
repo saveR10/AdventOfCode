@@ -86,6 +86,7 @@
     <Compile Include="SearchAlghoritmhs\ResearchAlghoritms.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Sources\2015\Day1.cs" />
+    <Compile Include="Sources\2015\Day10.cs" />
     <Compile Include="Sources\2015\Day9.cs" />
     <Compile Include="Sources\2015\Day8.cs" />
     <Compile Include="Sources\2015\Day7.cs" />
