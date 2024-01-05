@@ -24,7 +24,9 @@ namespace AOC.SearchAlghoritmhs
             Escaping,
             AlphaStar,
             Dijkstra,
-            Game
+            Game,
+            TextRules,
+            JSON,
         }
 
         public static List<string> SearchFolder(TypologyEnum typology)

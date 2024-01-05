@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=4.0.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\..\AOC2023\packages\NUnit.4.0.1\lib\net462\nunit.framework.dll</HintPath>
     </Reference>
@@ -86,6 +89,8 @@
     <Compile Include="SearchAlghoritmhs\ResearchAlghoritms.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Sources\2015\Day1.cs" />
+    <Compile Include="Sources\2015\Day12.cs" />
+    <Compile Include="Sources\2015\Day11.cs" />
     <Compile Include="Sources\2015\Day10.cs" />
     <Compile Include="Sources\2015\Day9.cs" />
     <Compile Include="Sources\2015\Day8.cs" />
