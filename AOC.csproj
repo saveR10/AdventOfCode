@@ -89,6 +89,10 @@
     <Compile Include="SearchAlghoritmhs\ResearchAlghoritms.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Sources\2015\Day1.cs" />
+    <Compile Include="Sources\2015\Day17.cs" />
+    <Compile Include="Sources\2015\Day16.cs" />
+    <Compile Include="Sources\2015\Day15.cs" />
+    <Compile Include="Sources\2015\Day14.cs" />
     <Compile Include="Sources\2015\Day13.cs" />
     <Compile Include="Sources\2015\Day12.cs" />
     <Compile Include="Sources\2015\Day11.cs" />
@@ -164,6 +168,7 @@
     <Content Include="DataStructures\IO\Output\TwoStackAlgorithm_mathExpression.txt" />
     <Content Include="DataStructures\IO\Output\WeightedQuickUnionFindUF_largeUF.txt" />
     <Content Include="DataStructures\IO\Output\WeightedQuickUnionFindUF_tinyUF.txt" />
+    <Content Include="Documents\Math\Combinatorial\Esempi applicazione calcolo combinatorio.html" />
     <Content Include="Input\2015\day1.txt" />
     <Content Include="Input\2015\day2.txt" />
     <Content Include="Input\2015\day3.txt" />
@@ -188,7 +193,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Documents\15_04_Calcolo_combinatorio_1_0.pdf" />
+    <None Include="Documents\Math\Combinatorial\15_04_Calcolo_combinatorio_1_0.pdf" />
+    <None Include="Documents\Math\Combinatorial\combinatoria2.pdf" />
+    <None Include="Documents\Math\Combinatorial\combinatorial.xlsx" />
+    <None Include="Documents\Math\Combinatorial\PROBLEMI_DI_CALCOLO_COMBINATORIO_prof._Nicosia.pdf" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

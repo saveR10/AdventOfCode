@@ -1,0 +1,2612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>Esempi applicazione calcolo combinatorio</title>
+</head>
+
+
+<body style="color: rgb(0, 0, 0); background-color: rgb(255, 204, 153); background-image: url(sfondo2.jpg);" alink="#000099" link="#000099" vlink="#990099">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: center; width: 1060px; font-family: Times New Roman;">
+<dl>
+
+
+
+
+
+
+
+
+
+
+
+  <dt><big><font size="+1"><big><br>
+
+
+
+
+
+
+
+
+
+
+
+    </big></font></big></dt>
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<dl style="text-align: justify;">
+
+
+
+
+
+
+
+
+
+
+
+  <dt style="text-align: center;"><big><font size="+1"><big>
+
+
+
+
+
+
+
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<big style="font-weight: bold;"><big></big></big></big></font></big></dt>
+
+
+
+
+
+  <dt style="text-align: center; margin-left: 139px; width: 921px;"><big><big><big><font style="font-weight: bold;" size="+1"><big><big><big>Esempi con l'applicazione delle</big></big></big></font></big></big></big></dt>
+
+
+
+
+
+
+    <dt style="text-align: center; margin-left: 162px; width: 875px;"><big><big><big><font style="font-weight: bold;" size="+1"><big><big><big>&nbsp;nozioni&nbsp;di calcolo combinatorio&nbsp;</big></big></big></font></big></big></big></dt>
+
+  <dt style="text-align: center; margin-left: 161px; width: 875px;"><big><big><big><font style="font-weight: bold;" size="+1"><big><big><big>ai&nbsp;problemi del calcolo delle
+probabilit&agrave;</big></big></big></font></big></big></big>  </dt>
+
+
+
+
+
+
+    <big><font size="+1"><big><big style="font-weight: bold;"><big>  </big></big></big></font></big>
+
+
+
+
+
+  <dt></dt>
+
+
+
+
+
+
+
+
+
+
+
+  <dt><big><font size="+1"><big><br>
+
+
+
+
+
+
+
+
+
+
+
+    </big></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </big></dt>
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<dl style="text-align: justify;">
+
+
+
+
+
+
+
+
+
+
+
+  <dt>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <table style="text-align: left; width: 1115px; height: 634px;" border="0" cellpadding="2" cellspacing="2">
+
+
+
+
+
+
+
+
+
+
+
+      <tbody>
+
+
+
+
+
+
+
+
+
+
+
+        <tr>
+
+
+
+
+
+
+
+
+
+
+
+          <td style="width: 214px;">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <dl>
+
+
+
+
+
+
+
+
+
+
+
+            <dt><big><font size="+1"><big><br>
+
+
+
+
+
+
+
+
+
+
+
+              </big></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </big></dt>
+
+
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          </dl>
+
+
+
+
+
+
+
+
+
+
+
+          </td>
+
+
+
+
+
+
+
+
+
+
+
+          <td style="width: 862px;"><big>
+          
+          
+          </big>
+          
+          
+          
+          
+          
+          
+          
+          
+          <dl>
+
+
+
+
+
+
+
+
+            <big>
+
+
+            </big><dt style="text-align: justify;"><big><big><font size="+1"><big><big><span style="font-style: italic; color: rgb(102, 0, 204);">"Affermo
+che nessuna scienza mi sembra pi&ugrave; utile, pi&ugrave; bella e pi&ugrave; facile della
+matematica.&nbsp;Ed invero: quale altra scienza si occupa di verit&agrave; pi&ugrave;
+elementari, poich&eacute; essa non ne presuppone alcun&rsquo;altra, mentre ogni
+altra presuppone la matematica? In quale altra scienza le
+argomentazioni sono altrettanto convincenti ed esaurienti? Quale altra
+scienza conduce a risultati pi&ugrave; sicuri e pi&ugrave; agevolmente controllabili?
+In quale altra scienza meglio rifulge lo&nbsp;splendore del vero? Quale
+altra fornisce cognizioni tanto universali nel tempo e nello spazio? La
+matematica &egrave; universalmente utile, oltre e forse pi&ugrave; che per la verit&agrave;
+che essa fa conoscere, per i metodi di ricerca che essa adopera ed
+adoperando insegna. Nessun altro studio richiede meditazione pi&ugrave;
+pacata: nessun altro meglio induce ad esser cauti nell&rsquo;affermare,
+semplici ed ordinati nell&rsquo;argomentare, precisi e chiari nel dire "</span><br style="font-style: italic; color: rgb(102, 0, 204);">
+
+
+
+
+
+
+
+
+
+          </big></big></font></big></big></dt>
+
+          
+          </dl>
+
+          
+          <div style="text-align: left;"><big><font size="+1"><big><span style="font-style: italic; color: rgb(102, 0, 204);">Alessandro Padoa (1868-1937) , 1908 - "Elogio alla matematica"</span>. </big></font></big><br>
+
+          </div>
+
+          
+          <dl>
+
+            <dt style="text-align: justify;"><big><big><font size="+1"><big><big>
+
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp; <br>
+
+
+
+
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;La stima della probabilit&agrave; di un evento
+&egrave; uno strumento fondamentale della statistica. Nelle sue forme
+pi&ugrave; semplici, si fonda sul calcolo combinatorio. E&rsquo;
+evidente ed intuitiva la sua applicazione ai giochi d'azzardo, ai quali
+effettivamente fu associata alla sua origine. Anche se il risultato di
+ogni singolo tentativo &egrave; imprevedibile, con un numero elevato di
+ripetizioni si stabiliscono regolarit&agrave; che possono essere
+previste e calcolate. Dal punto di vista didattico,
+l&rsquo;associazione del concetto di probabilit&agrave; al calcolo
+combinatorio &egrave; un aspetto importante: serve per collegare una
+scelta alla probabilit&agrave; con la quale l'evento atteso pu&ograve;
+avvenire, nel contesto di tutti gli eventi alternativi possibili.
+E&rsquo; la base dell&rsquo;inferenza statistica, della scelta
+scientifica in tutti i casi d&rsquo;incertezza.<br>
+
+
+
+
+
+
+
+
+
+          <br>
+
+
+
+
+
+
+
+
+
+I concetti e i metodi del calcolo combinatorio possono essere spiegati in modo semplice, attraverso il seguente esempio. <br>
+
+
+
+
+
+
+
+
+
+          <br>
+
+
+
+
+
+
+
+
+
+          <span style="font-weight: bold; color: rgb(102, 0, 204);">Esempio 1:</span><br style="font-family: Comic Sans MS;">
+
+
+
+
+
+
+
+
+
+          </big></big></font>
+
+
+      
+
+
+      
+
+
+
+
+      
+
+
+
+
+      
+
+
+
+
+      
+
+
+
+
+      
+
+
+
+
+      
+
+
+
+
+      
+      
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <big><big><font size="+1"><big><big>In una corsa con 10
+concorrenti, che abbiano le medesime possibilit&agrave; di vittoria,
+&egrave; possibile porsi molti quesiti, tra i quali: <br>
+
+
+
+
+
+
+
+
+
+          <br style="font-family: Comic Sans MS; color: rgb(102, 0, 204);">
+
+
+
+
+
+
+
+
+
+          <span style="color: rgb(102, 0, 204); font-weight: bold;">a)</span> quanti differenti ordini d'arrivo sono possibili? <br style="font-family: Comic Sans MS; color: rgb(102, 0, 204);">
+
+
+
+
+
+
+
+
+
+          <span style="font-weight: bold; color: rgb(102, 0, 204);">b)</span> quale &egrave; la probabilit&agrave; di indovinare i primi 3 al traguardo, secondo l'ordine? <br style="font-family: Comic Sans MS; color: rgb(102, 0, 204);">
+
+
+
+
+
+
+
+
+
+          <span style="color: rgb(102, 0, 204); font-weight: bold;">c)</span> quale la probabilit&agrave; di indovinare i primi 3, senza considerare il loro ordine? <br style="font-family: Comic Sans MS; color: rgb(102, 0, 204);">
+
+
+
+
+
+
+
+
+
+          <span style="color: rgb(102, 0, 204); font-weight: bold;">d)</span> &egrave; conveniente scommettere 10 euro per guadagnarne 500 euro, se si indovinassero i primi 2 nell'ordine? <br style="font-family: Comic Sans MS; color: rgb(102, 0, 204);">
+
+
+
+
+
+
+
+
+
+          <span style="color: rgb(102, 0, 204); font-weight: bold;">e)</span> &egrave; conveniente senza stabilire l'ordine? <br style="font-family: Comic Sans MS;">
+
+
+
+
+
+
+
+
+
+          </big></big></font>
+      
+      
+      
+
+
+      
+
+      
+
+
+      
+
+      
+
+
+      
+
+      
+
+
+      
+
+      
+
+
+      
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <br>
+
+
+
+
+
+
+
+
+
+          <big><big><font size="+1"><big><big>Per calcolare le
+probabilit&agrave; richieste, occorre prestare attenzione alle 4
+caratteristiche fondamentali di questi eventi: <br style="font-family: Comic Sans MS;">
+
+
+
+
+
+
+
+
+
+          </big></big></font>
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <big><big>
+      
+
+
+
+      <font size="+1"><big><big>(1) si escludono a vicenda, <br style="font-family: Comic Sans MS;">
+
+
+
+
+
+
+
+
+
+(2) sono tutti ugualmente possibili, <br style="font-family: Comic Sans MS;">
+
+
+
+
+
+
+
+
+
+(3) sono casuali, <br style="font-family: Comic Sans MS;">
+
+
+
+
+
+
+
+
+
+(4) sono indipendenti. <br style="font-family: Comic Sans MS;">
+
+
+
+
+
+
+
+
+
+          </big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          <big><big>
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          </dt>
+
+
+
+
+
+          
+          
+          
+          
+          
+          </dl>
+
+
+
+
+
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big><span style="font-weight: bold; color: rgb(102, 0, 204);">a)</span> In una corsa con 10 concorrenti, i possibili ordini d'arrivo sono le permutazioni di 10 elementi.</big></big></font></big></big><br style="font-family: Comic Sans MS;">
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+Il&nbsp;loro numero &egrave;:&nbsp;P = 10! = 1&sdot;2&sdot;3&sdot;4&sdot;5&sdot;6&sdot;7&sdot;8&sdot;9&sdot;10 = 3. 628.800</big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          
+          
+          
+          
+          
+          <dl>
+
+
+
+
+
+            <dt style="text-align: justify;"><big><big><font size="+1"><big><big>
+
+
+
+          </big></big></font>
+      
+
+
+
+      
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <br>
+
+
+
+
+
+
+
+
+
+          </dt>
+
+
+
+
+
+          
+          
+          
+          
+          
+          </dl>
+
+
+
+
+
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big><span style="color: rgb(102, 0, 204); font-weight: bold;">b)
+          </span>In una corsa di 10 concorrenti, il numero dei possibili gruppi
+differenti formati dai primi 3 all&rsquo;arrivo, tenendo conto anche
+del loro ordine, sono le disposizioni di 10 elementi 3 a 3, cio&egrave;
+:</big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          
+          
+          
+          
+          
+          <dl>
+
+
+
+
+
+            <dt style="text-align: justify;"><big><big><font size="+1"><big><big>
+
+
+
+          </big></big></font>
+
+
+
+
+      
+      
+      
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <big><big>
+      </big></big>
+          
+          </dt>
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          </dl>
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          <div style="text-align: center;"><big><big><font size="+1"><big><big><img style="width: 311px; height: 71px;" alt="" src="disp103.png" align="middle"></big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+
+
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+
+
+
+      
+      
+      
+      
+      </big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big>La probabilit&agrave; di indovinare i primi 3 concorrenti secondo l'ordine d'arrivo&nbsp;&egrave;:&nbsp; 1 / 720 = 0,001389. </big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          </big></big></font>
+
+
+
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big><span style="font-weight: bold; color: rgb(102, 0, 204);">c)</span>
+In una corsa di 10 concorrenti, i possibili gruppi dei primi 3
+concorrenti, senza distinzioni interne di ordine, sono le combinazioni
+di 10 elementi 3 a 3, cio&egrave;:</big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+
+
+
+      
+      
+      
+      
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <div style="text-align: center;"><big><big><font size="+1"><big><big><img style="width: 356px; height: 71px;" alt="" src="comb103.png" align="middle"></big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+
+
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+
+
+
+      
+      
+      
+      
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big>La
+probabilit&agrave; di indovinare i primi 3 concorrenti, senza
+stabilirne l'ordine, &egrave; 1/120 = 0,008333; &egrave; 6 ( = 3!)
+volte pi&ugrave; alta di quella in cui si chiede di indovinare anche il
+loro ordine.&nbsp; </big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          </big></big></font>
+
+
+
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big><span style="font-weight: bold; color: rgb(102, 0, 204);">d)</span>
+Il numero di possibili gruppi formati dai primi 2 concorrenti,
+stabilendo chi sar&agrave; il primo e chi il secondo, in un gruppo di
+10 &egrave; determinato dalle disposizioni di 10 elementi 2 a 2,
+cio&egrave; :</big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          </big></big></font>
+
+
+
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <div style="text-align: center;"><big><big><font size="+1"><big><big><img style="width: 296px; height: 71px;" alt="" src="disp102.png" align="middle"></big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+
+
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+
+
+
+      
+      
+      
+      
+      </big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big>La
+probabilit&agrave; di indovinare chi saranno i primi 2 &egrave; uguale
+a 1/90. E un rapporto pi&ugrave; sfavorevole del rapporto di 1 a 50
+fissato nella scommessa (10 euro contro 500 euro). Per chi scommette
+non &egrave; conveniente vincere 50 volte la posta, quando la
+probabilit&agrave; di vincere &egrave; 1/90. </big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          </big></big></font>
+
+
+
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big><span style="color: rgb(102, 0, 204); font-weight: bold;">e)</span>
+Il numero di possibili gruppi formati dai primi 2 concorrenti, senza
+stabilire l'ordine, in un gruppo di 10 &egrave; dato dalle combinazioni
+di 10 elementi 2 a 2, cio&egrave; :</big></big></font></big></big><br style="font-family: Comic Sans MS;">
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          </big></big></font>
+
+
+
+
+      
+      
+      
+      
+      
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <div style="text-align: center;"><big><big><font size="+1"><big><big><img style="width: 341px; height: 71px;" alt="" src="comb102.png" align="middle"></big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+
+
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+
+
+
+      </big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big>La
+probabilit&agrave; di indovinare i primi 2 senza dover stabilire
+l&rsquo;ordine uguale a 1/45; &egrave; pi&ugrave; favorevole del
+rapporto di 1 a 50 fissato dalla scommessa. Per chi scommette &egrave;
+conveniente, perch&eacute; l&rsquo;eventuale guadagno &egrave;
+superiore al rischio. Una scommessa tra i due giocatori &egrave; in
+parit&agrave;, solamente quando il prodotto tra la probabilit&agrave;
+d&rsquo;indovinare e il moltiplicatore della posta &egrave; uguale a 1.
+          </big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          <br>
+
+
+
+
+
+
+
+
+
+          <span style="font-weight: bold; color: rgb(102, 0, 204);">Esempio 2:</span><br>
+
+
+
+
+
+
+
+
+
+          <br>
+
+
+
+
+
+          </big></big></font></big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big>
+
+
+
+Ho quattro scatole chiuse,
+numerate da 1 a 4, e so che dentro ci sono complessivamente tre palline
+(ma non so come queste siano distribuite nelle scatole).</big></big></font></big></big><br style="color: rgb(102, 0, 204);">
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+Che probabilit&agrave; ho che le tre palline siano tutte nella scatola n. 1?</big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          <br>
+
+
+
+
+
+          </big></big></font></big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big>
+
+
+
+
+
+
+
+
+Gli eventi elementari, che possono essere considerati equiprobabili,
+sono le possibili distribuzioni delle tre palline nelle quattro
+scatole. Detto ci&ograve;, risolviamo l&rsquo;esercizio in due modi
+diversi:</big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          <br>
+
+
+
+
+
+
+
+
+
+          </big></big></font></big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big><span style="font-weight: bold; color: rgb(102, 0, 204);">1 metodo </span><span style="color: rgb(102, 0, 204);">(&ldquo;diretto&rdquo;).</span>
+Contiamo i casi possibili e i casi favorevoli. I casi fa-vorevoli sono
+solamente uno (la configurazione in cui le tre palline sono nella
+scatola 1). Contare i casi possibili &egrave; facile: ci sono 4
+configurazioni in cui le tre palline sono tutte in una sola scatola e 4
+in cui le tre palline sono tutte in scatole diverse. Restano i casi di
+tipo 2+1 (due palline nella stessa scatola, una in una scatola diversa
+e due scatole vuote): le due scatole vuote possono essere scelte in 6
+modi diversi e per ogni scelta delle due scatole vuote restano 2
+possibilit&agrave; per mettere la pallina singola. Dunque le
+configurazioni di tipo 2+1 sono 6 &times; 2 = 12. Complessivamente
+abbiamo contato 4 + 4 + 12 = 20 casi possibili e pertanto la
+probabilit&agrave; cercata &egrave;: 1/20.</big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          <br>
+
+
+
+
+
+
+
+
+
+          </big></big></font></big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big><span style="font-weight: bold; color: rgb(102, 0, 204);">2 metodo </span><span style="color: rgb(102, 0, 204);">(applicazione delle formule del calcolo combinatorio).</span>
+Osserviamo che posso interpretare il&ldquo;mettere una pallina in una
+scatola&rdquo; come lo &ldquo;scegliere&rdquo; quella scatola e il
+&ldquo;mettere due palline&rdquo; in una scatola come lo
+&ldquo;scegliere due volte&rdquo; quella scatola, "mettere tre palline"
+in una scatola come lo "scegliere tre volte" quella scatola. Allora una
+distribuzione delle tre palline nelle quattro scatole la posso vedere
+come una scelta, con possibili ripetizioni, di tre scatole dalle
+quattro disponibili. In altre parole, `e una combinazione con
+ripetizioni di 4 oggetti presi tre alla volta (nel linguaggio
+paste-vassoio: &egrave; come se dovessi riempire un vassoio con tre
+paste scegliendole da quattro tipi diversi). Dunque i casi possibili
+sono <img style="width: 45px; height: 33px;" alt="" src="combrip43.png" align="middle">&nbsp;&nbsp;&nbsp;mentre
+il caso favorevole &egrave;, come gi&agrave; detto, uno solo: tutte e
+tre le palline nella prima scatola, ovvero la prima scatola
+&ldquo;scelta tre volte&rdquo;. La probabilit&agrave; &egrave; : </big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          </big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <div style="text-align: center;"><big><big><font size="+1"><big><big><img style="width: 455px; height: 76px;" alt="" src="combrip43bis.png" align="middle"></big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+
+
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+
+
+
+      </big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big>Da evidenziare il fatto che&nbsp;questo secondo metodo &egrave; migliore quando si ha a che fare con numeri grandi.</big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          <br>
+
+
+
+
+
+
+
+
+
+          <span style="font-weight: bold; color: rgb(102, 0, 204);">Esempio 3:</span><br>
+
+
+
+
+
+
+
+
+
+          <br>
+
+
+
+
+
+          </big></big></font></big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big>
+
+
+
+
+
+Esame di stato, tema di matematica n 1 (PNI, a. s. 2000-2001- Corso di
+ordinamento. Liceo scientifico). Il quesito n&deg; 8 &egrave;
+l&rsquo;unico di probabilit&agrave;. Si chiede: </big></big></font></big></big><br>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+Una classe &egrave;
+composta da 12 ragazzi e 4 ragazze. Tra i sedici allievi se ne&nbsp;
+scelgono tre a caso: qual &egrave; la probabilit&agrave; che essi siano
+tutti maschi? </big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+
+
+&nbsp;<br>
+
+
+
+
+
+
+
+
+
+          </big></big></font></big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big><span style="font-weight: bold; color: rgb(102, 0, 204);">1 metodo</span></big></big></font></big></big><big><big><font size="+1"><big><big>:
+uso del calcolo combinatorio. Si valuta che il numero&nbsp;di casi
+favorevoli &egrave; il&nbsp; numero di combinazioni di classe 3 di 12
+elementi: </big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          </big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <div style="text-align: center;"><big><big><font size="+1"><big><big><img style="width: 649px; height: 66px;" alt="" src="comb123.png" align="middle"></big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+      </big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big>mentre il numero&nbsp;di casi&nbsp;possibili
+&egrave; quello delle combinazioni di&nbsp;classe 3 di 16 elementi:</big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          </big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <div style="text-align: center;"><big><big><font size="+1"><big><big><img style="width: 662px; height: 66px;" alt="" src="comb163.png" align="middle"></big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+      </big></big>
+          
+          
+          
+          
+          
+          <div style="text-align: justify;"><big><big><font size="+1"><big><big>La probabilit&agrave;&nbsp;dell&rsquo;evento che si considera &egrave; allora data dalla classica formula: </big></big></font></big></big><br>
+
+
+
+
+
+          </div>
+
+
+
+
+
+          <big><big><font size="+1"><big><big>
+
+
+
+          <br>
+
+
+
+
+
+
+
+
+
+          </big></big></font>
+
+      
+
+      
+      
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <div style="text-align: center;"><big><big><font size="+1"><big><big><img style="width: 776px; height: 68px;" alt="" src="probesempio3.png" align="middle"></big></big></font></big></big><br>
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <big><big>
+
+      </big></big><br>
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          <div style="text-align: justify; width: 868px;"><big><big><font size="+1"><big><big><span style="font-weight: bold; color: rgb(102, 0, 204);">2&nbsp;metodo</span></big></big></font></big></big><big><big><font size="+1"><big><big>: uso della probabilit&agrave; condizionata.
+Si immagina di osservare, uno dopo l&rsquo;altro, i tre allievi
+sorteggiati e per i&isin;{1, 2, 3} si considera l&rsquo;evento M<small>i</small> =
+&ldquo;Lo studente dell&rsquo;i-sima osservazione &egrave;
+maschio&rdquo;. Allora l&rsquo;evento di cui si chiede la&nbsp;
+probabilit&agrave; &egrave; il prodotto logico M<small><small>1</small></small>M<small><small>2</small></small>M<small><small>3</small></small> e, per il teorema
+della probabilit&agrave;&nbsp; composta: </big></big></font></big></big><br>
+
+
+
+
+
+          
+          
+          <div style="text-align: center;"><big><big><font size="+1"><big><big>
+
+
+
+
+
+P(M<small><small>1</small></small>M<small><small>2</small></small>M<small><small>3</small></small>) = P(M<small><small>1</small></small>) P(M<small><small>2</small></small>/M<small><small>1</small></small>) P(M<small><small>3</small></small>/M<small><small>1</small></small>M<small><small>2</small></small>) =&nbsp;<img style="width: 157px; height: 59px;" alt="" src="probesemio3bis.png" align="middle"></big></big></font></big></big></div>
+
+          </div>
+
+
+
+
+
+          </td>
+
+
+
+
+
+
+          <td style="vertical-align: top; width: 104px;"></td>
+
+
+
+
+
+
+        </tr>
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+      </tbody>
+    
+    
+    
+    
+    
+    
+    </table>
+
+
+
+
+
+
+  </dt>
+
+
+
+
+
+
+  <span style="text-decoration: underline;"><br>
+
+
+
+
+
+
+
+
+
+
+  </span>
+</dl>
+
+
+
+
+
+
+
+
+
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<big><font size="+1"><big><a style="font-family: Times New Roman;" href="../sito%20Tesina/Sito%20Tesina/1probind.html"> </a><b style="color: rgb(0, 0, 153);"><i><a href="2calcolocombinatorio.html">pagina precedente</a></i></b><b style="color: rgb(0, 0, 153);"><i>&nbsp;&nbsp;</i></b><span style="text-decoration: underline;"><span style="font-style: italic;"><span style="font-weight: bold;"><a href="2calcolocombinatorio.html"><img style="border: 0px solid ; width: 37px; height: 27px;" alt="" src="freccia%20a%20sinistra.jpg.png" align="middle"></a></span></span></span><b style="color: rgb(0, 0, 153);"><i> &nbsp; &nbsp;&nbsp;<a href="index.html"><img style="border: 0px solid ; width: 57px; height: 51px;" alt="" src="booktornaallahomepage.gif">Torna all'Indice</a> &nbsp; &nbsp;</i></b><b style="color: rgb(0, 0, 153);"><i>&nbsp; &nbsp;&nbsp;</i></b></big></font></big><a href="4variabilecasuale.html"><big><font size="+1"><big><b style="color: rgb(0, 0, 153);"><i><img style="border: 0px solid ; width: 37px; height: 27px;" alt="" src="freccia%20a%20destra.jpg.png" align="middle"></i></b></big></font></big></a><big><font size="+1"><big><b style="color: rgb(0, 0, 153);"><i>&nbsp;<a href="4variabilecasuale.html">pagina successiva&nbsp;</a></i></b></big></font></big>
+<dl style="text-align: justify;">
+
+
+
+
+
+
+
+
+
+
+  <br>
+
+
+
+
+
+
+
+
+
+
+  <span style="text-decoration: underline;"><br>
+
+
+
+
+
+
+
+
+
+
+  </span>
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<dl style="text-align: justify;">
+
+
+
+
+
+
+
+
+
+
+
+  <dt><big>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </big></dt>
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

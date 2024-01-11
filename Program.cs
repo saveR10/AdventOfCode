@@ -48,8 +48,8 @@ namespace AOC
                     break;
                 case ConsoleKey.D3:
                     //RUN PUZZLES
-                    string part = "1"; //2, 1, 1T, 2T
-                    Solver solver = new Solver(2015, 13, part);
+                    string part = "1T"; //2, 1, 1T, 2T
+                    Solver solver = new Solver(2015, 17, part);
                     object input = solver.FetchInput(Model.InputType.Text);
                     solver.RunPuzzle(input);
                     Console.WriteLine();

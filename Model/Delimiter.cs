@@ -23,6 +23,7 @@ namespace AOC.Model
         public static String[] delimiter_tilde = { "~"};
         public static String[] Backslash = { "\\" };
         public static String[] Dot = { "." };
+        public static String[] DoubleDot = { ":" };
 
     }
 }
