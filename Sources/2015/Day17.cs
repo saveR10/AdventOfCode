@@ -35,8 +35,23 @@ namespace AOC2015
         public int n_ints;
         public List<int> ints;
         public void Part1(object input, bool test, ref object solution)
-        {
-            Combinatorial.ExampleCombinationsWithousRept1();
+        {   //                          Get     Number
+            //COMBINATION WITH REPT     OK      OK
+            //COMBINATION WITHOUT REPT  OK      OK
+            //PERMUTATION WITH REPT     OK      OK
+            //PERMUTATION WITHOUT REPT  OK      OK
+            //DISPOSITION WITH REPT
+            //DISPOSITION WITHOUT REPT
+
+            Combinatorial.ExampleDispositionsWithRept1();
+            Combinatorial.ExampleDispositionsWithoutRept1();
+            
+            Combinatorial.ExamplePermutationsWithoutRept1();
+            Combinatorial.ExamplePermutationsWithoutRept2();
+            Combinatorial.ExamplePermutationsWithRept1();
+
+
+
             string inputText = (string)input;
             var inputlist = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None);
             ints = new List<int>();

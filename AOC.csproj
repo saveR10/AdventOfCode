@@ -169,6 +169,7 @@
     <Content Include="DataStructures\IO\Output\WeightedQuickUnionFindUF_largeUF.txt" />
     <Content Include="DataStructures\IO\Output\WeightedQuickUnionFindUF_tinyUF.txt" />
     <Content Include="Documents\Math\Combinatorial\Esempi applicazione calcolo combinatorio.html" />
+    <Content Include="Documents\Math\Combinatorial\Link.txt" />
     <Content Include="Input\2015\day1.txt" />
     <Content Include="Input\2015\day2.txt" />
     <Content Include="Input\2015\day3.txt" />
@@ -195,7 +196,12 @@
     <None Include="App.config" />
     <None Include="Documents\Math\Combinatorial\15_04_Calcolo_combinatorio_1_0.pdf" />
     <None Include="Documents\Math\Combinatorial\combinatoria2.pdf" />
-    <None Include="Documents\Math\Combinatorial\combinatorial.xlsx" />
+    <None Include="Documents\Math\Combinatorial\combinatorialPermWithoutRept.xlsx" />
+    <None Include="Documents\Math\Combinatorial\combinatorialPermWithRept.xlsx" />
+    <None Include="Documents\Math\Combinatorial\combinatoriaCombWithoutReptl.xlsx" />
+    <None Include="Documents\Math\Combinatorial\combinatorialCombWithRept.xlsx" />
+    <None Include="Documents\Math\Combinatorial\combinatorialDispWithRept.xlsx" />
+    <None Include="Documents\Math\Combinatorial\combinatorialDispWithoutRept.xlsx" />
     <None Include="Documents\Math\Combinatorial\PROBLEMI_DI_CALCOLO_COMBINATORIO_prof._Nicosia.pdf" />
     <None Include="packages.config" />
   </ItemGroup>
