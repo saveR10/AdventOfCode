@@ -18,7 +18,7 @@ namespace AOC
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Choose the option:");
+            /*Console.WriteLine("Choose the option:");
             Console.WriteLine("1 - DataStructures tests:");
             Console.WriteLine("2 - Search Alghoritms:");
             Console.WriteLine("3 - Run Puzzles:");
@@ -47,16 +47,16 @@ namespace AOC
                     Console.ReadLine();
                     break;
                 case ConsoleKey.D3:
-                    //RUN PUZZLES
-                    string part = "1T"; //2, 1, 1T, 2T
+                    //RUN PUZZLES*/
+                    string part = "2"; //2, 1, 1T, 2T
                     Solver solver = new Solver(2015, 17, part);
                     object input = solver.FetchInput(Model.InputType.Text);
                     solver.RunPuzzle(input);
                     Console.WriteLine();
                     Console.WriteLine($"Solution for part {part} is {solver.solution}");
                     Console.ReadLine();
-                    break;
-            }
+                    /*break;
+            }*/
         }
     }
 }

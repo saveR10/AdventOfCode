@@ -35,49 +35,56 @@ namespace AOC2015
         public int n_ints;
         public List<int> ints;
         public void Part1(object input, bool test, ref object solution)
-        {   //                          Get     Number
-            //COMBINATION WITH REPT     OK      OK
-            //COMBINATION WITHOUT REPT  OK      OK
-            //PERMUTATION WITH REPT     OK      OK
-            //PERMUTATION WITHOUT REPT  OK      OK
-            //DISPOSITION WITH REPT
-            //DISPOSITION WITHOUT REPT
-
-            Combinatorial.ExampleDispositionsWithRept1();
-            Combinatorial.ExampleDispositionsWithoutRept1();
+        {  
             
-            Combinatorial.ExamplePermutationsWithoutRept1();
-            Combinatorial.ExamplePermutationsWithoutRept2();
-            Combinatorial.ExamplePermutationsWithRept1();
-
-
-
             string inputText = (string)input;
             var inputlist = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None);
             ints = new List<int>();
             foreach(var i in inputlist) 
             {
-                ints.Add(int.Parse(i));
+                if(!string.IsNullOrEmpty(i)) ints.Add(int.Parse(i));
             }
-            n_ints = ints.Count();
+            List<List<int>> allCombinations = Combinatorial.GetAllCombinations(ints);
+            int sum = 0;
+            int target = test?25:150;
 
-            for (int i = 1; i <= n_ints; i++)
+            foreach (var item in allCombinations)
             {
-                Extract(i);
+                if (item.Sum() == target)
+                {
+                    sum += 1;
+                    Console.WriteLine(string.Join(", ", item));
+                }
             }
+            solution = sum;
         }
-        public void Extract(int n)
-        {
-            int temp = 0;
-            for(int i = 0; i < n_ints; i++)
-            {
-                temp = ints[i];
-//                if()
-            }
-        }
+
+
+        
+
         public void Part2(object input, bool test, ref object solution)
         {
-            
+            string inputText = (string)input;
+            var inputlist = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None);
+            ints = new List<int>();
+            foreach (var i in inputlist)
+            {
+                if (!string.IsNullOrEmpty(i)) ints.Add(int.Parse(i));
+            }
+            List<List<int>> allCombinations = Combinatorial.GetAllCombinations(ints);
+            int sum = 0;
+            int target = test ? 25 : 150;
+            var minElement = allCombinations.OrderBy(list => list.Count).Where(c=>c.Count()!=0).Where(s=>s.Sum()==target).FirstOrDefault().Count();
+
+            foreach (var item in allCombinations)
+            {
+                if (item.Sum() == target && item.Count()==minElement)
+                {
+                    sum += 1;
+                    Console.WriteLine(string.Join(", ", item));
+                }
+            }
+            solution = sum;
         }
 
     }

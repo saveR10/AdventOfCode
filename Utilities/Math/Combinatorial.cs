@@ -22,7 +22,9 @@ namespace AOC.Utilities.Math
         /// N is the total number of items.
         /// K is the size of the group.
         /// Total number of unique combinations = N! / ( K! (N - K)! ).
+        /// C_N,K
         /// This function is less efficient, but is more likely to not overflow when N and K are large.
+        /// N > K
         /// Taken from:  http://blog.plover.com/math/choose.html
         /// </summary>
         /// <param name="N"></param>
@@ -40,7 +42,12 @@ namespace AOC.Utilities.Math
             }
             return r;
         }
-
+        /// <summary>
+        /// Cr_N,K = ( N + K - 1)! / (( K! ) ( N - 1 )!)
+        /// </summary>
+        /// <param name="N"></param>
+        /// <param name="K"></param>
+        /// <returns></returns>
         public static long NumberCombinationsWithRept(long N, long K)
         {
             long num = NumberPermutationsWithoutRept(N + K - 1);
@@ -50,6 +57,31 @@ namespace AOC.Utilities.Math
         }
 
         #endregion
+
+        public static List<List<T>> GetAllCombinations<T>(List<T> elements)
+        {
+            List<List<T>> result = new List<List<T>>();
+            GetAllCombinationsHelper(elements, 0, new List<T>(), result);
+            return result;
+        }
+
+        public static void GetAllCombinationsHelper<T>(List<T> elements, int currentIndex, List<T> currentCombination, List<List<T>> result)
+        {
+            if (currentIndex == elements.Count)
+            {
+                result.Add(new List<T>(currentCombination));
+                return;
+            }
+
+            // Include the current element in the combination
+            currentCombination.Add(elements[currentIndex]);
+            GetAllCombinationsHelper(elements, currentIndex + 1, currentCombination, result);
+            currentCombination.RemoveAt(currentCombination.Count - 1); // Backtrack
+
+            // Exclude the current element from the combination
+            GetAllCombinationsHelper(elements, currentIndex + 1, currentCombination, result);
+        }
+
 
         /// <summary>
         /// This function gets all groups of unique combinations based upon N and K.
@@ -71,6 +103,9 @@ namespace AOC.Utilities.Math
                 a = a.SelectMany((t) => list, (t1, t2) => t1.Where(tt => !tt.Equals(t2)).Concat(new T[] { t2 }));
                 a = a.Where(t => t.Count() == i + 2);
                 a = a.ToList();
+                /*a = a.SelectMany(combination => list.Where(element => !combination.Contains(element)),
+                      (combination, element) => combination.Concat(new T[] { element }))
+                    .Where(combination => combination.Sum(e => Convert.ToInt32(e)) == target);*/
                 var b = new List<IEnumerable<T>>();
                 int ind_col = 0;
                 int ind_row = 0;
@@ -319,6 +354,7 @@ namespace AOC.Utilities.Math
 
         #region Number
         /// <summary>
+        /// DR_N,K = N^K
         /// </summary>
         /// <param name="N"></param>
         /// <param name="K"></param>
@@ -329,13 +365,8 @@ namespace AOC.Utilities.Math
         }
 
         /// <summary>
-        /// In quanti modi diversi 5 alunni si possono sedere su 3 sedie numerate? 
-        /// N=5, gli oggetti sono i 5 alunni
-        /// K=3, i posti sono le 3 sedie
-        /// Le sedie sono numerate, quindi conta l'ordine con cui gli alunni si siedono
-        /// I 5 alunni sono persone tutte distinte, quindi non c'è ripetizione di oggetti
-        /// N!/(N-K)! Si applica la formula delle disposizioni senza ripetizioni di oggetti.
-        /// D_N,K= Ci sono 60 modi diversi in cui gli alunni si possono sedere
+        /// D_N,K = N!/(N-K)!
+        /// Con N > K
         /// </summary>
         /// <param name="N"></param>
         /// <param name="K"></param>
@@ -354,26 +385,51 @@ namespace AOC.Utilities.Math
             return GetDispositionsWithRept(list, length - 1).SelectMany(t => list, (t1, t2) => t1.Concat(new T[] { t2 }));
         }
 
+        static List<List<T>> GenerateDispositionsWithoutRepetition<T>(List<T> elements, int seats)
+        {
+            List<List<T>> result = new List<List<T>>();
+            GenerateDispositionsWithoutRepetitionRecursive(elements, seats, new List<T>(), result);
+            return result;
+        }
 
+        static void GenerateDispositionsWithoutRepetitionRecursive<T>(
+            List<T> elements, int seats, List<T> currentDisposition, List<List<T>> result)
+        {
+            if (seats == 0)
+            {
+                result.Add(new List<T>(currentDisposition));
+                return;
+            }
 
-        #region Examples
-        /// Utilizzando le cifre 1,2,3,4 quanti numeri di 4 cifre si possono formare?
-        /// N=3, gli oggetti sono le 3 cifre
-        /// K=4, i posti sono le 4 cifre
-        /// Conta 'ordine: le cifre hanno posizioni ben precise, quindi conta l'ordine con cui i numeri 1,2,3 si dispongono.
-        /// R=4, ciascuna cifra 1,2,3 può ripetersi fino a 4 volte per formare il numero a 4 cifre, quindi c'è ripetizione di oggetti.
-        /// DR_N,K=N^K, si applica la formula delle disposizioni con ripetizioni di oggetti.
-        /// DR_3,4 = 3^4=81, si possono formare 81 numeri di 4 cifre usando le cifre 1,2,3
-        /// 1111  1112  1113        2111  2112  2113        3111  3112  3113
-        /// 1121  1122  1123        2121  2122  2123        3121  3122  3123
-        /// 1131  1132  1133        2131  2132  2133        3131  3132  3133
-        /// 1211  1212  1213        2211  2212  2213        3211  3212  3213
-        /// 1221  1222  1223        2221  2222  2223        3221  3222  3223
-        /// 1231  1232  1233        2231  2232  2233        3231  3232  3233
-        /// 1311  1312  1313        2311  2312  2313        3311  3312  3313
-        /// 1321  1322  1323        2321  2322  2323        3321  3322  3323
-        /// 1331  1332  1333        2331  2332  2333        3331  3332  3333
-        public static void ExampleDispositionsWithRept1()
+            for (int i = 0; i < elements.Count; i++)
+            {
+                if (!currentDisposition.Contains(elements[i]))
+                {
+                    currentDisposition.Add(elements[i]);
+                    GenerateDispositionsWithoutRepetitionRecursive(elements, seats - 1, currentDisposition, result);
+                    currentDisposition.RemoveAt(currentDisposition.Count - 1); // Backtrack
+                }
+            }
+        }
+
+            #region Examples
+            /// Utilizzando le cifre 1,2,3,4 quanti numeri di 4 cifre si possono formare?
+            /// N=3, gli oggetti sono le 3 cifre
+            /// K=4, i posti sono le 4 cifre
+            /// Conta 'ordine: le cifre hanno posizioni ben precise, quindi conta l'ordine con cui i numeri 1,2,3 si dispongono.
+            /// R=4, ciascuna cifra 1,2,3 può ripetersi fino a 4 volte per formare il numero a 4 cifre, quindi c'è ripetizione di oggetti.
+            /// DR_N,K=N^K, si applica la formula delle disposizioni con ripetizioni di oggetti.
+            /// DR_3,4 = 3^4=81, si possono formare 81 numeri di 4 cifre usando le cifre 1,2,3
+            /// 1111  1112  1113        2111  2112  2113        3111  3112  3113
+            /// 1121  1122  1123        2121  2122  2123        3121  3122  3123
+            /// 1131  1132  1133        2131  2132  2133        3131  3132  3133
+            /// 1211  1212  1213        2211  2212  2213        3211  3212  3213
+            /// 1221  1222  1223        2221  2222  2223        3221  3222  3223
+            /// 1231  1232  1233        2231  2232  2233        3231  3232  3233
+            /// 1311  1312  1313        2311  2312  2313        3311  3312  3313
+            /// 1321  1322  1323        2321  2322  2323        3321  3322  3323
+            /// 1331  1332  1333        2331  2332  2333        3331  3332  3333
+            public static void ExampleDispositionsWithRept1()
         {
             var n = NumberDispositionsWithRept(3, 4);
             IEnumerable<int> list = new List<int>() { 1, 2, 3 };
@@ -410,7 +466,15 @@ namespace AOC.Utilities.Math
         public static void ExampleDispositionsWithoutRept1()
         {
             var n = NumberDispositionsWithoutRept(5, 3);
-            IEnumerable<int> list = new List<int>() { 1, 2, 3, 4, 5 };
+            List<char> elements = new List<char> { '1', '2', '3', '4', '5' };
+            int seats = 3;
+            List<List<char>> dispositions = GenerateDispositionsWithoutRepetition(elements, seats);
+
+            Console.WriteLine($"All dispositions without repetition of {seats} elements:");
+            foreach (var disposition in dispositions)
+            {
+                Console.WriteLine(string.Join(", ", disposition));
+            }
             
         }
 
@@ -463,81 +527,6 @@ namespace AOC.Utilities.Math
         }
 
         #endregion
-
-        public static IEnumerable<IEnumerable<T>> HelperPermutations<T>(List<T> list,Dictionary<T,int> keyValuePairs)
-        {
-            //list.ForEach();
-            /*List<T> newList = new List<T>();
-            newList.Add(keyValuePairs.Keys.First());
-            newList = (List<T>)newList.AsEnumerable();*/
-            IEnumerable<IEnumerable<T>> l = new List<IEnumerable<T>>();
-
-            return l;
-        }
-        public static IEnumerable<IEnumerable<T>> GetPermutationsWithRept<T>(IEnumerable<T> list, int length)
-        {
-            IEnumerable<T> l = list.AsEnumerable();
-            List<T> la = new List<T>();
-            Dictionary<T, int> dict = new Dictionary<T, int>();
-            foreach (var item in l)
-            {
-                if (!la.Any(bb => bb.Equals(item)))
-                {
-                    la.Add(item);
-                    dict.Add(item, 1);
-                }
-                else
-                {
-                    dict[item] += 1;
-                }
-            }
-
-            int ind_digit = 0;
-            int num_digit = 2;
-            IEnumerable<IEnumerable<T>> a = la.SelectMany((ll) =>HelperPermutations(la,dict));
-            
-            for (int i = 0; i < length - 1; i++)
-            {
-                
-                a = a.SelectMany((t) => list, (t1, t2) => t1.Concat(new T[] { t2 }));
-                a = a.Where(t => t.Count() == i + 2);
-                a = a.ToList();
-                var b = new List<IEnumerable<T>>();
-                int ind_col = 0;
-                int ind_row = 0;
-                int num_cols = list.Count() - num_digit + 1;
-
-                int[] ind_indexes = new int[num_digit - 2];
-                int[] num_indexes = new int[num_digit - 2];
-
-                for (int ii = 0; ii < ind_indexes.Length; ii++)
-                {
-                    num_indexes[ii] = list.Count() - ind_digit;
-                }
-                foreach (var item in a)
-                {
-                    if (ind_row <= ind_col - ind_indexes.Sum()) b.Add(item);
-                    int num_rows = list.Count() - ind_digit - ind_indexes.Sum();
-                    ind_col++;
-                    if (ind_col == num_cols)
-                    {
-                        ind_row++;
-                        if (ind_row == num_rows)
-                        {
-                            ind_row = 0;
-                            SetIndexesCombWithoutRept(ind_indexes, num_indexes);
-                            num_rows = list.Count() - ind_digit - ind_indexes.Sum();
-                        }
-                        if (num_rows > 0) ind_row = ind_row % (num_rows);
-                        ind_col = 0;
-                    }
-                }
-                ind_digit++;
-                num_digit++;
-                a = b;
-            }
-            return a;
-        }
 
         /// <summary>
         /// 
@@ -620,29 +609,19 @@ namespace AOC.Utilities.Math
                     if (!swapped.Contains(elements[i]))
                     {
                         swapped.Add(elements[i]);
-                        Swap(elements, index, i);
+                        SwapPermutation(elements, index, i);
                         PermutationsWithReptRecursive(elements, index + 1, result);
-                        Swap(elements, index, i); // Backtrack
+                        SwapPermutation(elements, index, i); // Backtrack
                     }
                 }
             }
         }
 
-        static void Swap<T>(List<T> list, int index1, int index2)
+        static void SwapPermutation<T>(List<T> list, int index1, int index2)
         {
             T temp = list[index1];
             list[index1] = list[index2];
             list[index2] = temp;
-        }
-
-        public static IEnumerable<IEnumerable<T>> HelperGeneratePermutations<T>(List<T> list, Dictionary<T, int> keyValuePairs)
-        {
-            //list.ForEach();
-            /*List<T> newList = new List<T>();
-            newList.Add(keyValuePairs.Keys.First());
-            newList = (List<T>)newList.AsEnumerable();*/
-            IEnumerable<IEnumerable<T>> l = new List<IEnumerable<T>>();
-            return l;
         }
 
         #region Examples
@@ -682,12 +661,6 @@ namespace AOC.Utilities.Math
         /// </summary>
         public static void ExamplePermutationsWithRept1()
         {
-            IEnumerable<char> list = new List<char>() { 'M', 'A', 'M', 'M', 'A' };
-            var n = NumberPermutationsWithRept(list);
-            var p = GetPermutationsWithRept(list, 5);
-            ViewResult(p);
-
-
             List<char> elements = new List<char> { 'M', 'A', 'M', 'M', 'A' };
             var n2 = NumberPermutationsWithRept(elements);
             List<List<char>> permutations = Combinatorial.GetPermutationsWithRept(elements);
