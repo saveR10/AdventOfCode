@@ -29,6 +29,7 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
+    [ResearchAlghoritms(TypologyEnum.Combinatorial)]
     public class Day17 : Solver, IDay
     {
         public int counter = 0;

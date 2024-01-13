@@ -49,7 +49,7 @@ namespace AOC
                 case ConsoleKey.D3:
                     //RUN PUZZLES*/
                     string part = "2"; //2, 1, 1T, 2T
-                    Solver solver = new Solver(2015, 17, part);
+                    Solver solver = new Solver(2015, 18, part);
                     object input = solver.FetchInput(Model.InputType.Text);
                     solver.RunPuzzle(input);
                     Console.WriteLine();

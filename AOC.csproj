@@ -89,6 +89,7 @@
     <Compile Include="SearchAlghoritmhs\ResearchAlghoritms.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Sources\2015\Day1.cs" />
+    <Compile Include="Sources\2015\Day18.cs" />
     <Compile Include="Sources\2015\Day17.cs" />
     <Compile Include="Sources\2015\Day16.cs" />
     <Compile Include="Sources\2015\Day15.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Dynamic\Movement.cs" />
+    <Compile Include="Utilities\Map\Map.cs" />
     <Compile Include="Utilities\Math\Combinatorial.cs" />
     <Compile Include="Utilities\Math\Extensions.cs" />
     <Content Include="DataStructures\IO\Input\16Kints.txt" />

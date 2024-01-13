@@ -28,7 +28,9 @@ namespace AOC.SearchAlghoritmhs
             TextRules,
             JSON,
             Cronometers,
-            Ingredients
+            Ingredients,
+            Combinatorial,
+            Map
         }
 
         public static List<string> SearchFolder(TypologyEnum typology)
