@@ -32,7 +32,7 @@ using Solver = AOC.Solver;
 namespace AOC2015
 {
     [ResearchAlghoritms(TypologyEnum.Map)]
-    [ResearchAlghoritms(TypologyEnum.Game)]
+    [ResearchAlghoritms(TypologyEnum.Game)] //Conway's Game of Life
     public class Day18 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)
