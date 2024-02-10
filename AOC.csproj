@@ -107,6 +107,7 @@
     <Compile Include="Sources\2015\Day4.cs" />
     <Compile Include="Sources\2015\Day3.cs" />
     <Compile Include="Sources\2015\Day2.cs" />
+    <Compile Include="Sources\2016\Day3.cs" />
     <Compile Include="Sources\2016\Day2.cs" />
     <Compile Include="Sources\2016\Day1.cs" />
     <Compile Include="Sources\2023\Day1.cs" />
@@ -196,6 +197,8 @@
     <Content Include="Input\2015\day8.txt" />
     <Content Include="Input\2015\day9.txt" />
     <Content Include="Input\2016\day1.txt" />
+    <Content Include="Input\2016\day2.txt" />
+    <Content Include="Input\2016\day3.txt" />
     <Content Include="Input\2023\day1.txt" />
     <Content Include="Input\2023\day19.txt" />
     <Content Include="Input\2023\day20.txt" />
