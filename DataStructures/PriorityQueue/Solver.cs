@@ -6,8 +6,21 @@ using System.Threading.Tasks;
 
 namespace AOC.DataStructures.PriorityQueue
 {
+    /*The steps for a* alghoritm are:
+        -Define an initial point(0), with his neightbors(1) configuration and add it in SearchNodes
+        -Start a cycle to find out in SearchNodes the best point to continue
+	        -Finded out the best point to continue, explore his neightbors(1) configuration starting a cycle. For any neightbor:
+		        -Find his neightbors(2)
+		        -Check if a neightbor (1) configuration is already contained in a SearchNodes or in a PreviousSearchNodes
+			        -if not: set (0) as parent of (1) and added (1) in SearchNodes
+			        -if so: 
+					        -if SearchNodes already contains (1) and moves are less then that configuration, remove old configuration and added (1)
+					        -if SearchNodes already contains (1) and moves are more or equal then that configuration, nothing
+					        -if PreviousSearchNodes already contains (1) and moves are less then that configuration, remove old configuration and added (1)
+					        -if PreviousSearchNodes already contains (1) and moves are more or equal then that configuration, nothing
+	        -Remove (0) from SearchNodes and, if it isn't inserted yet, insert into PreviousSearchNodes*/
 
-        public class Solver
+    public class Solver
         {
             public int moves;
             public int totalMoves = 0;
@@ -26,7 +39,6 @@ namespace AOC.DataStructures.PriorityQueue
                 {
                     toEvaluate = searchNodesPQ.Min();
                
-
                     if (toEvaluate.IsGoal())
                     {
                         Console.WriteLine("Soluzione trovata");
