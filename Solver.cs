@@ -58,6 +58,7 @@ namespace AOC
         public void RunPuzzle(object input)
         {
             var PuzzleDay = Activator.CreateInstance(Type.GetType($"AOC{year}.Day{day}")) as IDay;
+            if (part.Contains("T")) test = true;
             switch (part)
             {
                 case "1":
