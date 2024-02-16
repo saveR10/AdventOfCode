@@ -13,32 +13,50 @@ using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
 
 namespace AOC2016
 {
-    public class Day3 : Solver, IDay
+    public class Day4 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)
-        { int conta =0;
+        {
+            int conta = 0;
             string inputText = (string)input;
             foreach (string t in inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None))
             {
                 if (!string.IsNullOrEmpty(t))
                 {
-                    string triangle = t.Trim();
-                    int a = int.Parse(System.Text.RegularExpressions.Regex.Split(triangle, @"\s+")[0]);
-                    int b = int.Parse(System.Text.RegularExpressions.Regex.Split(triangle, @"\s+")[1]);
-                    int c= int.Parse(System.Text.RegularExpressions.Regex.Split(triangle, @"\s+")[2]);
-
-                    if ((a + b) > c && (b + c) > a && (a + c) > b) { conta++; }
-                    else { }
+                    Dictionary <char,int> letters = new Dictionary<char,int>();
+                    string[] rooms = t.Split(Delimiter.delimiter_SquareBrackets, StringSplitOptions.None)[0].Split(Delimiter.delimiter_dash,StringSplitOptions.None);
+                    int sectorID = int.Parse(rooms[rooms.Length-1]);
+                    
+                    string checkSum = t.Split(Delimiter.delimiter_SquareBrackets, StringSplitOptions.None)[1];
+                    for (int i=0;i<rooms.Length-1;i++)
+                    {
+                        foreach(var l in rooms[i])
+                        {
+                            if (!letters.ContainsKey(l)) letters.Add(l, 1);
+                            else letters[l] += 1;
+                        }
+                    }
+                    FindMax(letters);
                 }
             }
-            solution=conta;
+            solution = conta;
         }
-        
+
+        public string FindMax(Dictionary<char,int> letters)
+        {
+            int max = 0;
+            char key;
+            foreach(var k in letters.Keys)
+            {
+                if (letters[k] > max) { max=letters[k]; key = k; }
+            }
+            return "";
+        }
         public void Part2(object input, bool test, ref object solution)
         {
             int conta = 0;
-            
-            
+
+
             string inputText = (string)input;
 
             if (test)
@@ -52,15 +70,15 @@ namespace AOC2016
 
             }
 
-            for(int i = 0; i < inputText.Split(Delimiter.delimiter_line,StringSplitOptions.None).Length; i+=3)
+            for (int i = 0; i < inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None).Length; i += 3)
             {
-                for(int j = 0; j < 3; j++)
+                for (int j = 0; j < 3; j++)
                 {
-                    
-                    var aa = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None)[i].Trim();
-                    int a= int.Parse(System.Text.RegularExpressions.Regex.Split(aa, @"\s+")[j]);
 
-                    var bb = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None)[i+1].Trim();
+                    var aa = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None)[i].Trim();
+                    int a = int.Parse(System.Text.RegularExpressions.Regex.Split(aa, @"\s+")[j]);
+
+                    var bb = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None)[i + 1].Trim();
                     int b = int.Parse(System.Text.RegularExpressions.Regex.Split(bb, @"\s+")[j]);
 
                     var cc = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None)[i + 2].Trim();
@@ -71,10 +89,11 @@ namespace AOC2016
                 }
             }
             solution = conta;
+            //prova 3
         }
         public bool IsTriangle(int a, int b, int c)
         {
-            bool ret=false;
+            bool ret = false;
             if ((a + b) > c && (b + c) > a && (a + c) > b) { ret = true; }
             else { }
             return ret;
