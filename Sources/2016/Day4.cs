@@ -3,6 +3,7 @@ using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
@@ -15,6 +16,7 @@ namespace AOC2016
 {
     public class Day4 : Solver, IDay
     {
+        Dictionary<char, int> letters;
         public void Part1(object input, bool test, ref object solution)
         {
             int conta = 0;
@@ -23,34 +25,63 @@ namespace AOC2016
             {
                 if (!string.IsNullOrEmpty(t))
                 {
-                    Dictionary <char,int> letters = new Dictionary<char,int>();
-                    string[] rooms = t.Split(Delimiter.delimiter_SquareBrackets, StringSplitOptions.None)[0].Split(Delimiter.delimiter_dash,StringSplitOptions.None);
-                    int sectorID = int.Parse(rooms[rooms.Length-1]);
-                    
+                    letters = new Dictionary<char, int>();
+                    string[] rooms = t.Split(Delimiter.delimiter_SquareBrackets, StringSplitOptions.None)[0].Split(Delimiter.delimiter_dash, StringSplitOptions.None);
+                    int sectorID = int.Parse(rooms[rooms.Length - 1]);
+
                     string checkSum = t.Split(Delimiter.delimiter_SquareBrackets, StringSplitOptions.None)[1];
-                    for (int i=0;i<rooms.Length-1;i++)
+                    for (int i = 0; i < rooms.Length - 1; i++)
                     {
-                        foreach(var l in rooms[i])
+                        foreach (var l in rooms[i])
                         {
                             if (!letters.ContainsKey(l)) letters.Add(l, 1);
                             else letters[l] += 1;
                         }
                     }
-                    FindMax(letters);
+                    if (IsRoom(checkSum))
+                    {
+                        conta += sectorID;
+                    }
                 }
             }
             solution = conta;
         }
-
-        public string FindMax(Dictionary<char,int> letters)
+        //436438 th
+        public bool IsRoom(string checkSum)
         {
+            int indice = 0;
+            int num = 0;
+            bool ret = false;
             int max = 0;
             char key;
-            foreach(var k in letters.Keys)
+            foreach (var c in checkSum)
             {
-                if (letters[k] > max) { max=letters[k]; key = k; }
+                if (letters.ContainsKey(c))
+                    if (IsMaxOccurency(c))
+                    {
+                        ret = true;
+                        letters.Remove(c);
+                    }
+                    else
+                    {
+                        ret = false;
+                    }
             }
-            return "";
+            return ret;
+        }
+
+        public bool IsMaxOccurency(char c)
+        {
+            bool ret = true;
+            int occ = letters[c];
+            foreach (var l in letters.Keys)
+            {
+                if (letters[l] > occ)
+                {
+                    ret=false;
+                }
+            }
+            return ret;
         }
         public void Part2(object input, bool test, ref object solution)
         {
