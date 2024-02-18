@@ -206,12 +206,19 @@
     <Content Include="Input\2016\day1.txt" />
     <Content Include="Input\2016\day2.txt" />
     <Content Include="Input\2016\day3.txt" />
+    <Content Include="Input\2016\day4.txt" />
+    <Content Include="Input\2016\day5.txt" />
+    <Content Include="Input\2016\day6.txt" />
+    <Content Include="Input\2016\day7.txt" />
+    <Content Include="Input\2016\day8.txt" />
+    <Content Include="Input\2016\day9.txt" />
     <Content Include="Input\2017\day1.txt" />
     <Content Include="Input\2023\day1.txt" />
     <Content Include="Input\2023\day19.txt" />
     <Content Include="Input\2023\day20.txt" />
     <Content Include="Input\2023\day21.txt" />
     <Content Include="Input\2023\day22.txt" />
+    <Content Include="Input\2023\day23.txt" />
     <Content Include="Test\2015\day11.txt" />
     <Content Include="Test\2015\day12.txt" />
     <Content Include="Test\2015\day13.txt" />
@@ -224,6 +231,17 @@
     <Content Include="Test\2015\day7.txt" />
     <Content Include="Test\2015\day8.txt" />
     <Content Include="Test\2015\day9.txt" />
+    <Content Include="Test\2016\day1.txt" />
+    <Content Include="Test\2016\day2.txt" />
+    <Content Include="Test\2016\day3.txt" />
+    <Content Include="Test\2016\day4.txt" />
+    <Content Include="Test\2016\day5.txt" />
+    <Content Include="Test\2016\day6.txt" />
+    <Content Include="Test\2016\day7.txt" />
+    <Content Include="Test\2016\day8.txt" />
+    <Content Include="Test\2016\day9.txt" />
+    <Content Include="Test\2017\day1.txt" />
+    <Content Include="Test\2023\day1.txt" />
     <Content Include="Test\2023\day22.txt" />
     <Content Include="Test\2023\day23.txt" />
     <Content Include="Test\2023\day25.txt" />
@@ -247,13 +265,13 @@
     <Folder Include="Input\2020\" />
     <Folder Include="Input\2021\" />
     <Folder Include="Input\2022\" />
-    <Folder Include="Test\2016\" />
-    <Folder Include="Test\2017\" />
+    <Folder Include="Input\2024\" />
     <Folder Include="Test\2018\" />
     <Folder Include="Test\2019\" />
     <Folder Include="Test\2020\" />
     <Folder Include="Test\2021\" />
     <Folder Include="Test\2022\" />
+    <Folder Include="Test\2024\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
