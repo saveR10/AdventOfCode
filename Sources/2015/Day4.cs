@@ -13,7 +13,7 @@ using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.Hashing)]
+    [ResearchAlghoritmsAttribute(TypologyEnum.Hashing)] //MD5
     public class Day4 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

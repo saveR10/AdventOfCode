@@ -179,12 +179,5 @@ namespace AOC2016
             }
             return decryptedName;
         }
-        public bool IsTriangle(int a, int b, int c)
-        {
-            bool ret = false;
-            if ((a + b) > c && (b + c) > a && (a + c) > b) { ret = true; }
-            else { }
-            return ret;
-        }
     }
 }
