@@ -107,6 +107,7 @@
     <Compile Include="Sources\2015\Day4.cs" />
     <Compile Include="Sources\2015\Day3.cs" />
     <Compile Include="Sources\2015\Day2.cs" />
+    <Compile Include="Sources\2016\Day9.cs" />
     <Compile Include="Sources\2016\Day8.cs" />
     <Compile Include="Sources\2016\Day7.cs" />
     <Compile Include="Sources\2016\Day6.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Sources\2016\Day3.cs" />
     <Compile Include="Sources\2016\Day2.cs" />
     <Compile Include="Sources\2016\Day1.cs" />
+    <Compile Include="Sources\2017\Day1.cs" />
     <Compile Include="Sources\2023\Day1.cs" />
     <Compile Include="Sources\2023\Day25.cs" />
     <Compile Include="Sources\2023\Day23.cs" />
@@ -204,6 +206,7 @@
     <Content Include="Input\2016\day1.txt" />
     <Content Include="Input\2016\day2.txt" />
     <Content Include="Input\2016\day3.txt" />
+    <Content Include="Input\2017\day1.txt" />
     <Content Include="Input\2023\day1.txt" />
     <Content Include="Input\2023\day19.txt" />
     <Content Include="Input\2023\day20.txt" />
@@ -239,13 +242,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Input\2017\" />
     <Folder Include="Input\2018\" />
     <Folder Include="Input\2019\" />
     <Folder Include="Input\2020\" />
     <Folder Include="Input\2021\" />
     <Folder Include="Input\2022\" />
-    <Folder Include="Sources\2017\" />
     <Folder Include="Test\2016\" />
     <Folder Include="Test\2017\" />
     <Folder Include="Test\2018\" />

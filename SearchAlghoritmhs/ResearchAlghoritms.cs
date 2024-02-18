@@ -30,7 +30,8 @@ namespace AOC.SearchAlghoritmhs
             Cronometers,
             Ingredients,
             Combinatorial,
-            Map
+            Map,
+            Decompressing
         }
 
         public static List<string> SearchFolder(TypologyEnum typology)
