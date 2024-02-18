@@ -26,6 +26,7 @@ namespace AOC.Model
         public static String[] DoubleDot = { ":" };
         public static String[] delimiter_SquareBrackets= { "[","]" };
         public static String[] delimiter_dash = { "-"};
+        public static String[] delimiter_x = { "x" };
 
     }
 }

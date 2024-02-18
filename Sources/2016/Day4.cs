@@ -153,10 +153,7 @@ namespace AOC2016
                         Console.WriteLine(decryptedName);
                         if (decryptedName.Contains("northpole object storage")) solution = sectorID;
                     }
-                    if (IsTwin(checkSum))
-                    {
-
-                    }
+                    if (IsTwin(checkSum)) { }
                 }
             }
         }
