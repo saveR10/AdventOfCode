@@ -117,6 +117,7 @@
     <Compile Include="Sources\2016\Day2.cs" />
     <Compile Include="Sources\2016\Day1.cs" />
     <Compile Include="Sources\2017\Day1.cs" />
+    <Compile Include="Sources\2018\Day1.cs" />
     <Compile Include="Sources\2023\Day1.cs" />
     <Compile Include="Sources\2023\Day25.cs" />
     <Compile Include="Sources\2023\Day23.cs" />
