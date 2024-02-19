@@ -119,6 +119,7 @@
     <Compile Include="Sources\2017\Day1.cs" />
     <Compile Include="Sources\2018\Day1.cs" />
     <Compile Include="Sources\2019\Day1.cs" />
+    <Compile Include="Sources\2020\Day1.cs" />
     <Compile Include="Sources\2023\Day1.cs" />
     <Compile Include="Sources\2023\Day25.cs" />
     <Compile Include="Sources\2023\Day23.cs" />
@@ -269,7 +270,6 @@
     <Folder Include="Input\2021\" />
     <Folder Include="Input\2022\" />
     <Folder Include="Input\2024\" />
-    <Folder Include="Sources\2020\" />
     <Folder Include="Sources\2021\" />
     <Folder Include="Sources\2022\" />
     <Folder Include="Test\2018\" />
