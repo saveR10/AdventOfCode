@@ -10,6 +10,7 @@ namespace AOC.Model
     {
         public static String[] delimiters = { "\r\n", " " };
         public static String[] delimiter_space = { " " };
+        public static String[] delimiter_Tab = { "\t" };
         public static String[] delimiter_line = { "\r\n","\n" };
         public static String[] delimiter_equals = { "=" };
         public static String[] delimiter_parentesi = { "(", ")"};
