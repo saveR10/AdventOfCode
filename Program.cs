@@ -5,6 +5,7 @@ using AOC.DataStructures.LinkedList;
 using AOC.DataStructures.PriorityQueue;
 using AOC.DataStructures.Searching;
 using AOC.DataStructures.Sorting;
+using AOC.Documents.LINQ;
 using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,7 @@ namespace AOC
                     break;
                 case ConsoleKey.D2:
                     //SEARCH ALGHORITMS
-                    List<string> InterestedClasses = ResearchAlghoritmsAttribute.SearchFolder(ResearchAlghoritmsAttribute.TypologyEnum.Dijkstra);
+                    List<string> InterestedClasses = ResearchAlghoritmsAttribute.SearchFolder(ResearchAlghoritmsAttribute.TypologyEnum.Hashing);
                     foreach (var c in InterestedClasses) Console.WriteLine(c);
                     Console.ReadLine();
                     break;

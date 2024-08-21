@@ -82,6 +82,21 @@
     <Compile Include="DataStructures\AlghoritmsOptimization\ThreeSumFast.cs" />
     <Compile Include="DataStructures\AlghoritmsOptimization\TwoStackAlghoritms.cs" />
     <Compile Include="DataStructures\Clustering\WeightedQuickUnionFindUF.cs" />
+    <Compile Include="Documents\LINQ\Accumulators.cs" />
+    <Compile Include="Documents\LINQ\Join.cs" />
+    <Compile Include="Documents\LINQ\Projection.cs" />
+    <Compile Include="Documents\LINQ\Sorting.cs" />
+    <Compile Include="Documents\LINQ\Grouping.cs" />
+    <Compile Include="Documents\LINQ\Conversion.cs" />
+    <Compile Include="Documents\LINQ\Concatenation.cs" />
+    <Compile Include="Documents\LINQ\Aggregation.cs" />
+    <Compile Include="Documents\LINQ\Quantifier.cs" />
+    <Compile Include="Documents\LINQ\Partition.cs" />
+    <Compile Include="Documents\LINQ\Generation.cs" />
+    <Compile Include="Documents\LINQ\Set.cs" />
+    <Compile Include="Documents\LINQ\Equality.cs" />
+    <Compile Include="Documents\LINQ\Element.cs" />
+    <Compile Include="Documents\LINQ\Filtering.cs" />
     <Compile Include="IDay.cs" />
     <Compile Include="Model\Delimiter.cs" />
     <Compile Include="Model\InputType.cs" />
@@ -118,6 +133,7 @@
     <Compile Include="Sources\2016\Day1.cs" />
     <Compile Include="Sources\2017\Day2.cs" />
     <Compile Include="Sources\2017\Day1.cs" />
+    <Compile Include="Sources\2018\Day2.cs" />
     <Compile Include="Sources\2018\Day1.cs" />
     <Compile Include="Sources\2019\Day1.cs" />
     <Compile Include="Sources\2020\Day1.cs" />
@@ -219,6 +235,7 @@
     <Content Include="Input\2016\day9.txt" />
     <Content Include="Input\2017\day1.txt" />
     <Content Include="Input\2018\day1.txt" />
+    <Content Include="Input\2018\day2.txt" />
     <Content Include="Input\2019\day1.txt" />
     <Content Include="Input\2023\day1.txt" />
     <Content Include="Input\2023\day19.txt" />
@@ -248,6 +265,7 @@
     <Content Include="Test\2016\day8.txt" />
     <Content Include="Test\2016\day9.txt" />
     <Content Include="Test\2017\day1.txt" />
+    <Content Include="Test\2017\day2.txt" />
     <Content Include="Test\2019\day1.txt" />
     <Content Include="Test\2023\day1.txt" />
     <Content Include="Test\2023\day22.txt" />

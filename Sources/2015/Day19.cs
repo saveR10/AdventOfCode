@@ -121,26 +121,11 @@ namespace AOC2015
             }
             return NewMolecules;
         }
-
-
+        public static Dictionary<string, List<string>> TransformationRules = new Dictionary<string, List<string>>();
         public static string Medicine;
 
-        public static Dictionary<string, List<string>> TransformationRules = new Dictionary<string, List<string>>();
         public void Part2(object input, bool test, ref object solution)
         {
-            /*  e 
-                O
-                HH
-                HOH
-
-                e
-                H
-                HO
-                HHH
-                HOHH
-                HOHOH
-                HOHOHO
-            */
             string inputText = (string)input;
             if (test) inputText = "e => H\r\ne => O\r\n" + inputText;
             var inputlist = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None);
@@ -171,13 +156,18 @@ namespace AOC2015
                     {
                         Medicine = inputlist[i];
                         Molecula initial = new Molecula("e", true);
+                        //Molecula initial = new Molecula("ORnPBPMgArCaCaCaSiThCaCaSiThCa", true);
                         MaxPQMolecule<Molecula> previousSearchNodesPQ = new MaxPQMolecule<Molecula>();
                         MaxPQMolecule<Molecula> searchNodesPQ = new MaxPQMolecule<Molecula>();
                         searchNodesPQ.Insert(initial);
+                        //TestQueue(searchNodesPQ);
                         Molecula toEvaluate = new Molecula();
+                        int cont = 0;
                         while (!searchNodesPQ.IsEmpty())
                         {
+                            cont++;
                             toEvaluate = searchNodesPQ.Max();
+                            Console.WriteLine($"{cont} - {toEvaluate._composite}");
                             foreach (Molecula mol in toEvaluate._possibleTransformations)
                             {
                                 Molecula NewMolecula = new Molecula(mol._composite, true, toEvaluate._step + 1);
@@ -190,7 +180,7 @@ namespace AOC2015
                                 else
                                 {
                                     Molecula OldMolecula = searchNodesPQ.Select(NewMolecula._composite);
-                                    if (OldMolecula._priority != 0)
+                                    if (OldMolecula != null)
                                     {
                                         if (NewMolecula._step < OldMolecula._step)
                                         {
@@ -218,127 +208,150 @@ namespace AOC2015
                             {
                                 Console.WriteLine("Soluzione trovata");
                                 solution = searchNodesPQ.Select(Medicine)._step;
-                                while (!searchNodesPQ.IsEmpty())
-                                {
-                                    searchNodesPQ.DelMax();
-                                }
+                                while (!searchNodesPQ.IsEmpty()) searchNodesPQ.DelMax();
                             }
                         }
                     }
                 }
             }
         }
+        public void TestQueue(MaxPQMolecule<Molecula> searchNodesPQ)
+        {
+            Molecula prova3 = new Molecula("e", true);
+            prova3._priority = 3;
+            Molecula prova1 = new Molecula("e", true);
+            prova1._priority = 1;
+            Molecula prova10 = new Molecula("e", true);
+            prova10._priority = 10;
+            Molecula prova1000 = new Molecula("e", true);
+            prova1000._priority = 1000;
+            Molecula prova0 = new Molecula("e", true);
+            prova0._priority = 0;
+            searchNodesPQ.Insert(prova3);
+            searchNodesPQ.Insert(prova1);
+            searchNodesPQ.Insert(prova10);
+            searchNodesPQ.Insert(prova1000);
+            searchNodesPQ.Insert(prova0);
+            var a = searchNodesPQ.Max();
+            searchNodesPQ.DelMax();
+            var b = searchNodesPQ.Max();
+            searchNodesPQ.DelMax();
+            var c = searchNodesPQ.Max();
+            searchNodesPQ.DelMax();
 
+        }
+        public static int SetMatchMeasure(string composite)
+        {
+            int measure = 0;
+            for (int i = 0; i < Math.Min(composite.Length, Medicine.Length); i++)
+            {
+                if (composite[i] == Medicine[i]) measure++;
+                else break;
+            }
+            if (composite.Length > Medicine.Length) measure -= (composite.Length - Medicine.Length);
+            return measure;
+        }
         public class Molecula
         {
-            public Molecula parent;
             public string _composite;
             public int _length;
-            public int _indexMedicine;
             public int _indexToTransform;
-            public List<Molecula> _possibleTransformations;
             public int _step;
-            public int _priority;
             public bool Goal;
-            public Molecula(bool FindTransformation = false)
-            {
-                if (FindTransformation) GenerateMolecule();
-            }
-            public Molecula(string Composite, bool FindTransformation = false, int Step = 0)
+            public List<Molecula> _possibleTransformations;
+            public int _matchMeasure;
+            public int _priority;
+            public Molecula parent;
+
+            #region ctr
+            public Molecula()
+            { }
+
+            public Molecula(string Composite, bool FindTransformations = false, int Step = 0)
             {
                 this._composite = Composite;
                 this._length = Composite.Length;
                 this._step = Step;
-                this._indexMedicine = SetIndexMedicine(Composite);
                 this.Goal = isMedicine();
-                this._priority = _indexMedicine - Step;
-                if (FindTransformation && !this.Goal) GenerateMolecule();
+                this._matchMeasure = SetMatchMeasure(this._composite);
+                this._indexToTransform = this._matchMeasure;
+                this._priority = this._matchMeasure - this._step;
+                if (FindTransformations && !this.Goal) GenerateMolecule();
             }
+
+            #endregion
+            #region Methods 
+            public bool isMedicine() { return (this._composite == Medicine); }
 
             public void GenerateMolecule()
             {
-                this._possibleTransformations = new List<Molecula>();
-                this._composite = "HCaMgRnFBCaF";
-                string tempMolecula = this._composite;
-                Molecula NewComposite = new Molecula("", false);
-                for (int m = 0; m < this._composite.Length; m++)
-                {
-                    NewComposite = FindNextComposite(ref tempMolecula);
-                    if (NewComposite == null) break;
-
-                    foreach (var t in TransformationRules[NewComposite._composite])
+                //bool exit = false;
+                //while (!exit)
+                //{
+                    this._possibleTransformations = new List<Molecula>();
+                    for (int c = Math.Max(this._indexToTransform-4,0); c < this._composite.Length; c++)
                     {
-                        Molecula toAdd = new Molecula(
-                            this._composite.Substring(0,NewComposite._indexMedicine)+
-                            t+
-                            this._composite.Substring(NewComposite._indexMedicine+1, this._composite.Length-NewComposite._indexMedicine)
-                            , false, this._step + 1);
-                        this._possibleTransformations.Add(toAdd);
-
-                    }
-                }
-
-            }
-
-
-            public Molecula FindNextComposite(ref string tempMolecula)
-            {
-                Molecula NewMolecula = new Molecula("", false);
-                for (int i = 0; i < tempMolecula.Length; i++)
-                {
-                    if (tempMolecula[i].ToString() == "B" ||
-                        tempMolecula[i].ToString() == "F" ||
-                        tempMolecula[i].ToString() == "H" ||
-                        tempMolecula[i].ToString() == "N" ||
-                        tempMolecula[i].ToString() == "O" ||
-                        tempMolecula[i].ToString() == "P" ||
-                        tempMolecula[i].ToString() == "e")
-                    {
-                        NewMolecula._composite = tempMolecula[i].ToString();
-                        if (!string.IsNullOrEmpty(NewMolecula._composite))
+                        if (this._composite[c].ToString() == "B" ||
+                            this._composite[c].ToString() == "F" ||
+                            this._composite[c].ToString() == "H" ||
+                            this._composite[c].ToString() == "N" ||
+                            this._composite[c].ToString() == "O" ||
+                            this._composite[c].ToString() == "P" ||
+                            this._composite[c].ToString() == "e")
                         {
-                            NewMolecula._length = NewMolecula._composite.Length;
-                            NewMolecula._indexMedicine = i;
-                            tempMolecula = tempMolecula.Substring(0, i)+ tempMolecula.Substring(i+1, tempMolecula.Length-1);
-                            return NewMolecula;
+                            foreach (var t in TransformationRules[this._composite[c].ToString()])
+                            {
+                                Molecula toAdd = new Molecula(
+                                    this._composite.Substring(0, c) +
+                                    t +
+                                    this._composite.Substring(c + 1, this._composite.Length - (c + 1))
+                                    , false, this._step + 1);
+                                this._possibleTransformations.Add(toAdd);
+                            }
                         }
-                    }
-                    else if (i > 0)
-                    {
-                        if (tempMolecula[i].ToString() == "l") if (tempMolecula[i - 1].ToString() == "A") NewMolecula._composite = tempMolecula.Substring(i - 1, 2);
-                        if (tempMolecula[i].ToString() == "a") if (tempMolecula[i - 1].ToString() == "C") NewMolecula._composite = tempMolecula.Substring(i - 1, 2);
-                        if (tempMolecula[i].ToString() == "g") if (tempMolecula[i - 1].ToString() == "M") NewMolecula._composite = tempMolecula.Substring(i - 1, 2);
-                        if (tempMolecula[i].ToString() == "i") if (tempMolecula[i - 1].ToString() == "S") NewMolecula._composite = tempMolecula.Substring(i - 1, 2);
-                        if (tempMolecula[i].ToString() == "h") if (tempMolecula[i - 1].ToString() == "T") NewMolecula._composite = tempMolecula.Substring(i - 1, 2);
-                        if (tempMolecula[i].ToString() == "i") if (tempMolecula[i - 1].ToString() == "T") NewMolecula._composite = tempMolecula.Substring(i - 1, 2);
-                        if (!string.IsNullOrEmpty(NewMolecula._composite))
+                        else if (this._composite.Length > c && ((this._composite[c].ToString() == "A" && this._composite[c + 1].ToString() == "l") ||
+                                                              (this._composite[c].ToString() == "C" && this._composite[c + 1].ToString() == "a") ||
+                                                              (this._composite[c].ToString() == "M" && this._composite[c + 1].ToString() == "g") ||
+                                                              (this._composite[c].ToString() == "S" && this._composite[c + 1].ToString() == "i") ||
+                                                              (this._composite[c].ToString() == "T" && this._composite[c + 1].ToString() == "h") ||
+                                                              (this._composite[c].ToString() == "T" && this._composite[c + 1].ToString() == "i"))
+                                )
                         {
-                            NewMolecula._indexMedicine = Math.Max(0, i - 1);
-                            NewMolecula._length = NewMolecula._composite.Length;
-                            tempMolecula = tempMolecula.Substring(0, Math.Max(0, i - 1));
-                            return NewMolecula;
+                            foreach (var t in TransformationRules[this._composite.Substring(c, 2)])
+                            {
+                                Molecula toAdd = new Molecula(
+                                    this._composite.Substring(0, c) +
+                                    t +
+                                    this._composite.Substring(c + 2, this._composite.Length - (c + 2))
+                                    , false, this._step + 1);
+                                this._possibleTransformations.Add(toAdd);
+                            }
                         }
+                        //            if (NewComposite == null) break;
+
+                        //            foreach (var t in TransformationRules[NewComposite._composite])
+                        //            {
+                        //                Molecula toAdd = new Molecula(
+                        //                    this._composite.Substring(0, NewComposite._indexMedicine) +
+                        //                    t +
+                        //                    this._composite.Substring(NewComposite._indexMedicine + 1, this._composite.Length - NewComposite._indexMedicine)
+                        //                    , false, this._step + 1);
+                        //                this._possibleTransformations.Add(toAdd);
+
+                        //            }
                     }
-                }
-                return null;
+                    
+                    /*if (this._possibleTransformations.Any(m => m._matchMeasure > this._matchMeasure)) exit = true;
+                    else
+                    {
+                        this._possibleTransformations.RemoveAll(x => x._composite != "");
+                        this._indexToTransform--;
+                    }*/
+                //}
             }
-            public bool isMedicine()
-            {
-                return (this._composite == Medicine);
-            }
-            public int SetIndexMedicine(string comp)
-            {
-                int indexMedicine = 0;
-                for (int m = 0; m < Medicine.Length && m < comp.Length; m++)
-                {
-                    if (comp[m] == Medicine[m]) { indexMedicine++; }
-                    else break;
-                }
-                return indexMedicine;
-            }
+            #endregion
+
         }
-
-
         public class MaxPQMolecule<Key>
         {
             private Key[] pq;                    // store items at indices 1 to n
@@ -393,14 +406,11 @@ namespace AOC2015
                 return pq[1];
             }
 
-
             private void Resize(int capacity)
             {
-
                 if (capacity <= n) return;
                 Key[] temp = new Key[capacity];
                 for (int i = 1; i <= n; i++)
-
                     temp[i] = pq[i];
 
                 pq = temp;
@@ -418,24 +428,11 @@ namespace AOC2015
 
             public bool Contain(string comp)
             {
-
                 dynamic tpq = pq;
                 bool isContain = false;
-
-
                 for (int i = 1; i < n; i++)
-
-
-
-
-
-
-
                 {
                     if (((Molecula)tpq[i])._composite == comp) isContain = true;
-
-
-
                 }
                 return isContain;
             }
@@ -445,16 +442,9 @@ namespace AOC2015
                 Molecula result = new Molecula();
 
                 dynamic tpq = pq;
-
-
                 for (int i = 1; i <= n; i++)
                 {
                     if (((Molecula)tpq[i])._composite == comp)
-
-
-
-
-
                     {
                         result = tpq[i];
                         break;
@@ -464,32 +454,14 @@ namespace AOC2015
                 return result;
             }
 
-
-
-
-
-
-
-
-
-
-
-
             public bool Remove(string comp)
             {
-
                 dynamic tpq = pq;
                 if (IsEmpty()) throw new InvalidOperationException("Priority queue underflow");
-
 
                 for (int i = 1; i <= n; i++)
                 {
                     if (((Molecula)tpq[i])._composite == comp)
-
-
-
-
-
                     {
                         Key del = pq[i];
                         for (int j = i + 1; j <= n; j++)
@@ -560,27 +532,7 @@ namespace AOC2015
                 pq[j] = swap;
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             public bool isMaxHeap()
-
-
-
-
-
             {
                 for (int i = 1; i <= n; i++)
                 {
@@ -657,5 +609,20 @@ namespace AOC2015
             }
         }
 
+
+
+        ///*  e 
+        //        O
+        //        HH
+        //        HOH
+
+        //        e
+        //        H
+        //        HO
+        //        HHH
+        //        HOHH
+        //        HOHOH
+        //        HOHOHO
+        //    */
     }
 }
