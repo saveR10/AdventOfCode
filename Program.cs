@@ -19,7 +19,7 @@ namespace AOC
     {
         static void Main(string[] args)
         {
-            var prova2 = "a2";
+            var prova2 = "a3";
             Console.WriteLine("Choose the option:");
             Console.WriteLine("1 - DataStructures tests:");
             Console.WriteLine("2 - Search Alghoritms:");
