@@ -48,9 +48,9 @@ namespace AOC
                     Console.ReadLine();
                     break;
                 case ConsoleKey.D3:
-                    //RUN PUZZLES*/
-                    string part = "2"; //2, 1, 1T, 2T
-                    Solver solver = new Solver(2016, 2, part);
+                    //RUN PUZZLES
+                    string part = "1"; //2, 1, 1T, 2T
+                    Solver solver = new Solver(2015, 4, part);
                     object input = solver.FetchInput(Model.InputType.Text);
                     solver.RunPuzzle(input);
                     Console.WriteLine();
