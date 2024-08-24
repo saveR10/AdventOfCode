@@ -26,6 +26,7 @@ namespace AOC
         }
         public object FetchInput(InputType t)
         {
+            var revertest = "terzocommit";
             if (part.Contains("T"))
             {
                 switch (t)
