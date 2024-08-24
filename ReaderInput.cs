@@ -20,7 +20,7 @@ namespace AOC
         public IEnumerable<string> InputLines(int year, int day) => Input(File.ReadLines, year, day);
         public T Input<T>(Func<string, T> f, int year, int day)
         {
-            var reverttest = "terzo commit";
+            string sessionId = "53616c7465645f5f7e1c8a6f3c55abdd3ed4d582ae5b047a22a66496cfdb2d10c191ca590510a65f50f0f1dc8c899ec577bb39f463012274a59a37e9d463fd7d";
             string input;
             var fileName = Path.Combine("C:\\Users\\s.cecere\\source\\repos\\AOC\\AOC\\Input\\", $"{year}\\day{day}.txt");
             if (!File.Exists(fileName))
