@@ -26,7 +26,6 @@ namespace AOC
         }
         public object FetchInput(InputType t)
         {
-            var RevertTest = "secondo commit";
             if (part.Contains("T"))
             {
                 switch (t)
