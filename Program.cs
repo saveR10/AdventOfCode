@@ -21,6 +21,7 @@ namespace AOC
         {
             var provarevert = "primo commit";
             provarevert = "secondo commit";
+            provarevert = "terzo commit";
             Console.WriteLine("Choose the option:");
             Console.WriteLine("1 - DataStructures tests:");
             Console.WriteLine("2 - Search Alghoritms:");
