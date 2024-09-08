@@ -71,9 +71,13 @@ namespace AOC
             }
 
         }
-        public string test = @"London to Dublin = 464
-London to Belfast = 518
-Dublin to Belfast = 141";
+        public string test = @"abcdef
+bababc
+abbcde
+abcccd
+aabcdd
+abcdee
+ababab";
 
     }
 }
