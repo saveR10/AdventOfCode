@@ -19,7 +19,6 @@ namespace AOC
     {
         static void Main(string[] args)
         {
-            var gabriele = "PRimo commit di Gabriele";
             var a = "Primo commit";
             var b = "Secondo commit";
             var c = "Terzo commit";
