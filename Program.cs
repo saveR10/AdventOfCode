@@ -19,12 +19,12 @@ namespace AOC
     {
         static void Main(string[] args)
         {
-            var a1 = "Primo commit - 1";
+            var a1 = "Primo commit - 1";            
             var a2 = "Primo commit - 2";
             var b1 = "Secondo commit - 1";
             var b2 = "Secondo commit - 2";
             var c1 = "Terzo commit - 1";
-            var c2 = "Terzo commit - 2";
+            var c2 = "Terzo commit - 2 - con modifiche";
             Console.WriteLine("Choose the option:");
             Console.WriteLine("1 - DataStructures tests:");
             Console.WriteLine("2 - Search Alghoritms:");
