@@ -131,6 +131,7 @@
     <Compile Include="Sources\2016\Day3.cs" />
     <Compile Include="Sources\2016\Day2.cs" />
     <Compile Include="Sources\2016\Day1.cs" />
+    <Compile Include="Sources\2017\Day3.cs" />
     <Compile Include="Sources\2017\Day2.cs" />
     <Compile Include="Sources\2017\Day1.cs" />
     <Compile Include="Sources\2018\Day2.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="Sources\2023\Day21.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\2024\Day1.cs" />
     <Compile Include="Utilities\Dynamic\Movement.cs" />
     <Compile Include="Utilities\Map\Map.cs" />
     <Compile Include="Utilities\Math\Combinatorial.cs" />
@@ -234,10 +236,13 @@
     <Content Include="Input\2016\day8.txt" />
     <Content Include="Input\2016\day9.txt" />
     <Content Include="Input\2017\day1.txt" />
+    <Content Include="Input\2017\day2.txt" />
+    <Content Include="Input\2017\day3.txt" />
     <Content Include="Input\2018\day1.txt" />
     <Content Include="Input\2018\day2.txt" />
     <Content Include="Input\2019\day1.txt" />
     <Content Include="Input\2023\day1.txt" />
+    <Content Include="Input\2023\day18.txt" />
     <Content Include="Input\2023\day19.txt" />
     <Content Include="Input\2023\day20.txt" />
     <Content Include="Input\2023\day21.txt" />

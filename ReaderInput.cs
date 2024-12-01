@@ -20,7 +20,7 @@ namespace AOC
         public IEnumerable<string> InputLines(int year, int day) => Input(File.ReadLines, year, day);
         public T Input<T>(Func<string, T> f, int year, int day)
         {
-            string sessionId = "53616c7465645f5f7e1c8a6f3c55abdd3ed4d582ae5b047a22a66496cfdb2d10c191ca590510a65f50f0f1dc8c899ec577bb39f463012274a59a37e9d463fd7d";
+            //Per recuperare il sessionId, aprire devTools dal browser (F12), Applicazion - Memoria - Cookie - https://adventofcode.com - copiare il valore del "session"
             string input;
             var fileName = Path.Combine("C:\\Users\\s.cecere\\source\\repos\\AOC\\AOC\\Input\\", $"{year}\\day{day}.txt");
             if (!File.Exists(fileName))
@@ -71,13 +71,12 @@ namespace AOC
             }
 
         }
-        public string test = @"abcdef
-bababc
-abbcde
-abcccd
-aabcdd
-abcdee
-ababab";
+        public string test = @"3   4
+4   3
+2   5
+1   3
+3   9
+3   3";
 
     }
 }
