@@ -15,6 +15,20 @@ namespace AOC2023
 {
     public class Day19 : Solver, IDay
     {
+        public static String[] delimiters = { "\r\n", " " };
+        public static String[] delimiter_space = { " " };
+        public static String[] delimiter_line = { "\r\n" };
+        public static String[] delimiter_equals = { "=" };
+        public static String[] delimiter_signs = { "=", "-" };
+        public static String[] delimiter_parentesi = { "{", "}" };
+        public static String[] delimiter_parentesi_inizio = { "{" };
+        public static String[] delimiter_parentesi_fine = { "}" };
+        public static String[] delimiter_comma = { "," };
+        public static String[] delimiter_puntovirgola = { ";" };
+        public string Instructions = "";
+        public string[,] ExploredTile;
+        char[,] Tile;
+        public int n;
         public void Part1(object input, bool test, ref object solution)
         {
             string[] input_array = (string[])((string)input).Split(Delimiter.delimiter_line,StringSplitOptions.None);
@@ -138,7 +152,107 @@ namespace AOC2023
         {
             return "";
         }
+        /*bool test = true;
 
+            if (!test)
+            {
+                Instructions = "";
+            }
+            else
+            {
+                Instructions = @"px{a<2006:qkq,m>2090:A,rfg}
+pv{a>1716:R,A}
+lnx{m>1548:A,A}
+rfg{s<537:gd,x>2440:R,A}
+qs{s>3448:A,lnx}
+qkq{x<1416:A,crn}
+crn{x>2662:A,R}
+in{s<1351:px,qqz}
+qqz{s>2770:qs,m<1801:hdj,R}
+gd{a>3333:R,R}
+hdj{m>838:A,pv}
+
+{x=787,m=2655,a=1222,s=2876}
+{x=1679,m=44,a=2067,s=496}
+{x=2036,m=264,a=79,s=2244}
+{x=2461,m=1339,a=466,s=291}
+{x=2127,m=1623,a=2188,s=1013}";
+            }
+            int i = 0;
+            Dictionary<string, List<string>> Workflows = new Dictionary<string, List<string>>();
+            Dictionary<int, List<string>> Parts = new Dictionary<int, List<string>>();
+
+            var lines = Instructions.Split(delimiter_line, StringSplitOptions.None);
+            for (i = 0; i < lines.Length; i++)
+            {
+                if (!string.IsNullOrEmpty(lines[i]))
+                {
+                    string wf_name = lines[i].Split(delimiter_parentesi, StringSplitOptions.None)[0];
+                    string[] rules = lines[i].Substring(lines[i].Split(delimiter_parentesi_inizio, StringSplitOptions.None)[0].Length + 1).Split(delimiter_parentesi_fine, StringSplitOptions.None)[0].Split(delimiter_comma, StringSplitOptions.None);
+                    List<string> wf_rules = new List<string>();
+                    for (int j = 0; j < rules.Count(); j++)
+                    {
+                        wf_rules.Add(rules[j]);
+                    }
+                    Workflows.Add(wf_name, wf_rules);
+                }
+                else break;
+            }
+            int n_parts = 0;
+            for (i = i + 1; i < lines.Length; i++)
+            {
+                n_parts++;
+                string[] parts = lines[i].Split(delimiter_parentesi, StringSplitOptions.None)[1].Split(delimiter_comma, StringSplitOptions.None);
+                List<string> parts_ = new List<string>();
+                for (int j = 0; j < parts.Count(); j++)
+                {
+                    parts_.Add(parts[j]);   
+                }
+                Parts.Add(n_parts,parts_);
+            }
+            long sum = 0;
+            foreach(var part in Parts)
+            {
+                bool accepted = false;
+                bool processing = true;
+                string target = "in";
+                while (processing)
+                {
+                    foreach(var rule in Workflows[target])
+                    {
+                        accepted=ValidateRule(rule);
+                    }
+                }    
+
+                if (accepted) sum += 1;
+            }
+        }
+
+        public bool ValidateRule(string rule)
+        {
+            if (rule.Contains(":"))
+            {
+                var a = rule.Split(':')[0];
+            }
+            bool ret = false;
+
+
+
+            return ret;
+        }
+
+/*        public class Workflow
+        {
+            public string name { get; set; }
+            public List<string> rules { get; set; }
+            public enum state
+            {
+                indefined,
+                rejected,
+                accepter
+            }
+            
+        }*/
 
     }
 }
