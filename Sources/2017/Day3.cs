@@ -43,15 +43,15 @@ namespace AOC2017
                 if (init == 1 || init == maxRank)
                 {
                     radius++;
-                    rank=rank+2; //1,3,5,7,9,...
-                    maxRank= SetMaxRank(rank); //1,9,25,49,...
+                    rank = rank + 2; //1,3,5,7,9,...
+                    maxRank = SetMaxRank(rank); //1,9,25,49,...
                 }
                 init++;
                 step = ManhattanMeasure(init, rank, radius);
             }
             return step;
         }
-        static int ManhattanMeasure(int init, int rank,int radius)
+        static int ManhattanMeasure(int init, int rank, int radius)
         {
             int RankPosition;
             if (rank > 1)
@@ -64,13 +64,13 @@ namespace AOC2017
         {
             if (RankPosition == 0) return rank / 2;
             else if (RankPosition == rank / 2) return 0;
-            else return Math.Abs(rank/2 - RankPosition);
+            else return Math.Abs(rank / 2 - RankPosition);
 
 
         }
         public int SetMaxRank(int rank)
         {
-            return rank *rank;
+            return rank * rank;
         }
         public void Part2(object input, bool test, ref object solution)
         {
@@ -88,45 +88,88 @@ namespace AOC2017
         int[,] Matrix;
         int r;
         int c;
-        public int GenerateMatrix(int data) 
+        public int GenerateMatrix(int data)
         {
             int init = 1;
             int step = 0;
             int rank = 1;
+            int radius = 0;
             int maxNumberRank = 1;
+            int maxRank=0;
+            int NeighboursSum=0;
             r = 300;
             c = 300;
             Matrix = new int[600, 600];
             Matrix[300, 300] = 1;
-            while (init < data)
+            while (NeighboursSum < data)
             {
-                if (init == 1 || init == maxNumberRank)
+                if (init == 1 || init == maxRank)
                 {
+                    radius++;
                     rank = rank + 2; //1,3,5,7,9,...
-                    maxNumberRank = SetMaxNumberRank(rank); //1,9,25,49,...
+                    maxNumberRank = SetMaxNumberRank(rank) - SetMaxNumberRank(rank - 2); //1,8,16,...
+                    maxRank = SetMaxNumberRank(rank); 
                     c++;
                 }
+                else
+                {
+                    Move(init, rank, maxNumberRank, radius);
+
+                }
                 init++;
-                //Move(init, rank, radius);
-                int NeighboursSum = FindNeighbors();
-                Matrix[r,c] = NeighboursSum;
+                NeighboursSum = FindNeighbors();
+                Matrix[r, c] = NeighboursSum;
+                ShowMatrix();
                 //step = ManhattanMeasure(init, rank, radius);
             }
-            return step;
+            return NeighboursSum;
         }
-        public void Move(int init, int rank, int radius)
+        public void ShowMatrix()
         {
-            int RankPosition;
+            int randColor = 1;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("###########################\n");
+            for (int i = 5; i > -5; i--)
+            {
+                for (int j = -5; j < 5; j++)
+                {
+                    switch (randColor%2)
+                    {
+                        case 0:
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            break;
+                        case 1:
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            break;
+                        case 2:
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            break;
+
+                    }
+                    Console.Write(Matrix[r + i, c + j]);
+                    randColor++;
+                }
+                Console.Write("\n");
+            }
+        }
+        public void Move(int init, int rank, int maxNumberRank, int radius)
+        {
+            int RankAbsPosition;
             if (rank > 1)
-                RankPosition = (init - (int)Math.Pow(rank - 2, 2)) % (rank - 1);
+                RankAbsPosition = (init - (int)Math.Pow(rank - 2, 2));
             else
-                RankPosition = 0;
+                RankAbsPosition = 0;
             //;return //radius + CalculateTriangular(RankPosition, rank);
+
+            if (RankAbsPosition > 0 && RankAbsPosition < maxNumberRank / 4) r++;
+            else if (RankAbsPosition >= maxNumberRank / 4 && RankAbsPosition < maxNumberRank / 2) c--;
+            else if (RankAbsPosition >= maxNumberRank / 2 && RankAbsPosition < 3 * maxNumberRank / 4) r--;
+            else if (RankAbsPosition >= 3 * maxNumberRank / 4 && RankAbsPosition < maxNumberRank) c++;
         }
         public int FindNeighbors()
         {
             int sum = 0;
-            for(int i = -1; i < 2;i++)
+            for (int i = -1; i < 2; i++)
             {
                 for (int j = -1; j < 2; j++)
                 {
