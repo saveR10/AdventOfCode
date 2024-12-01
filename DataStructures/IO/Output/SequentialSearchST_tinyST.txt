@@ -11,5 +11,5 @@ A 8
 E 12
 S 0
 
-Execution time in milliseconds: 65400
-Execution time in seconds: 65
+Execution time in milliseconds: 22760
+Execution time in seconds: 22

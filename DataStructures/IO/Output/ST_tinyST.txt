@@ -11,4 +11,4 @@ R 3
 S 0
 X 7
 
-Execution time in milliseconds: 15
+Execution time in milliseconds: 1

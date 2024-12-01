@@ -47,6 +47,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -142,6 +143,10 @@
     <Compile Include="Sources\2019\Day1.cs" />
     <Compile Include="Sources\2020\Day1.cs" />
     <Compile Include="Sources\2021\Day1.cs" />
+    <Compile Include="Sources\2023\Day5.cs" />
+    <Compile Include="Sources\2023\Day4.cs" />
+    <Compile Include="Sources\2023\Day3.cs" />
+    <Compile Include="Sources\2023\Day2.cs" />
     <Compile Include="Sources\2023\Day1.cs" />
     <Compile Include="Sources\2023\Day25.cs" />
     <Compile Include="Sources\2023\Day23.cs" />
@@ -179,6 +184,7 @@
     <Compile Include="Utilities\Map\Map.cs" />
     <Compile Include="Utilities\Math\Combinatorial.cs" />
     <Compile Include="Utilities\Math\Extensions.cs" />
+    <Compile Include="Utilities\Math\Prime.cs" />
     <Content Include="DataStructures\IO\Input\16Kints.txt" />
     <Content Include="DataStructures\IO\Input\1KInts.txt" />
     <Content Include="DataStructures\IO\Input\1Mints.txt" />

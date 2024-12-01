@@ -18,7 +18,7 @@ namespace AOC.Utilities.Math
         #region Combinations
         #region Number
         /// <summary>
-        /// This function gets the total number of unique combinations based upon N and K. Also called BinomialCoefficient.
+        /// This function gets the total number of unique combinations based upon N and K. Also called Binomial Coefficient.
         /// N is the total number of items.
         /// K is the size of the group.
         /// Total number of unique combinations = N! / ( K! (N - K)! ).
