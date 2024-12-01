@@ -16,6 +16,7 @@ using AOC.Utilities.Dynamic;
 
 namespace AOC2017
 {
+    [ResearchAlghoritmsAttribute(TypologyEnum.Map)] 
     public class Day3 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)
