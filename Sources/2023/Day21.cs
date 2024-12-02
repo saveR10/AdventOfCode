@@ -1,5 +1,5 @@
 ﻿using AOC;
-using NUnit.Framework;
+ 
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,7 +28,6 @@ namespace AOC2023
         public bool[,] NextYou;
         public int n;
         public int loopmap;
-        [Test]
         public void Part1(object input, bool test,ref object solution)
         {
             test = false;
@@ -233,8 +232,6 @@ namespace AOC2023
 
             //Console.WriteLine(work.Count);
         }
-
-        [Test]
         public void Part2(object input,bool test, ref object solution)
         {
             test = true;

@@ -2,8 +2,8 @@
 using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
-using NUnit.Framework;
-using NUnit.Framework.Internal;
+ 
+ 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;

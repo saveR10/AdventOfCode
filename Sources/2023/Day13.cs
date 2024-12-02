@@ -1542,13 +1542,11 @@ namespace AOC2023
         }
         public void Part2(object input, bool test, ref object solution)
         {
-            public tredicesimo_hard()
-            {
-                bool test = false;
+            test = false;
 
-                if (!test)
-                {
-                    Notes = @"##....###.#..
+            if (!test)
+            {
+                Notes = @"##....###.#..
 ########...#.
 ##.##.##.#.##
 ........###.#
@@ -2848,10 +2846,10 @@ namespace AOC2023
 #..##....
 #..##....
  ";
-                }
-                else
-                {
-                    Notes = @"#.##..##.
+            }
+            else
+            {
+                Notes = @"#.##..##.
 ..#.##.#.
 ##......#
 ##......#
@@ -2867,76 +2865,76 @@ namespace AOC2023
 ..##..###
 #....#..#
  ";
-                }
-                List<string> Pattern = new List<string>();
-                string newPattern = "";
-                for (int i = 0; i < Notes.Split(delimiter_line, StringSplitOptions.None).Count(); i++)
-                {
-                    if (Notes.Split(delimiter_line, StringSplitOptions.None)[i].Contains("."))
-                    {
-                        newPattern += Notes.Split(delimiter_line, StringSplitOptions.None)[i] + "\r\n";
-                    }
-                    else
-                    {
-                        Pattern.Add(newPattern);
-                        newPattern = "";
-                    }
-                }
-                long counter = 0;
-
-
-                int count_pattern = 0;
-                int count_repaired = 0;
-                bool RepairedPattern = false;
-                bool FindedHorizontalPattern = false;
-                bool FindedVerticalPattern = false;
-                foreach (string pattern in Pattern)
-                {
-                    string OriginalPattern = pattern;
-                    string[] OriginalPatternArray = OriginalPattern.Split(delimiter_line, StringSplitOptions.None);
-                    Console.WriteLine($"Horizontal pattern {count_pattern} e counter repaired {count_repaired}");
-                    count_pattern += 1;
-
-                    //TryToRepair
-                    RepairedPattern = false;
-                    string NewPattern = "";
-                    string[] NewPatternArray = new string[OriginalPattern.Split(delimiter_line, StringSplitOptions.None).Length];
-
-                    for (int r1 = 0; r1 < OriginalPatternArray.Length - 1; r1++)
-                    {
-                        for (int r2 = r1 + 1; r2 < OriginalPatternArray.Length - 1; r2++)
-                        {
-                            if (FindSmudge(OriginalPatternArray[r1], OriginalPatternArray[r2]))
-                            {
-                                NewPattern = RepairSmudge(OriginalPatternArray[r1], OriginalPatternArray[r2], OriginalPatternArray, r1, r2);
-                                NewPatternArray = PopulatePatternArray(NewPattern);
-                                if (FindHorizontalPattern(NewPatternArray) > 0)
-                                {
-                                    count_repaired++;
-                                    RepairedPattern = true;
-                                    break;
-                                }
-                                else if (FindVerticalPattern(PopulatePatternArray(VerticalToHorizontalPattern(NewPattern))) > 0)
-                                {
-                                    count_repaired++;
-                                    RepairedPattern = true;
-                                    break;
-                                }
-                                else
-                                {
-                                    NewPattern = "";
-                                }
-
-                            }
-                        }
-                        if (!string.IsNullOrEmpty(NewPattern)) break;
-                    }
-                }
-                //21100 too low
-                //38600 too high
             }
+            List<string> Pattern = new List<string>();
+            string newPattern = "";
+            for (int i = 0; i < Notes.Split(delimiter_line, StringSplitOptions.None).Count(); i++)
+            {
+                if (Notes.Split(delimiter_line, StringSplitOptions.None)[i].Contains("."))
+                {
+                    newPattern += Notes.Split(delimiter_line, StringSplitOptions.None)[i] + "\r\n";
+                }
+                else
+                {
+                    Pattern.Add(newPattern);
+                    newPattern = "";
+                }
+            }
+            long counter = 0;
 
+
+            int count_pattern = 0;
+            int count_repaired = 0;
+            bool RepairedPattern = false;
+            bool FindedHorizontalPattern = false;
+            bool FindedVerticalPattern = false;
+            foreach (string pattern in Pattern)
+            {
+                string OriginalPattern = pattern;
+                string[] OriginalPatternArray = OriginalPattern.Split(delimiter_line, StringSplitOptions.None);
+                Console.WriteLine($"Horizontal pattern {count_pattern} e counter repaired {count_repaired}");
+                count_pattern += 1;
+
+                //TryToRepair
+                RepairedPattern = false;
+                string NewPattern = "";
+                string[] NewPatternArray = new string[OriginalPattern.Split(delimiter_line, StringSplitOptions.None).Length];
+
+                for (int r1 = 0; r1 < OriginalPatternArray.Length - 1; r1++)
+                {
+                    for (int r2 = r1 + 1; r2 < OriginalPatternArray.Length - 1; r2++)
+                    {
+                        if (FindSmudge(OriginalPatternArray[r1], OriginalPatternArray[r2]))
+                        {
+                            NewPattern = RepairSmudge(OriginalPatternArray[r1], OriginalPatternArray[r2], OriginalPatternArray, r1, r2);
+                            NewPatternArray = PopulatePatternArray(NewPattern);
+                            if (FindHorizontalPattern(NewPatternArray) > 0)
+                            {
+                                count_repaired++;
+                                RepairedPattern = true;
+                                break;
+                            }
+                            else if (FindVerticalPattern(PopulatePatternArray(VerticalToHorizontalPattern(NewPattern))) > 0)
+                            {
+                                count_repaired++;
+                                RepairedPattern = true;
+                                break;
+                            }
+                            else
+                            {
+                                NewPattern = "";
+                            }
+
+                        }
+                    }
+                    if (!string.IsNullOrEmpty(NewPattern)) break;
+                }
+            }
+            //21100 too low
+            //38600 too high
         }
+
+
         public string[] PopulatePatternArray(string pattern)
         {
             var pat = pattern.Split(delimiter_line, StringSplitOptions.None);

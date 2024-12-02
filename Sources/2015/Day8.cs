@@ -2,7 +2,7 @@
 using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
-using NUnit.Framework;
+ 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
