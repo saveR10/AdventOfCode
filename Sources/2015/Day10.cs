@@ -23,6 +23,7 @@ using Solver = AOC.Solver;
 namespace AOC2015
 {
     [ResearchAlghoritmsAttribute(TypologyEnum.Game)] //Look And Say game
+    [ResearchAlghoritmsAttribute(TypologyEnum.Regex)] 
     public class Day10 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

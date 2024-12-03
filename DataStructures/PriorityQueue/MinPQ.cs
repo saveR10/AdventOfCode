@@ -189,6 +189,23 @@ namespace AOC.DataStructures.PriorityQueue
             }
             fw.Close();
         }
+
+        public static void Example2()
+        {
+            Random random = new Random();
+            AOC.DataStructures.PriorityQueue.MinPQ<int> minPQ = new AOC.DataStructures.PriorityQueue.MinPQ<int>();
+            for (int i = 0; i < 40; i++)
+            {
+                int randomNumber = random.Next(1000);
+                minPQ.Insert(randomNumber);
+            }
+            while (!minPQ.IsEmpty())
+            {
+                Console.WriteLine(minPQ.DelMin());
+                
+            }
+            Console.ReadLine( );
+        }
     }
 }
 

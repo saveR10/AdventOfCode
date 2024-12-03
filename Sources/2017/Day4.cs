@@ -2,8 +2,6 @@
 using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
- 
- 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
@@ -17,6 +15,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC2017
 {
+    [ResearchAlghoritmsAttribute(TypologyEnum.Regex)]
     public class Day4 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

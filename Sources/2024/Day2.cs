@@ -63,11 +63,6 @@ namespace AOC2024
 
             return true;
         }
-        public enum OrderType
-        {
-            Ascendent,
-            Descendent
-        }
 
         public void Part2(object input, bool test, ref object solution)
         {

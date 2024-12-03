@@ -2,16 +2,19 @@
 using AOC.DataStructures.Clustering;
 using AOC.Documents.LINQ;
 using AOC.Model;
+using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace AOC2023
 {
     //DA SISTEMARE
+    [ResearchAlghoritmsAttribute(TypologyEnum.Regex)]
     public class Day4 : Solver, IDay
     {
         private const string V = "\r\n";

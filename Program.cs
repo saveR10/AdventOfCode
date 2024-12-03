@@ -37,21 +37,25 @@ namespace AOC
                     //BST<string, int>.Example();
                     //LinearProbingHashST<string, int>.Example();
                     //RedBlackBST<string, int>.Example();
-                    SeparateChainingHashST<string, int>.Example();
-                    SequentialSearchST<string, int>.Example();
-                    ST<string, int>.Example();
+                    //SeparateChainingHashST<string, int>.Example();
+                    //SequentialSearchST<string, int>.Example();
+                    //ST<string, int>.Example();
+                    //MinPQ<int>.Example();
+                    MinPQ<int>.Example2();
+                    //MaxPQ<int>.Example();
+                    //Board.Example();
                     break;
                 case ConsoleKey.D2:
                     //SEARCH ALGHORITMS
-                    List<string> InterestedClasses = ResearchAlghoritmsAttribute.SearchFolder(ResearchAlghoritmsAttribute.TypologyEnum.Map);
+                    List<string> InterestedClasses = ResearchAlghoritmsAttribute.SearchFolder(ResearchAlghoritmsAttribute.TypologyEnum.Regex);
                     foreach (var c in InterestedClasses) Console.WriteLine(c);
                     Console.ReadLine();
                     break;
                 case ConsoleKey.D3:
                     //RUN PUZZLES
                     //Set Year, Day, Part and Test (Yes/No). If you are going to play Test, you must set a string data test in ReaderInput.cs
-                    string part = "2"; //2, 1, 1T, 2T
-                    Solver solver = new Solver(2024, 2, part);
+                    string part = "2T"; //2, 1, 1T, 2T
+                    Solver solver = new Solver(2024, 3, part);
                     object input = solver.FetchInput(Model.InputType.Text);
                     solver.RunPuzzle(input);
                     Console.WriteLine();
