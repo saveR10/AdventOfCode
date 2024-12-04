@@ -91,6 +91,7 @@
     <Compile Include="Documents\LINQ\Equality.cs" />
     <Compile Include="Documents\LINQ\Element.cs" />
     <Compile Include="Documents\LINQ\Filtering.cs" />
+    <Compile Include="Documents\REGEX\Example.cs" />
     <Compile Include="IDay.cs" />
     <Compile Include="Model\Delimiter.cs" />
     <Compile Include="Model\InputType.cs" />
