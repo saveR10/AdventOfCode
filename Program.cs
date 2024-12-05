@@ -49,14 +49,14 @@ namespace AOC
                     break;
                 case ConsoleKey.D2:
                     //SEARCH ALGHORITMS
-                    List<string> InterestedClasses = ResearchAlghoritmsAttribute.SearchFolder(ResearchAlghoritmsAttribute.TypologyEnum.Regex);
+                    List<string> InterestedClasses = ResearchAlghoritmsAttribute.SearchFolder(ResearchAlghoritmsAttribute.TypologyEnum.Decompressing);
                     foreach (var c in InterestedClasses) Console.WriteLine(c);
                     Console.ReadLine();
                     break;
                 case ConsoleKey.D3:
                     //RUN PUZZLES
                     //Set Year, Day, Part and Test (Yes/No). If you are going to play Test, you must set a string data test in ReaderInput.cs
-                    string part = "1T"; //2, 1, 1T, 2T
+                    string part = "2"; //2, 1, 1T, 2T
                     Solver solver = new Solver(2024, 5, part);
                     object input = solver.FetchInput(Model.InputType.Text);
                     solver.RunPuzzle(input);

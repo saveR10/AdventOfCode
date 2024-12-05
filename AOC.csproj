@@ -318,6 +318,11 @@
     <Content Include="Test\2023\day22.txt" />
     <Content Include="Test\2023\day23.txt" />
     <Content Include="Test\2023\day25.txt" />
+    <Content Include="Test\2024\day1.txt" />
+    <Content Include="Test\2024\day2.txt" />
+    <Content Include="Test\2024\day3.txt" />
+    <Content Include="Test\2024\day4.txt" />
+    <Content Include="Test\2024\day5.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -342,7 +347,6 @@
     <Folder Include="Test\2020\" />
     <Folder Include="Test\2021\" />
     <Folder Include="Test\2022\" />
-    <Folder Include="Test\2024\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

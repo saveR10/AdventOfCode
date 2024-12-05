@@ -1,18 +1,21 @@
 ﻿using AOC;
 using AOC.DataStructures.Clustering;
 using AOC.Model;
+using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
 
 namespace AOC2024
 {
     public class Day4 : Solver, IDay
     {
-        
+        [ResearchAlghoritmsAttribute(TypologyEnum.Game)] //Crosswords
+
         public void Part1(object input, bool test, ref object solution)
         {
             int n;
