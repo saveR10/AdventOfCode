@@ -10,6 +10,7 @@ using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -46,6 +47,7 @@ namespace AOC
                     //MaxPQ<int>.Example();
                     //Board.Example();
                     Documents.REGEX.REGEX.Example();
+                    //SortingTest.TestSortingAlgorithms();
                     break;
                 case ConsoleKey.D2:
                     //SEARCH ALGHORITMS
@@ -56,8 +58,8 @@ namespace AOC
                 case ConsoleKey.D3:
                     //RUN PUZZLES
                     //Set Year, Day, Part and Test (Yes/No). If you are going to play Test, you must set a string data test in ReaderInput.cs
-                    string part = "2"; //2, 1, 1T, 2T
-                    Solver solver = new Solver(2024, 5, part);
+                    string part = "2T"; //2, 1, 1T, 2T
+                    Solver solver = new Solver(2024, 6, part);
                     object input = solver.FetchInput(Model.InputType.Text);
                     solver.RunPuzzle(input);
                     Console.WriteLine();

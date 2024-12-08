@@ -58,6 +58,7 @@
     <Compile Include="DataStructures\Searching\SeparateChainingHashST.cs" />
     <Compile Include="DataStructures\Searching\SequentialSearchST.cs" />
     <Compile Include="DataStructures\Searching\ST.cs" />
+    <Compile Include="DataStructures\Sorting\SortingTest.cs" />
     <Compile Include="DataStructures\Sorting\HeapSort.cs" />
     <Compile Include="DataStructures\Sorting\InsertionSort.cs" />
     <Compile Include="DataStructures\LinkedList\LinkedQueue.cs" />
