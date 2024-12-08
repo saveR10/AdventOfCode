@@ -1,14 +1,17 @@
 ﻿using AOC;
 using AOC.DataStructures.Clustering;
 using AOC.Model;
+using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
 
 namespace AOC2024
 {
+    [ResearchAlghoritms(TypologyEnum.Map)]
     public class Day8 : Solver, IDay
     {
         public static string[,] Map;

@@ -81,6 +81,9 @@ namespace AOC2024
                 Console.Write(i);
                 Console.WriteLine("");
             }
+            Console.WriteLine($"GuardPoint: {GuardPoint[0]} {GuardPoint[1]}");
+            Console.WriteLine($"NextPoint: {NextPoint[0]} {NextPoint[1]}");
+            Console.WriteLine($"LoopObstacles: {LoopObstacles}");
         }
         public enum Direction
         {
@@ -171,6 +174,7 @@ namespace AOC2024
                 GuardPoint[0] = NextPoint[0];
                 GuardPoint[1] = NextPoint[1];
                 Map[GuardPoint[0], GuardPoint[1]] = "X";
+                StoryMap[GuardPoint[0], GuardPoint[1]] += "T";
                 TraceDirection();
             }
         }
@@ -223,7 +227,12 @@ namespace AOC2024
         public bool TempIsSettedNextPoint;
         public bool TempIsTurned;
         public bool isLoop;
-        //L'ho dovuta risolvere con il brute force, ma dovrei cercare una soluzione migliore
+        public bool Show = false;
+        public bool ShowLoop = false;
+        //Risolto con il bruteforce: ho perso un sacco di tempo (giorni!) perché avevo trascurato un dettaglio:
+        //se ho già testato un punto verificando se aggiungendo un ostacolo la guardia rimane bloccata, se ripasso
+        //successivamente per lo stesso punto (ma ovviamente da una diversa direzione, altrimenti il percorso di
+        //default sarebbe in loop), bisogna mettere la condizione di non ritestare lo stesso punto!
         public void Part2(object input, bool test, ref object solution)
         {
             List<string> inputList = new List<string>();
@@ -248,30 +257,60 @@ namespace AOC2024
                     }
                 }
             }
-            ShowMap();
+            if (Show) ShowMap();
             while (GuardPresence)
             {
                 isSettedNextPoint = false;
                 isTurned = false;
-                
+
                 Set_NextPoint();
-                if (isSettedNextPoint)
+                if (isSettedNextPoint && GuardPresence)
                 {
+                    if (NextPoint[0]==8 && NextPoint[1] == 72)
+                    {
+
+                    }
+                    if (Show) 
+                        ShowMap();
                     CheckLoop();
                     MoveNextPoint();
-                    ShowMap();
+                    if (Show) 
+                        ShowMap();
                 }
             }
-            solution = ScanMapB();//LoopObstacles;
-            //3416
-            //3427
-            //3349
+            solution = ScanLoopMap();//LoopObstacles;//
+            //2162
+            ShowObstaclesMap();
+        }
+        public void ShowObstaclesMap()
+        {
+            Console.WriteLine("\n----------------------\n");
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(i);
+            }
+            Console.WriteLine();
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (StoryMap[i, j].Contains("O")) Console.Write("O");
+                    else Console.Write(Map[i, j]);
+                }
+                Console.Write(i);
+                Console.WriteLine("");
+            }
+            Console.WriteLine($"GuardPoint: {GuardPoint[0]} {GuardPoint[1]}");
+            Console.WriteLine($"NextPoint: {NextPoint[0]} {NextPoint[1]}");
+            Console.WriteLine($"LoopObstacles: {LoopObstacles}");
+
         }
         public bool Set_NextPoint()
         {
-            int test_r = GuardPoint[0]; 
+            int test_r = GuardPoint[0];
             int test_c = GuardPoint[1];
-            NextPoint[0] = test_r; 
+            NextPoint[0] = test_r;
             NextPoint[1] = test_c;
 
             SetTestCoordinates(ref test_r, ref test_c);
@@ -281,11 +320,12 @@ namespace AOC2024
             {
                 if (Map[test_r, test_c].Equals("#"))
                 {
+                    isSettedNextPoint = false;
+                    isTurned = true;
                     dir = TurnRight(dir);
                     StoryMap[GuardPoint[0], GuardPoint[1]] += TraceToFind(dir);
                     NextPoint[0] = GuardPoint[0];
                     NextPoint[1] = GuardPoint[1];
-                    isTurned = true;
                 }
                 else
                 {
@@ -304,55 +344,60 @@ namespace AOC2024
                             NextPoint[1] -= 1;
                             break;
                     }
+                    isTurned = false;
                     isSettedNextPoint = true;
                 }
             }
             return isTurned;
         }
-
         public void CheckLoop()
         {
-            if (!isTurned && !StoryMap[NextPoint[0], NextPoint[1]].Contains("O") && GuardPresence)
+            if (GuardPresence && !StoryMap[NextPoint[0], NextPoint[1]].Contains("T"))
             {
                 isLoop = false;
-                TempIsTurned = false;
 
                 TempGuardPoint = new int[2];
-                TempGuardPoint = (int[])GuardPoint.Clone();
-
                 TempMap = new string[n, n];
-                TempMap = (string[,])Map.Clone();
-                TempMap[TempGuardPoint[0], TempGuardPoint[1]] = "X";
-
                 TempStoryMap = new string[n, n];
+                TempNextPoint = new int[2];
+
+                TempGuardPoint = (int[])GuardPoint.Clone();
+                TempMap = (string[,])Map.Clone();
                 TempStoryMap = (string[,])StoryMap.Clone();
                 TempDir = TurnRightB(dir);
                 TempStoryMap[TempGuardPoint[0], TempGuardPoint[1]] += TraceToFind(TempDir);
-
-                TempNextPoint = new int[2];
                 TempMap[NextPoint[0], NextPoint[1]] = "#";
                 TempStoryMap[NextPoint[0], NextPoint[1]] = "#";
-                TempGuardPresence = GuardPresence;
+                TempGuardPresence = true;
 
-                ShowMapB();
+                if (ShowLoop) 
+                    ShowLoopMap();
 
                 while (TempGuardPresence && !isLoop)
                 {
-                    SetNextPointB();
-                    if (!isLoop)
+                    TempIsSettedNextPoint = false;
+                    TempIsTurned = false;
+
+                    SetNextPointLoop();
+                    if (ShowLoop)
+                        ShowLoopMap();
+                    if (!isLoop && TempIsSettedNextPoint)
                     {
-                        MoveNextPointB();
-                        ShowMapB();
+                        MoveNextPointLoop();
+                        if (ShowLoop)
+                            ShowLoopMap();
                     }
                 }
                 if (isLoop)
                 {
                     LoopObstacles++;
                     StoryMap[NextPoint[0], NextPoint[1]] += "O";
+                    //ShowMap();
+                    //ShowLoopMap();
                 }
             }
         }
-        public void ShowMapB()
+        public void ShowLoopMap()
         {
             Console.WriteLine("\n--------TEMP----------\n");
 
@@ -373,12 +418,15 @@ namespace AOC2024
                 Console.Write(i);
                 Console.WriteLine("");
             }
+            Console.WriteLine($"TempGuardPoint: {TempGuardPoint[0]} {TempGuardPoint[1]}");
+            Console.WriteLine($"TempNextPoint: {TempNextPoint[0]} {TempNextPoint[1]}");
+
         }
         public Direction TurnRightB(Direction TempDir)
         {
             return (Direction)(((int)TempDir + 1) % 4);
         }
-        public bool SetNextPointB()
+        public bool SetNextPointLoop()
         {
             int test_r = TempGuardPoint[0];
             int test_c = TempGuardPoint[1];
@@ -391,28 +439,19 @@ namespace AOC2024
 
             if (TempGuardPresence)
             {
-                if (TempStoryMap[test_r, test_c].Contains(toFind) || TempStoryMap[test_r, test_c].Contains("+"))
-                {
-                    isLoop = true;
-                    return true;
-                }
-
+                //if (TempStoryMap[test_r, test_c].Contains(toFind))
+                //{
+                //    isLoop = true;
+                //    return true;
+                //}
                 if (TempMap[test_r, test_c].Equals("#"))
                 {
+                    TempIsSettedNextPoint = false;
+                    TempIsTurned = true;
                     TempDir = TurnRightB(TempDir);
-                    if(TempStoryMap[TempGuardPoint[0], TempGuardPoint[1]].Contains(TraceToFind(TempDir)))
-                    {
-                        isLoop = true;
-                        StoryMap[NextPoint[0], NextPoint[1]] += "O";
-                        return true;
-                    }
-                    else
-                    {
-                        TempStoryMap[TempGuardPoint[0], TempGuardPoint[1]] += TraceToFind(TempDir);
-                    }
+                    TempStoryMap[TempGuardPoint[0], TempGuardPoint[1]] += TraceToFind(TempDir);
                     TempNextPoint[0] = TempGuardPoint[0];
                     TempNextPoint[1] = TempGuardPoint[1];
-                    TempIsTurned = true;
                 }
                 else
                 {
@@ -431,6 +470,8 @@ namespace AOC2024
                             TempNextPoint[1] -= 1;
                             break;
                     }
+                    TempIsTurned = false;
+                    TempIsSettedNextPoint = true;
                 }
             }
             return isLoop;
@@ -477,26 +518,26 @@ namespace AOC2024
             }
             return true;
         }
-        public void MoveNextPointB()
+        public void MoveNextPointLoop()
         {
             CheckGuardPresenceLoop(TempNextPoint[0], TempNextPoint[1]);
 
             if (TempGuardPresence)
             {
-                TempGuardPoint[0] = TempNextPoint[0];
-                TempGuardPoint[1] = TempNextPoint[1];
-                TempMap[TempGuardPoint[0], TempGuardPoint[1]] = "X";
-                if(TempStoryMap[TempGuardPoint[0], TempGuardPoint[1]].Contains(TraceToFind(TempDir)))
+                if (TempStoryMap[TempNextPoint[0], TempNextPoint[1]].Contains(TraceToFind(TempDir)))
                 {
                     isLoop = true;
                 }
                 else
                 {
+                    TempGuardPoint[0] = TempNextPoint[0];
+                    TempGuardPoint[1] = TempNextPoint[1];
+                    TempMap[TempGuardPoint[0], TempGuardPoint[1]] = "X";
                     TempStoryMap[TempGuardPoint[0], TempGuardPoint[1]] += TraceToFind(TempDir);
                 }
             }
         }
-        public int ScanMapB()
+        public int ScanLoopMap()
         {
             int CreatedLoops = 0;
             for (int i = 0; i < n; i++)
