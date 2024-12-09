@@ -75,8 +75,8 @@ namespace AOC.DataStructures.PriorityQueue
 
             pq[++n] = x;
             Swim(n);
-            if (!IsMaxHeap())
-                throw new InvalidOperationException("Heap invariant violated");
+            //if (!IsMaxHeap())
+              //  throw new InvalidOperationException("Heap invariant violated");
         }
 
         public Key DelMax()
@@ -92,8 +92,8 @@ namespace AOC.DataStructures.PriorityQueue
             if (n > 0 && n == (pq.Length - 1) / 4)
                 Resize(pq.Length / 2);
 
-            if (!IsMaxHeap())
-                throw new InvalidOperationException("Heap invariant violated");
+            //if (!IsMaxHeap())
+              //  throw new InvalidOperationException("Heap invariant violated");
 
             return max;
         }

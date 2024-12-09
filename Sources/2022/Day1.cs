@@ -12,49 +12,57 @@ using System.Xml.Schema;
 using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
 using System.Runtime.InteropServices;
 
-namespace AOC2021
+namespace AOC2022
 {
     public class Day1 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)
         {
-            int count= 0;
-            int depth_memory = 0;
             string inputText = (string)input;
+            List<int> Elves = new List<int>();
+            int Calories = 0;
             foreach (var l in inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None))
             {
                 if (!string.IsNullOrEmpty(l))
                 {
-                    int depth = int.Parse(l);
-                    if (depth_memory!=0) if (depth > depth_memory) count += 1;
-                    depth_memory= depth;
+                    Calories += int.Parse(l);
+                }
+                else
+                {
+                    Elves.Add(Calories);
+                    Calories = 0;
                 }
             }
-            solution = count;
+            Elves.Add(Calories);
+            Calories = 0;
+
+            solution = Elves.Max();
         }
         public void Part2(object input, bool test, ref object solution)
         {
-            int count = 0;
-            int depth_memory = 0;
-            List<int> depths = new List<int>();
             string inputText = (string)input;
+            AOC.DataStructures.PriorityQueue.MaxPQ<int> Elves = new AOC.DataStructures.PriorityQueue.MaxPQ<int>();
+            int Calories = 0;
             foreach (var l in inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None))
             {
                 if (!string.IsNullOrEmpty(l))
                 {
-                    depths.Add(int.Parse(l));
+                    Calories += int.Parse(l);
+                }
+                else
+                {
+                    Elves.Insert(Calories);
+                    Calories = 0;
                 }
             }
-            int depth = 0;
-            for (int i = 2; i < depths.Count; i++)
-            {
-                depth = depths[i] + depths[i - 1] + depths[i - 2];
-                if (depth_memory != 0) if (depth > depth_memory) count += 1;
-                depth_memory = depth;
-            }
+            Elves.Insert(Calories);
+            Calories = 0;
 
-
-            solution = count;
+            int sum = 0;
+            sum += Elves.DelMax();
+            sum += Elves.DelMax();
+            sum += Elves.DelMax();
+            solution = sum;
         }
     }
 }

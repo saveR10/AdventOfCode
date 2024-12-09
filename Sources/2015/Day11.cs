@@ -3,7 +3,6 @@ using AOC.DataStructures.Clustering;
 using AOC.DataStructures.PriorityQueue;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
- 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

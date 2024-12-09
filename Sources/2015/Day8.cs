@@ -1,8 +1,7 @@
 ﻿using AOC;
 using AOC.DataStructures.Clustering;
 using AOC.Model;
-using AOC.SearchAlghoritmhs;
- 
+using AOC.SearchAlghoritmhs; 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;

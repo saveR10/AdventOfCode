@@ -7,9 +7,7 @@ using AOC.Utilities.Map;
 using AOC.Utilities.Math;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
- 
- 
+using Newtonsoft.Json.Serialization; 
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -34,6 +32,7 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
+    [ResearchAlghoritmsAttribute(TypologyEnum.Reduction)]
     public class Day19 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)
@@ -123,7 +122,7 @@ namespace AOC2015
         }
         public static Dictionary<string, List<string>> TransformationRules = new Dictionary<string, List<string>>();
         public static string Medicine;
-
+        //Il metodo a riduzione inversa con sostituzioni greedy è il più efficiente e adatto per questo problema. Funziona bene con il tipo di regole e struttura molecolare forniti nel puzzle.
         public void Part2(object input, bool test, ref object solution)
         {
             string inputText = (string)input;
@@ -140,14 +139,14 @@ namespace AOC2015
                 if (Transformation)
                 {
                     var r = inputlist[i].Split(Delimiter.delimiter_space, StringSplitOptions.None);
-                    if (!TransformationRules.ContainsKey(r[0]))
+                    if (!TransformationRules.ContainsKey(r[r.Length - 1]))
                     {
-                        TransformationRules.Add(r[0], new List<string> { });
-                        TransformationRules[r[0]].Add(r[r.Length - 1]);
+                        TransformationRules.Add(r[r.Length - 1], new List<string> { });
+                        TransformationRules[r[r.Length - 1]].Add(r[0]);
                     }
                     else
                     {
-                        TransformationRules[r[0]].Add(r[r.Length - 1]);
+                        TransformationRules[r[r.Length - 1]].Add(r[0]);
                     }
                 }
                 else
