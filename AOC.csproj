@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStructures\Cache\Cache.cs" />
     <Compile Include="DataStructures\InnerSource\Array.cs" />
     <Compile Include="DataStructures\InnerSource\Intro.cs" />
     <Compile Include="DataStructures\InnerSource\ConcurrentCollection.cs" />
@@ -146,6 +148,7 @@
     <Compile Include="Sources\2017\Day3.cs" />
     <Compile Include="Sources\2017\Day2.cs" />
     <Compile Include="Sources\2017\Day1.cs" />
+    <Compile Include="Sources\2018\Day3.cs" />
     <Compile Include="Sources\2018\Day2.cs" />
     <Compile Include="Sources\2018\Day1.cs" />
     <Compile Include="Sources\2019\Day1.cs" />

@@ -33,7 +33,9 @@ namespace AOC.SearchAlghoritmhs
             Map,
             Decompressing,
             Regex,
-            Reduction
+            Reduction,
+            Cache,
+            Recursive
         }
 
         public static List<string> SearchFolder(TypologyEnum typology)

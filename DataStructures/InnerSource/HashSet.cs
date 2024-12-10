@@ -70,10 +70,7 @@ namespace AOC.DataStructures.InnerSource
             names_NonCaseSensitive.Add("Alice");
             names_NonCaseSensitive.Add("alice"); // Non viene aggiunto perché il confronto è case-insensitive
 
-        Esempio:
-            csharp
-            Copy code
-HashSet<int> uniqueNumbers = new HashSet<int> { 1, 2, 3 };
+            HashSet<int> uniqueNumbers = new HashSet<int> { 1, 2, 3 };
             uniqueNumbers.Add(3); // Non viene aggiunto perché è già presente.
 
         }

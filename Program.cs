@@ -1,5 +1,6 @@
 ﻿using AOC.DataStructures;
 using AOC.DataStructures.AlghoritmsOptimization;
+using AOC.DataStructures.Cache;
 using AOC.DataStructures.Clustering;
 using AOC.DataStructures.LinkedList;
 using AOC.DataStructures.PriorityQueue;
@@ -46,8 +47,9 @@ namespace AOC
                     //MinPQ<int>.Example2();
                     //MaxPQ<int>.Example();
                     //Board.Example();
-                    Documents.REGEX.REGEX.Example();
+                    //Documents.REGEX.REGEX.Example();
                     //SortingTest.TestSortingAlgorithms();
+                    Cache.Example();
                     break;
                 case ConsoleKey.D2:
                     //SEARCH ALGHORITMS
@@ -59,8 +61,8 @@ namespace AOC
                     //RUN PUZZLES
                     //Set Year, Day, Part and Test (Yes/No). If you are going to play Test, you must set a string data test in ReaderInput.cs
                     string part = "2"; //2, 1, 1T, 2T
-                    Solver solver = new Solver(2024, 9, part);
-                    object input = solver.FetchInput(Model.InputType.Text);
+                    Solver solver = new Solver(2024, 10, part);
+                    object input = solver.FetchInput(Model.InputType.LinesList);
                     solver.RunPuzzle(input);
                     Console.WriteLine();
                     Console.WriteLine($"Solution for part {part} is {solver.solution}");
