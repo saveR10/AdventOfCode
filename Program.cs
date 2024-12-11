@@ -60,9 +60,9 @@ namespace AOC
                 case ConsoleKey.D3:
                     //RUN PUZZLES
                     //Set Year, Day, Part and Test (Yes/No). If you are going to play Test, you must set a string data test in ReaderInput.cs
-                    string part = "2"; //2, 1, 1T, 2T
-                    Solver solver = new Solver(2024, 10, part);
-                    object input = solver.FetchInput(Model.InputType.LinesList);
+                    string part = "2T"; //2, 1, 1T, 2T
+                    Solver solver = new Solver(2024, 11, part);
+                    object input = solver.FetchInput(Model.InputType.Text);
                     solver.RunPuzzle(input);
                     Console.WriteLine();
                     Console.WriteLine($"Solution for part {part} is {solver.solution}");

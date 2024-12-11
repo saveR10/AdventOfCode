@@ -20,6 +20,11 @@ namespace AOC.DataStructures.InnerSource
             linkedList.AddLast(2);
             linkedList.AddFirst(0);
 
+
+            //Una lista collegata, utile per scenari in cui servono operazioni frequenti di inserimento/ rimozione.
+            LinkedList<string> _linkedList = new LinkedList<string>();
+            _linkedList.AddLast("First");
+            _linkedList.AddLast("Second");
         }
     }
 }

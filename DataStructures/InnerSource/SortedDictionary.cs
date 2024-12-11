@@ -21,6 +21,15 @@ namespace AOC.DataStructures.InnerSource
             sortedDict[3] = "Three";
             sortedDict[2] = "Two";
 
+
+            //Simile a Dictionary, ma mantiene le chiavi ordinate.
+            SortedDictionary<int, string> _sortedDict = new SortedDictionary<int, string>();
+            _sortedDict[2] = "Two";
+            _sortedDict[1] = "One";
+            foreach (var kv in _sortedDict)
+            {
+                Console.WriteLine(kv.Key + " " + kv.Value);
+            }
         }
     }
 }

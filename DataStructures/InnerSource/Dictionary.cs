@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AOC.Documents.LINQ;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
@@ -20,6 +21,11 @@ namespace AOC.DataStructures.InnerSource
             ages["Alice"] = 25;
             ages["Bob"] = 30;
 
+
+            //Una struttura dati chiave-valore con lookup efficiente.
+            Dictionary<int, string> dict = new Dictionary<int, string>();
+            dict[1] = "One";
+            Console.WriteLine(dict[1]); // Output: One
         }
     }
 }

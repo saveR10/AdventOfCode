@@ -73,6 +73,11 @@ namespace AOC.DataStructures.InnerSource
             HashSet<int> uniqueNumbers = new HashSet<int> { 1, 2, 3 };
             uniqueNumbers.Add(3); // Non viene aggiunto perché è già presente.
 
+
+            //Una collezione che non consente duplicati e offre un accesso rapido.
+            HashSet<int> set = new HashSet<int> { 1, 2, 3 };
+            set.Add(2); // Ignorato, duplicato
+            Console.WriteLine(set.Count); // Output: 3
         }
     }
 }

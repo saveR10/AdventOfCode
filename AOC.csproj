@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DataStructures\Cache\Cache.cs" />
     <Compile Include="DataStructures\InnerSource\Array.cs" />
+    <Compile Include="DataStructures\InnerSource\BitArray.cs" />
     <Compile Include="DataStructures\InnerSource\Intro.cs" />
     <Compile Include="DataStructures\InnerSource\ConcurrentCollection.cs" />
     <Compile Include="DataStructures\InnerSource\Dictionary.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="DataStructures\InnerSource\SortedDictionary.cs" />
     <Compile Include="DataStructures\InnerSource\SortedSet.cs" />
     <Compile Include="DataStructures\InnerSource\Stack.cs" />
+    <Compile Include="DataStructures\InnerSource\Tuple.cs" />
     <Compile Include="DataStructures\PriorityQueue\Board.cs" />
     <Compile Include="DataStructures\PriorityQueue\MinPQ.cs" />
     <Compile Include="DataStructures\PriorityQueue\MinPQBoard.cs" />

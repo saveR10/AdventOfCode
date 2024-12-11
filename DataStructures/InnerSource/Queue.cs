@@ -22,6 +22,12 @@ namespace AOC.DataStructures.InnerSource
             tasks.Enqueue("Task1");
             tasks.Enqueue("Task2");
             string nextTask = tasks.Dequeue();
+
+            //Una coda FIFO(First - In, First - Out).
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue("First");
+            queue.Enqueue("Second");
+            Console.WriteLine(queue.Dequeue()); // Output: First
         }
     }
 }

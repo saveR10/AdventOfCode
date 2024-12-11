@@ -20,6 +20,11 @@ namespace AOC.DataStructures.InnerSource
             numbers.Add(4);
             numbers.Remove(2);
 
+            //Una lista generica dinamica che consente aggiunta / rimozione di elementi.
+            List<int> list = new List<int> { 1, 2, 3 };
+            list.Add(4);
+            Console.WriteLine(list.Count); // Output: 4
+
         }
     }
 }
