@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
@@ -115,6 +116,7 @@
     <Compile Include="ReaderInput.cs" />
     <Compile Include="SearchAlghoritmhs\ResearchAlghoritms.cs" />
     <Compile Include="Solver.cs" />
+    <Compile Include="Sources\2015\Day20.cs" />
     <Compile Include="Sources\2015\Day25.cs" />
     <Compile Include="Sources\2015\Day1.cs" />
     <Compile Include="Sources\2015\Day19.cs" />
@@ -153,6 +155,7 @@
     <Compile Include="Sources\2018\Day3.cs" />
     <Compile Include="Sources\2018\Day2.cs" />
     <Compile Include="Sources\2018\Day1.cs" />
+    <Compile Include="Sources\2019\Day3.cs" />
     <Compile Include="Sources\2019\Day1.cs" />
     <Compile Include="Sources\2020\Day1.cs" />
     <Compile Include="Sources\2021\Day1.cs" />
@@ -210,6 +213,8 @@
     <Compile Include="Sources\2024\Day10.cs" />
     <Compile Include="Sources\2024\Day11.cs" />
     <Compile Include="Sources\2024\Day1.cs" />
+    <Content Include="Input\2015\day20.txt" />
+    <Content Include="Input\2015\day25.txt" />
     <Content Include="Test\2015\day25.txt" />
     <Compile Include="Utilities\Dynamic\Movement.cs" />
     <Compile Include="Utilities\Map\Map.cs" />

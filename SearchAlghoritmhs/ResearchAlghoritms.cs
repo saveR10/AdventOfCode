@@ -19,14 +19,14 @@ namespace AOC.SearchAlghoritmhs
         public TypologyEnum Typology { get { return typology; } }
         public enum TypologyEnum
         {
-            Hashing,
-            BinaryOperation,
+            Hashing,                //algoritmi di criptazione/decriptazione
+            BinaryOperation,        //operazioni sui valori di tipo binario
             Escaping,
             AlphaStar,
             Dijkstra,
             Game,
             TextRules,
-            JSON,
+            JSON,                   //gestione di oggetti di tipo JSON
             Cronometers,
             Ingredients,
             Combinatorial,
@@ -35,7 +35,10 @@ namespace AOC.SearchAlghoritmhs
             Regex,
             Reduction,
             Cache,
-            Recursive
+            Recursive,
+            Overflow,               //richiedono considerazioni matematiche o utilizzo di strutture dati adatte
+            DFS,                    //Depth-First Search (DFS) per esplorare tutte le celle connesse che appartengono a una regione specifica
+            SystemLinearEquations   //rappresentabili come sistemi di equazioni lineari
         }
 
         public static List<string> SearchFolder(TypologyEnum typology)

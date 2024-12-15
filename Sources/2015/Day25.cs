@@ -1,6 +1,7 @@
 ﻿using AOC;
 using AOC.DataStructures.Clustering;
 using AOC.Model;
+using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,52 +10,48 @@ using System.Numerics;
 
 namespace AOC2015
 {
+    [ResearchAlghoritms(ResearchAlghoritmsAttribute.TypologyEnum.Overflow)]
     public class Day25 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)
         {
             string inputText = (string)input;
-            long[][] matrix = new long[2000][];
-            foreach(var i in matrix)
+            int targetR = int.Parse(inputText.Split(' ')[0]);
+            int targetC = int.Parse(inputText.Split(' ')[1]);
+            long[,] matrix = new long[6000, 6000];
+            long last = 0;
+            for (int r = 0; r < 6000; r++)
             {
-                long[] j = new long[2000];
+                for (int c = 0; c <= r; c++)
+                {
+                    if((r - c)==0 && c == 0)
+                    {
+                        matrix[r - c, c] = 20151125;
+                        last = 20151125;
+                    }
+                    else
+                    {
+                        BigInteger a = last;
+                        BigInteger b = 252533;
+                        BigInteger p = a * b;
+                        matrix[r - c, c] = (long)(p % (BigInteger)33554393);
+                        last = matrix[r - c, c];
+                    }
+                    if(matrix[targetR - 1, targetC - 1] !=null && matrix[targetR - 1, targetC - 1] != 0)
+                    {
+                        solution = matrix[targetR-1, targetC-1];
+                        break;
+                    }
+                }
+                if (solution != null) break;
             }
-            matrix[0][0] = long.Parse(inputText);
         }
-
 
 
 
         public void Part2(object input, bool test, ref object solution)
         {
-            string inputText = (string)input;
-
-            int r;
-            int counter = 0;
-            bool trovato = false;
-            int indice = 0;
-            for (int i = 0; i < inputText.Length; i++)
-            {
-                if (inputText[i] == '(')
-                {
-                    counter += 1;
-                }
-                else
-                {
-                    counter -= 1;
-                }
-
-                if (counter == -1 && !trovato)
-                {
-                    indice = i;
-                    trovato = true;
-                }
-            }
-
-            solution = counter;
+            
         }
-
-
-
     }
 }

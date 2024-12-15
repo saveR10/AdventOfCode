@@ -1,6 +1,7 @@
 ﻿using AOC;
 using AOC.DataStructures.Clustering;
 using AOC.Model;
+using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,6 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC2024
 {
+    [ResearchAlghoritmsAttribute(ResearchAlghoritmsAttribute.TypologyEnum.Overflow)]
     public class Day11 : Solver, IDay
     {
         public List<long> Stones = new List<long>();
