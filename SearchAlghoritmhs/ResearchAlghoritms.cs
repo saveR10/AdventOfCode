@@ -19,26 +19,35 @@ namespace AOC.SearchAlghoritmhs
         public TypologyEnum Typology { get { return typology; } }
         public enum TypologyEnum
         {
-            Hashing,                //algoritmi di criptazione/decriptazione
-            BinaryOperation,        //operazioni sui valori di tipo binario
-            Escaping,
+            #region Typology
+            Hashing,                    //algoritmi di criptazione/decriptazione
+            BinaryOperation,            //operazioni sui valori di tipo binario
+            Game,                       //rifacimento di giochi classici
+            JSON,                       //gestione di oggetti di tipo JSON
+
+            #endregion
+
+            #region ResolutionStrategy
             AlphaStar,
             Dijkstra,
-            Game,
+            Drawing,                    //schematizzarlo con un disegno può risultare utile
+            DFS,                        //Depth-First Search (DFS) DFS esplora i nodi in profondità, seguendo un percorso fino al suo termine prima di tornare indietro ed esplorare altri percorsi.
+            BFS,                        //Breadth-First Search (BFS) BFS esplora i nodi di un grafo o albero livello per livello, iniziando dal nodo di partenza e visitando tutti i suoi vicini prima di passare ai vicini di livello successivo
+            SystemLinearEquations,      //rappresentabili come sistemi di equazioni lineari
+            Cache,
+            Overflow,                   //richiedono considerazioni matematiche o utilizzo di strutture dati adatte
+            Map,
+            #endregion
+
+            Escaping, //è dei caratteri!
             TextRules,
-            JSON,                   //gestione di oggetti di tipo JSON
             Cronometers,
             Ingredients,
             Combinatorial,
-            Map,
             Decompressing,
             Regex,
             Reduction,
-            Cache,
             Recursive,
-            Overflow,               //richiedono considerazioni matematiche o utilizzo di strutture dati adatte
-            DFS,                    //Depth-First Search (DFS) per esplorare tutte le celle connesse che appartengono a una regione specifica
-            SystemLinearEquations   //rappresentabili come sistemi di equazioni lineari
         }
 
         public static List<string> SearchFolder(TypologyEnum typology)
