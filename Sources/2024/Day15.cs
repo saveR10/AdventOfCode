@@ -15,9 +15,9 @@ using System.Text.RegularExpressions;
 
 namespace AOC2024
 {
-    [ResearchAlghoritms(ResearchAlghoritmsAttribute.TypologyEnum.Drawing)]
-    [ResearchAlghoritms(ResearchAlghoritmsAttribute.TypologyEnum.Map)]
-    [ResearchAlghoritms(ResearchAlghoritmsAttribute.TypologyEnum.Game)] //Sokoban
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.Drawing)]
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Map)]
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Game)] //Sokoban
     public class Day15 : Solver, IDay
     {
         public static string[,] Map;

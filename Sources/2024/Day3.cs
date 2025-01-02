@@ -8,11 +8,11 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2024
 {
-    [ResearchAlghoritms(TypologyEnum.Regex)]
+    [ResearchAlgorithms(TypologyEnum.Regex)]
     public class Day3 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

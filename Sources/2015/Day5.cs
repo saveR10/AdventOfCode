@@ -12,11 +12,11 @@ using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.TextRules)]
+    [ResearchAlgorithmsAttribute(TypologyEnum.TextRules)]
 
     public class Day5 : Solver, IDay
     {

@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC2024
 {
-    [ResearchAlghoritms(ResearchAlghoritmsAttribute.TypologyEnum.SystemLinearEquations)] //Equazioni Diofantee 𝑎⋅𝑥+𝑏⋅𝑦=𝑐, Metodo di Cramer
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.SystemLinearEquations)] //Equazioni Diofantee 𝑎⋅𝑥+𝑏⋅𝑦=𝑐, Metodo di Cramer
     public class Day13 : Solver, IDay
     {
         List<Machine> Machines = new List<Machine>();

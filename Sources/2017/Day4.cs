@@ -9,13 +9,13 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Xml.Schema;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using AOC.Utilities.Dynamic;
 using System.Text.RegularExpressions;
 
 namespace AOC2017
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.Regex)]
+    [ResearchAlgorithmsAttribute(TypologyEnum.Regex)]
     public class Day4 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

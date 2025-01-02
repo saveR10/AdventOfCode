@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace AOC2024
 {
-    [ResearchAlghoritms(ResearchAlghoritmsAttribute.TypologyEnum.DFS)]
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.DFS)]
     public class Day12 : Solver, IDay
     {
         public static char[,] GardenMap;

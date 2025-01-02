@@ -23,14 +23,14 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using static AOC2015.Day9;
 using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlghoritms(TypologyEnum.Map)]
-    [ResearchAlghoritms(TypologyEnum.Game)] //Conway's Game of Life
+    [ResearchAlgorithms(TypologyEnum.Map)]
+    [ResearchAlgorithms(TypologyEnum.Game)] //Conway's Game of Life
     public class Day18 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

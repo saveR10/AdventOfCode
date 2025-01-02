@@ -8,13 +8,13 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2024
 {
     public class Day4 : Solver, IDay
     {
-        [ResearchAlghoritmsAttribute(TypologyEnum.Game)] //Crosswords
+        [ResearchAlgorithmsAttribute(TypologyEnum.Game)] //Crosswords
 
         public void Part1(object input, bool test, ref object solution)
         {

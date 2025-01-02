@@ -12,12 +12,12 @@ using System.Management.Instrumentation;
 using System.Reflection;
 using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace AOC2024
 {
-    [ResearchAlghoritms(TypologyEnum.Map)]
+    [ResearchAlgorithms(TypologyEnum.Map)]
     public class Day6 : Solver, IDay
     {
         public static string[,] Map;

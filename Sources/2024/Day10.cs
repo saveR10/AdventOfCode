@@ -9,12 +9,12 @@ using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Text.RegularExpressions;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2024
 {
-    [ResearchAlghoritms(TypologyEnum.Map)]
-    [ResearchAlghoritms(TypologyEnum.Recursive)]
+    [ResearchAlgorithms(TypologyEnum.Map)]
+    [ResearchAlgorithms(TypologyEnum.Recursive)]
 
     public class Day10: Solver, IDay
     {

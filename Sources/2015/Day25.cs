@@ -10,7 +10,7 @@ using System.Numerics;
 
 namespace AOC2015
 {
-    [ResearchAlghoritms(ResearchAlghoritmsAttribute.TypologyEnum.Overflow)]
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.Overflow)]
     public class Day25 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

@@ -7,8 +7,9 @@ using System.Runtime.Caching;
 
 namespace AOC.DataStructures.Cache
 {
-    internal class Cache
+    public static class Cache
     {
+
         public static void Example()
         {
             // Creazione della cache
@@ -60,7 +61,7 @@ namespace AOC.DataStructures.Cache
             }
 
         }
-        private class CompositeKey
+        public class CompositeKey
         {
             public string Key1 { get; }
             public string Key2 { get; }
@@ -99,5 +100,211 @@ namespace AOC.DataStructures.Cache
                 return $"{Key1}:{Key2}";
             }
         }
+
+        //public static MemoryCache cacheSequence = MemoryCache.Default;
+
+        //Memoization con cache 500 char
+        /*int cacheSize500 = 500;
+        int fullCache500 = inputSequence.Length / cacheSize500;
+        int remaining500 = inputSequence.Length % cacheSize500;
+        for (int i = 0; i < fullCache500; i++)
+        {
+            string block = inputSequence.Substring(i * cacheSize500, cacheSize500);
+            string cacheKey = $"{currentPos.x},{currentPos.y}:{block}";
+            if (CacheToken.ContainsKey(cacheKey) && cacheSequence.Contains(cacheKey))
+            {
+                var cachedResult = (Tuple<string, (int x, int y)>)cacheSequence.Get(cacheKey);
+                sequence.Append(cachedResult.Item1);
+                //WriteOutputToFile(cachedResult.Item1);
+                currentPos = cachedResult.Item2;
+            }
+            else
+            {
+                var blockSequence = new StringBuilder();
+                foreach (char command in block)
+                {
+                    (int targetX, int targetY) = DirectionalKeypad[command];
+                    blockSequence.Append($"{GenerateMovementExtended(currentPos, (targetX, targetY), type)}A"); //dovrei dimezzare il tempo di accesso alla memoria
+                                                                                                                //blockSequence.Append("A"); // Premere il tasto
+                    currentPos = (targetX, targetY);
+                }
+
+                string blockSequenceStr = blockSequence.ToString();
+                sequence.Append(blockSequenceStr);
+                //WriteOutputToFile(blockSequenceStr);
+
+                cacheSequence.Add(cacheKey, Tuple.Create(blockSequenceStr, currentPos), DateTimeOffset.UtcNow.AddMinutes(10));
+            }
+            if (sequence.Length > 50000000)
+            {
+                //WriteOutputToFile(sequence.ToString(), outputFilePath);
+                sequence.Clear();
+                GC.Collect();
+            }
+        }
+        if (sequence.Length > 0)
+        {
+            //WriteOutputToFile(sequence.ToString(), outputFilePath);
+            sequence.Clear();
+        }
+
+        //Memoization con cache 100 char
+        int cacheSize100 = 100;
+        int fullCache100 = remaining500 / cacheSize100;
+        int remaining100 = remaining500 % cacheSize100;
+        for (int i = 0; i < fullCache100; i++)
+        {
+            string block = inputSequence.Substring(fullCache500 * cacheSize500 + i * cacheSize100, cacheSize100);
+            string cacheKey = $"{currentPos.x},{currentPos.y}:{block}";
+
+            if (cacheSequence.Contains(cacheKey))
+            {
+                var cachedResult = (Tuple<string, (int x, int y)>)cacheSequence.Get(cacheKey);
+                sequence.Append(cachedResult.Item1);
+                //WriteOutputToFile(cachedResult.Item1);
+                currentPos = cachedResult.Item2;
+            }
+            else
+            {
+                var blockSequence = new StringBuilder();
+                foreach (char command in block)
+                {
+                    (int targetX, int targetY) = DirectionalKeypad[command];
+                    blockSequence.Append($"{GenerateMovementExtended(currentPos, (targetX, targetY), type)}A"); //dovrei dimezzare il tempo di accesso alla memoria
+                    //blockSequence.Append("A"); // Premere il tasto
+                    currentPos = (targetX, targetY);
+                }
+
+                string blockSequenceStr = blockSequence.ToString();
+                sequence.Append(blockSequenceStr);
+                //WriteOutputToFile(blockSequenceStr);
+
+                cacheSequence.Add(cacheKey, Tuple.Create(blockSequenceStr, currentPos), DateTimeOffset.UtcNow.AddMinutes(10));
+            }
+            if (sequence.Length > 50000000)
+            {
+                //  WriteOutputToFile(sequence.ToString(), outputFilePath);
+                sequence.Clear();
+                GC.Collect();
+            }
+        }
+        if (sequence.Length > 0)
+        {
+            //WriteOutputToFile(sequence.ToString(), outputFilePath);
+            sequence.Clear();
+        }
+
+        //Memoization con cache 10 char
+        int cacheSize10 = 10;
+        int fullCache10 = remaining100 / cacheSize10;
+        int remaining10 = remaining100 % cacheSize10;
+        for (int i = 0; i < fullCache10; i++)
+        {
+            string block = inputSequence.Substring(fullCache500 * cacheSize500 + fullCache100 * cacheSize100 + (i * cacheSize10), cacheSize10);
+            string cacheKey = $"{currentPos.x},{currentPos.y}:{block}";
+
+            if (cacheSequence.Contains(cacheKey))
+            {
+                var cachedResult = (Tuple<string, (int x, int y)>)cacheSequence.Get(cacheKey);
+                sequence.Append(cachedResult.Item1);
+                //WriteOutputToFile(cachedResult.Item1);
+                currentPos = cachedResult.Item2;
+            }
+            else
+            {
+                var blockSequence = new StringBuilder();
+                foreach (char command in block)
+                {
+                    (int targetX, int targetY) = DirectionalKeypad[command];
+                    blockSequence.Append($"{GenerateMovementExtended(currentPos, (targetX, targetY), type)}A"); //dovrei dimezzare il tempo di accesso alla memoria
+                    //blockSequence.Append("A"); // Premere il tasto
+                    currentPos = (targetX, targetY);
+                }
+
+                string blockSequenceStr = blockSequence.ToString();
+                sequence.Append(blockSequenceStr);
+                //WriteOutputToFile(blockSequenceStr);
+
+                cacheSequence.Add(cacheKey, Tuple.Create(blockSequenceStr, currentPos), DateTimeOffset.UtcNow.AddMinutes(10));
+            }
+            if (sequence.Length > 50000000)
+            {
+                //  WriteOutputToFile(sequence.ToString(), outputFilePath);
+                sequence.Clear();
+                GC.Collect();
+            }
+        }
+        if (sequence.Length > 0)
+        {
+            //WriteOutputToFile(sequence.ToString(), outputFilePath);
+            sequence.Clear();
+        }
+
+        //Memoization con cache 5 char
+        int cacheSize5 = 5;
+        int fullCache5 = remaining10 / cacheSize5;
+        int remaining5 = remaining10 % cacheSize5;
+        for (int i = 0; i < fullCache5; i++)
+        {
+            string block = inputSequence.Substring(fullCache500 * cacheSize500 + fullCache100 * cacheSize100 + fullCache10 * cacheSize10 + i * (cacheSize5), cacheSize5);
+            string cacheKey = $"{currentPos.x},{currentPos.y}:{block}";
+
+            if (cacheSequence.Contains(cacheKey))
+            {
+                var cachedResult = (Tuple<string, (int x, int y)>)cacheSequence.Get(cacheKey);
+                sequence.Append(cachedResult.Item1);
+                //WriteOutputToFile(cachedResult.Item1);
+                currentPos = cachedResult.Item2;
+            }
+            else
+            {
+                var blockSequence = new StringBuilder();
+                foreach (char command in block)
+                {
+                    (int targetX, int targetY) = DirectionalKeypad[command];
+                    blockSequence.Append($"{GenerateMovementExtended(currentPos, (targetX, targetY), type)}A"); //dovrei dimezzare il tempo di accesso alla memoria
+                    //blockSequence.Append("A"); // Premere il tasto
+                    currentPos = (targetX, targetY);
+                }
+
+                string blockSequenceStr = blockSequence.ToString();
+                sequence.Append(blockSequenceStr);
+                //WriteOutputToFile(blockSequenceStr);
+
+                cacheSequence.Add(cacheKey, Tuple.Create(blockSequenceStr, currentPos), DateTimeOffset.UtcNow.AddMinutes(10));
+            }
+            if (sequence.Length > 50000000)
+            {
+                //  WriteOutputToFile(sequence.ToString(), outputFilePath);
+                sequence.Clear();
+                GC.Collect();
+            }
+        }
+        if (sequence.Length > 0)
+        {
+            //WriteOutputToFile(sequence.ToString(), outputFilePath);
+            sequence.Clear();
+            GC.WaitForPendingFinalizers();
+        }
+
+        //caratteri rimanenti
+        for (int i = fullCache100 * cacheSize100 + fullCache10 * cacheSize10 + fullCache5 * cacheSize5; i < remaining5; i++)
+        {
+            char command = inputSequence[i];
+            (int targetX, int targetY) = DirectionalKeypad[command];
+            sequence.Append(GenerateMovementExtended(currentPos, (targetX, targetY), type));
+            //WriteOutputToFile(GenerateMovementExtended(currentPos, (targetX, targetY), type));
+            sequence.Append("A"); // Premere il tasto
+            //WriteOutputToFile("A"); // Premere il tasto
+            currentPos = (targetX, targetY);
+        }
+        if (sequence.Length > 0)
+        {
+            //WriteOutputToFile(sequence.ToString(), outputFilePath);
+            sequence.Clear();
+        }
+        return sequence.ToString();*/
+
+
     }
 }

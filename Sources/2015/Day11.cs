@@ -16,12 +16,12 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.TextRules)]
+    [ResearchAlgorithmsAttribute(TypologyEnum.TextRules)]
     public class Day11 : Solver, IDay
     {
         public int digitNumber = 7;

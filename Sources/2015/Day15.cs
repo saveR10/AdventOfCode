@@ -21,13 +21,13 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using Solver = AOC.Solver;
 
 namespace AOC2015
 {
     //Si potrebbe risolvere con un sistema lineari di equazioni; ma bisognerebbe derivare...
-    [ResearchAlghoritms(TypologyEnum.Ingredients)]
+    [ResearchAlgorithms(TypologyEnum.Ingredients)]
     public class Day15 : Solver, IDay
     {
         public Dictionary<string, Ingredient> Ingredients = new Dictionary<string, Ingredient>();

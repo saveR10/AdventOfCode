@@ -11,7 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Xml.Schema;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2018
 {

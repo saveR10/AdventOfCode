@@ -7,11 +7,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2024
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.Regex)]
+    [ResearchAlgorithmsAttribute(TypologyEnum.Regex)]
     public class Day1 : Solver, IDay
     {
         List<int> firstList = new List<int>();

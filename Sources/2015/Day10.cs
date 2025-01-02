@@ -16,13 +16,13 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.Game)] //Look And Say game
-    [ResearchAlghoritmsAttribute(TypologyEnum.Regex)] 
+    [ResearchAlgorithmsAttribute(TypologyEnum.Game)] //Look And Say game
+    [ResearchAlgorithmsAttribute(TypologyEnum.Regex)] 
     public class Day10 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

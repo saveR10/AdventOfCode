@@ -9,11 +9,11 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.Hashing)] //MD5
+    [ResearchAlgorithmsAttribute(TypologyEnum.Hashing)] //MD5
     public class Day4 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

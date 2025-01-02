@@ -12,11 +12,11 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.TextRules)]
+    [ResearchAlgorithmsAttribute(TypologyEnum.TextRules)]
     public class Day7 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

@@ -13,11 +13,11 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.Escaping)]
+    [ResearchAlgorithmsAttribute(TypologyEnum.Escaping)]
     public class Day8 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

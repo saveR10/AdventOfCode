@@ -13,8 +13,8 @@ namespace AOC2024
 {
     public class Day19 : Solver, IDay
     {
-        [ResearchAlghoritms(ResearchAlghoritmsAttribute.TypologyEnum.Combinatorial)]
-        [ResearchAlghoritms(ResearchAlghoritmsAttribute.TypologyEnum.Cache)]
+        [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Combinatorial)]
+        [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.Cache)]
         public void Part1(object input, bool test, ref object solution)
         {
             string inputText = (string)input;

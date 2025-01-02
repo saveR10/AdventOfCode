@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.ConstrainedExecution;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using static AOC2015.Day13;
@@ -15,6 +17,31 @@ namespace AOC.Utilities.Math
 {
     internal class Combinatorial
     {
+        //Combinazioni:
+        //  Le combinazioni sono selezioni di oggetti in cui l'ordine non conta.
+        //  Si tratta di un sottoinsieme di oggetti scelto da un insieme più grande, senza considerare l'ordine in cui sono scelti.
+        //  Ad esempio, se devi scegliere 2 frutti tra "mela", "banana" e "ciliegia", le combinazioni possibili sono: (mela, banana), (mela, ciliegia), (banana, ciliegia). In questo caso, (mela, banana) è la stessa combinazione di(banana, mela), quindi l'ordine non ha importanza.
+        //  La formula per calcolare il numero di combinazioni è: 𝐶(𝑛,𝑘)=𝑛!/(𝑘!(𝑛−𝑘)!)
+        //      dove n è il numero totale di oggetti e k è il numero di oggetti da scegliere.
+        //
+        //Permutazioni:
+        //  Le permutazioni sono ordinamenti di oggetti, in cui l'ordine conta.
+        //  Si tratta di disposizioni in cui è importante l'ordine degli oggetti.
+        //  Ad esempio, se devi ordinare 3 libri tra "A", "B" e "C", le permutazioni possibili sono: (A, B, C), (A, C, B), (B, A, C), (B, C, A), (C, A, B), (C, B, A). Qui l'ordine è importante.
+        //  La formula per calcolare il numero di permutazioni è: 𝑃(𝑛,𝑘)=𝑛!/(𝑛−𝑘)
+        //      dove n è il numero totale di oggetti e k è il numero di oggetti da ordinare.
+        //
+        //Disposizioni:
+        //  Le disposizioni sono selezioni ordinate di oggetti, in cui l'ordine conta, ma si differenziano dalle permutazioni perché vengono considerate solo le disposizioni parziali di un numero inferiore di oggetti (rispetto al numero totale).
+        //  Ad esempio, se hai 5 oggetti(A, B, C, D, E) e devi sceglierne 3, le disposizioni possibili(dove l'ordine conta) sono: (A, B, C), (A, C, B), (B, A, C), e così via.
+        //  La formula per calcolare il numero di disposizioni è la stessa delle permutazioni, ma limitata a un sottoinsieme di oggetti: 𝐷(𝑛,𝑘)=𝑛!/(𝑛−𝑘)!
+        //      dove n è il numero totale di oggetti e k è il numero di oggetti da selezionare e disporre.
+        //
+        //Riassunto delle differenze principali:
+        //  Combinazioni: l'ordine non conta.
+        //  Permutazioni: l'ordine conta e si considera l'ordinamento di tutti gli oggetti scelti.
+        //  Disposizioni: l'ordine conta, ma si selezionano solo una parte degli oggetti totali.
+        //Quindi, la differenza principale tra disposizioni e permutazioni è che le permutazioni riguardano l'ordinamento di tutti gli oggetti, mentre le disposizioni si concentrano su un sottoinsieme specifico di oggetti da ordinare.
         #region Combinations
         #region Number
         /// <summary>
@@ -385,7 +412,7 @@ namespace AOC.Utilities.Math
             return GetDispositionsWithRept(list, length - 1).SelectMany(t => list, (t1, t2) => t1.Concat(new T[] { t2 }));
         }
 
-        static List<List<T>> GenerateDispositionsWithoutRepetition<T>(List<T> elements, int seats)
+        public static List<List<T>> GenerateDispositionsWithoutRepetition<T>(List<T> elements, int seats)
         {
             List<List<T>> result = new List<List<T>>();
             GenerateDispositionsWithoutRepetitionRecursive(elements, seats, new List<T>(), result);

@@ -10,12 +10,12 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using static AOC2015.Day9;
 
 namespace AOC2024
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.Dijkstra)]
+    [ResearchAlgorithmsAttribute(ResolutionEnum.Dijkstra)]
     public class Day16 : Solver, IDay
     {
         public static string[,] Map;

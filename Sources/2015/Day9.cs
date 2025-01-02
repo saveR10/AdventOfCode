@@ -15,12 +15,12 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.Dijkstra)]
+    [ResearchAlgorithmsAttribute(ResolutionEnum.Dijkstra)]
     public class Day9 : Solver, IDay
     {
         public MinPQPath<Path> SearchNodes = new MinPQPath<Path>();

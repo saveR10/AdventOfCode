@@ -20,12 +20,12 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlghoritms(TypologyEnum.Dijkstra)]
+    [ResearchAlgorithms(ResolutionEnum.Dijkstra)]
     public class Day13 : Solver, IDay
     {
         public Dictionary<string, List<Tuple<string, int>>> RelativeHappiness;

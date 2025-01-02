@@ -7,11 +7,11 @@ using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlghoritms(TypologyEnum.Map)]
+    [ResearchAlgorithms(TypologyEnum.Map)]
     public class Day1 : Solver, IDay
     {
         public enum Direction

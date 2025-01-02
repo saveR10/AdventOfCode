@@ -10,11 +10,11 @@ using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.Hashing)] //Shift Cipher
+    [ResearchAlgorithmsAttribute(TypologyEnum.Hashing)] //Shift Cipher
 
     public class Day4 : Solver, IDay
     {

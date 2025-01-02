@@ -13,11 +13,11 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
-using static AOC.SearchAlghoritmhs.ResearchAlghoritmsAttribute;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlghoritmsAttribute(TypologyEnum.BinaryOperation)]
+    [ResearchAlgorithmsAttribute(TypologyEnum.BinaryOperation)]
     public class Day7 : Solver, IDay
     {
         //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/bitwise-and-shift-operators
