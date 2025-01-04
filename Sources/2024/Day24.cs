@@ -1,6 +1,7 @@
 ﻿using AOC;
 using AOC.DataStructures.Clustering;
 using AOC.Model;
+using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Design;
@@ -10,6 +11,8 @@ using System.Text.RegularExpressions;
 
 namespace AOC2024
 {
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.BinaryOperation)]
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Gate)]
     public class Day24 : Solver, IDay
     {
         public static Dictionary<string, bool> wire = new Dictionary<string, bool>();

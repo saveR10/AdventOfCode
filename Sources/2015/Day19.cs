@@ -140,14 +140,14 @@ namespace AOC2015
                 if (Transformation)
                 {
                     var r = inputlist[i].Split(Delimiter.delimiter_space, StringSplitOptions.None);
-                    if (!TransformationRules.ContainsKey(r[r.Length - 1]))
+                    if (!TransformationRules.ContainsKey(r[0]))
                     {
-                        TransformationRules.Add(r[r.Length - 1], new List<string> { });
-                        TransformationRules[r[r.Length - 1]].Add(r[0]);
+                        TransformationRules.Add(r[0], new List<string> { });
+                        TransformationRules[r[0]].Add(r[r.Length - 1]);
                     }
                     else
                     {
-                        TransformationRules[r[r.Length - 1]].Add(r[0]);
+                        TransformationRules[r[0]].Add(r[r.Length - 1]);
                     }
                 }
                 else
@@ -155,19 +155,39 @@ namespace AOC2015
                     if (!string.IsNullOrEmpty(inputlist[i]))
                     {
                         Medicine = inputlist[i];
-                        MinPQ<Molecula> minPQ = new MinPQ<Molecula>();
+
+                        // Reverse the rules
+                        var reversedRules = new Dictionary<string, string>();
+                        foreach (var rule in TransformationRules)
+                        {
+                            foreach (var chemical in rule.Value)
+                            {
+                                var reversedKey = new string(chemical.Reverse().ToArray());
+                                var reversedValue = new string(rule.Key.Reverse().ToArray());
+                                reversedRules[reversedKey] = reversedValue;
+                            }
+                        }
+
+                        // Reverse the molecule
+                        var reversedMolecule = new string(Medicine.Reverse().ToArray());
 
 
-                      
+                        // Create the regex pattern for replacements
+                        var regexReplacements = string.Join("|", reversedRules.Keys);
+                        var pattern = new Regex(regexReplacements);
+
+                        int replacementCount = 0;
+
+                        while (reversedMolecule != "e")
+                        {
+                            reversedMolecule = pattern.Replace(reversedMolecule, match => reversedRules[match.Value], 1);
+                            replacementCount++;
+                        }
+
+                        solution = replacementCount;
                     }
                 }
             }
-            solution = minStep;
         }
-    }
-    internal class Molecula
-    {
-        internal string molecula;
-        //in
     }
 }

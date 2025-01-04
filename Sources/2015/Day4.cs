@@ -36,11 +36,11 @@ namespace AOC2015
             secretkey = secretkey.Split(Delimiter.delimiter_line, StringSplitOptions.None)[0];
             for (int i = 0; i < 1000000; i++)
             {
-                numberToAddSecretKey=i.ToString().PadLeft(6, '0');
+                numberToAddSecretKey = i.ToString().PadLeft(6, '0');
                 string md5 = CreateMD5(secretkey + numberToAddSecretKey);
                 if (md5.StartsWith("00000"))
                 {
-                    founded= true;
+                    founded = true;
                     solution = i;
                     return;
                 }
@@ -176,7 +176,6 @@ namespace AOC2015
                 return result_string;
             }
         }
-
 
         public string ConvertFromHexToBinary(string hex)
         {
@@ -382,24 +381,23 @@ namespace AOC2015
             try
             {
 
-            for (int i = 0; i < 10000000; i++)
-            {
-                numberToAddSecretKey = i.ToString().PadLeft(6, '0');
-                string md5 = CreateMD5(secretkey + numberToAddSecretKey);
-                   if(i%100000==0) Console.WriteLine(i);
-                if (md5.StartsWith("000000"))
+                for (int i = 0; i < 10000000; i++)
                 {
-                    founded = true;
-                    solution = i;
-                    return;
-                }
+                    numberToAddSecretKey = i.ToString().PadLeft(6, '0');
+                    string md5 = CreateMD5(secretkey + numberToAddSecretKey);
+                    if (i % 100000 == 0) Console.WriteLine(i);
+                    if (md5.StartsWith("000000"))
+                    {
+                        founded = true;
+                        solution = i;
+                        return;
+                    }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
+                throw new Exception($"Generic Exception: {ex.Message}");
             }
-
         }
     }
 }

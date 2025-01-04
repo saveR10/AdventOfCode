@@ -117,6 +117,10 @@
     <Compile Include="ReaderInput.cs" />
     <Compile Include="SearchAlghoritmhs\ResearchAlghoritms.cs" />
     <Compile Include="Solver.cs" />
+    <Compile Include="Sources\2015\Day24.cs" />
+    <Compile Include="Sources\2015\Day23.cs" />
+    <Compile Include="Sources\2015\Day22.cs" />
+    <Compile Include="Sources\2015\Day21.cs" />
     <Compile Include="Sources\2015\Day20.cs" />
     <Compile Include="Sources\2015\Day25.cs" />
     <Compile Include="Sources\2015\Day1.cs" />
@@ -138,6 +142,7 @@
     <Compile Include="Sources\2015\Day4.cs" />
     <Compile Include="Sources\2015\Day3.cs" />
     <Compile Include="Sources\2015\Day2.cs" />
+    <Compile Include="Sources\2016\Day10.cs" />
     <Compile Include="Sources\2016\Day9.cs" />
     <Compile Include="Sources\2016\Day8.cs" />
     <Compile Include="Sources\2016\Day7.cs" />
@@ -214,6 +219,7 @@
     <Compile Include="Sources\2024\Day10.cs" />
     <Compile Include="Sources\2024\Day11.cs" />
     <Compile Include="Sources\2024\Day1.cs" />
+    <Compile Include="Utilities\Math\LinearSolver.cs" />
     <Content Include="Input\2015\day20.txt" />
     <Content Include="Input\2015\day25.txt" />
     <Content Include="Input\2024\day10.txt" />

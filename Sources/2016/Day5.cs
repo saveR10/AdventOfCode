@@ -2,8 +2,6 @@
 using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
- 
- 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;

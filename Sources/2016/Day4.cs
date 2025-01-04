@@ -15,7 +15,7 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 namespace AOC2016
 {
     [ResearchAlgorithmsAttribute(TypologyEnum.Hashing)] //Shift Cipher
-
+    [ResearchAlgorithmsAttribute(TypologyEnum.TextRules)]
     public class Day4 : Solver, IDay
     {
         Dictionary<char, int> letters;

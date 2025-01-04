@@ -22,7 +22,7 @@ using System.Linq.Expressions;
 
 namespace AOC2024
 {
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Game)] //Keypad
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Keypad)]
     [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.Cache)]
     [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.Overflow)]
     public class Day21 : Solver, IDay

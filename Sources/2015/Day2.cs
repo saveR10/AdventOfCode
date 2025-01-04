@@ -31,8 +31,6 @@ namespace AOC2015
                 Array.Sort(a);
                 somma += (a[0] * a[1]);
                 ribbon += (((a[0] * 2) + (a[1] * 2)) + a[0] * a[1] * a[2]);
-
-
             }
             solution = somma;
         }
@@ -56,8 +54,6 @@ namespace AOC2015
                 Array.Sort(a);
                 somma += (a[0] * a[1]);
                 ribbon += (((a[0] * 2) + (a[1] * 2)) + a[0] * a[1] * a[2]);
-
-
             }
             solution = ribbon;
         }

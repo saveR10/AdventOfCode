@@ -1,6 +1,7 @@
 ﻿using AOC;
 using AOC.DataStructures.Clustering;
 using AOC.Model;
+using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +11,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC2024
 {
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Triangles)]
     public class Day23 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

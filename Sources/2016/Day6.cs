@@ -16,6 +16,7 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
+    [ResearchAlgorithms(TypologyEnum.TextRules)]
     public class Day6 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

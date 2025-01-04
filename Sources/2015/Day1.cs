@@ -40,8 +40,6 @@ namespace AOC2015
         }
 
 
-
-
         public void Part2(object input, bool test, ref object solution)
         {
             string inputText = (string)input;
@@ -67,11 +65,7 @@ namespace AOC2015
                     trovato = true;
                 }
             }
-
             solution = counter;
         }
-
-
-
     }
 }

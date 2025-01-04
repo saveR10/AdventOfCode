@@ -84,5 +84,38 @@ namespace AOC.Utilities.Map
 
             return (start, end);
         }
+
+
+
+        /// <summary>
+        /// Counts the number of `true` values in a 2D boolean array.
+        /// </summary>
+        /// <param name="matrix">The 2D boolean array to evaluate.</param>
+        /// <returns>The count of `true` values in the array.</returns>
+        public static int CountTrueValues(bool[,] matrix)
+        {
+            if (matrix == null)
+            {
+                throw new ArgumentNullException(nameof(matrix), "The matrix cannot be null.");
+            }
+
+            int count = 0;
+
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    if (matrix[i, j])
+                    {
+                        count++;
+                    }
+                }
+            }
+
+            return count;
+        }
     }
 }

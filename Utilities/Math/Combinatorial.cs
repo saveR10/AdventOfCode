@@ -412,7 +412,7 @@ namespace AOC.Utilities.Math
             return GetDispositionsWithRept(list, length - 1).SelectMany(t => list, (t1, t2) => t1.Concat(new T[] { t2 }));
         }
 
-        public static List<List<T>> GenerateDispositionsWithoutRepetition<T>(List<T> elements, int seats)
+        public static List<List<T>> GetDispositionsWithoutRepetition<T>(List<T> elements, int seats)
         {
             List<List<T>> result = new List<List<T>>();
             GenerateDispositionsWithoutRepetitionRecursive(elements, seats, new List<T>(), result);
@@ -495,7 +495,7 @@ namespace AOC.Utilities.Math
             var n = NumberDispositionsWithoutRept(5, 3);
             List<char> elements = new List<char> { '1', '2', '3', '4', '5' };
             int seats = 3;
-            List<List<char>> dispositions = GenerateDispositionsWithoutRepetition(elements, seats);
+            List<List<char>> dispositions = GetDispositionsWithoutRepetition(elements, seats);
 
             Console.WriteLine($"All dispositions without repetition of {seats} elements:");
             foreach (var disposition in dispositions)

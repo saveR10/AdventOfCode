@@ -11,6 +11,7 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
+    [ResearchAlgorithms(TypologyEnum.Keypad)]
     public class Day2 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

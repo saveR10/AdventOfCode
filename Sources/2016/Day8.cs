@@ -3,8 +3,6 @@ using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
 using Newtonsoft.Json.Bson;
- 
- 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
@@ -18,6 +16,7 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
+    [ResearchAlgorithms(ResolutionEnum.Drawing)]
     public class Day8 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

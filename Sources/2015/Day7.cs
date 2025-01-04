@@ -8,6 +8,7 @@ using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -43,7 +44,6 @@ namespace AOC2015
         }
         public void Part1(object input, bool test, ref object solution)
         {
-
             Wires = new Dictionary<string, Wire>();
             string inputText = (string)input;
             var list = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None);
@@ -148,7 +148,6 @@ namespace AOC2015
             var list = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None);
             try
             {
-
                 while (all == false)
                 {
                     all = true;
@@ -160,7 +159,6 @@ namespace AOC2015
                             list[i] = "16076 -> b";
                             line = list[i];
                         }
-
                         var elem = line.Split(Delimiter.delimiter_space, StringSplitOptions.None);
                         
                         if (elem[elem.Length - 1] == "OK")
@@ -220,16 +218,13 @@ namespace AOC2015
                                     Wires[elem[elem.Length - 1]].Value = a_assignment;
                                     list[i] = list[i] + " OK";
                                 }
-
                             }
-
                         }
                     }
                 }
                 solution = Wires["a"].Value;
             }
             catch (Exception ex) { }
-
         }
     }
 }

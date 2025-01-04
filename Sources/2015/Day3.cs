@@ -1,6 +1,7 @@
 ﻿using AOC;
 using AOC.DataStructures.Clustering;
 using AOC.Model;
+using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -10,6 +11,7 @@ using System.Runtime.Remoting.Messaging;
 
 namespace AOC2015
 {
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Map)]
     public class Day3 : Solver, IDay
     {
         public bool[,] houses = new bool[1000, 1000];
@@ -35,17 +37,9 @@ namespace AOC2015
                 if (dir == '<') x -= 1;
                 houses[x, y] = true;
             }
-            for (int i = 0; i < 1000; i++)
-            {
-                for (int j = 0; j < 1000; j++)
-                {
-                    if (houses[i, j] != null && houses[i, j] == true) Houses++;
-                }
-            }
+            Houses = AOC.Utilities.Map.Map.CountTrueValues(houses);
             solution = Houses;
-
         }
-
 
         public void Part2(object input, bool test, ref object solution)
         {
@@ -77,13 +71,7 @@ namespace AOC2015
                     houses[xr, yr] = true;
                 }
             }
-            for (int i = 0; i < 1000; i++)
-            {
-                for (int j = 0; j < 1000; j++)
-                {
-                    if (houses[i, j] != null && houses[i, j] == true) Houses++;
-                }
-            }
+            Houses = AOC.Utilities.Map.Map.CountTrueValues(houses);
             solution = Houses;
         }
     }

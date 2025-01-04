@@ -17,6 +17,7 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
+    [ResearchAlgorithms(TypologyEnum.Map)]
     public class Day6 : Solver, IDay
     {
         public int n = 1000;
