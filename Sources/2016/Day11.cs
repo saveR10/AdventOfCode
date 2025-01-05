@@ -409,7 +409,7 @@ namespace AOC2016
             //BFS(floors);
             AStar(floors);
             solution = minStep;
-            //63, ... per qualche mtivo mi conta step +2; ho provato ad eseguirlo Part1 con A* e mi veniva 39 invece di 37. Forse perché non ho inserito il primo stato? Boh!
+            //63, ... per qualche mtivo mi conta step +2; ho provato ad eseguirlo Part1 con A* e mi veniva 39 invece di 37. Forse perché non ho inserito il primo stato? Sembra di no!
         }
         public void AStar(Dictionary<int, List<string>> initialFloors)
         {
@@ -425,7 +425,7 @@ namespace AOC2016
             // Stato iniziale
             var initialState = new State(initialFloors, 1, 0, initialHeuristic);
             priorityQueue.Insert(initialState);
-            //exploredStates[initialState.GetHashCode()] = initialState.F; // Inserisci il primo stato nella mappa
+            exploredStates[GetHashCodeFloor(initialFloors)] = initialState.F; // Inserisci il primo stato nella mappa
 
             // Ciclo principale dell'A* 
             while (!priorityQueue.IsEmpty())

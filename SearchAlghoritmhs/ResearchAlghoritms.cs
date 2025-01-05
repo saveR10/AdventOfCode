@@ -82,7 +82,8 @@ namespace AOC.SearchAlghoritmhs
             SystemLinearEquations = 1 << 5, // Equazioni lineari
             Cache = 1 << 6,               // Ottimizzazione tramite cache
             Overflow = 1 << 7,             // Problemi di overflow numerico, richiedono considerazioni matematiche o utilizzo di strutture dati adatte
-            NumberTheory = 1 << 8         //Problemi basati su proprietà matematiche dei numeri, inclusi divisori, multipli, fattorizzazione, teoria dei resti, congruenze e relazioni numeriche che richiedono ottimizzazioni o calcoli specifici legati alla struttura dei numeri stessi
+            NumberTheory = 1 << 8,         //Problemi basati su proprietà matematiche dei numeri, inclusi divisori, multipli, fattorizzazione, teoria dei resti, congruenze e relazioni numeriche che richiedono ottimizzazioni o calcoli specifici legati alla struttura dei numeri stessi
+            Reflection = 1 << 9,              //Utilizzo delle classi Reflection    
         }
         [Flags]
         public enum DifficultEnum
