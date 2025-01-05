@@ -22,7 +22,6 @@ namespace AOC2024
                 CalibratedEquation = false;
                 if (!string.IsNullOrEmpty(equation))
                 {
-
                     BigInteger testValue = BigInteger.Parse(equation.Split(':')[0]);
                     List<BigInteger> numbers = new List<BigInteger>();
                     foreach (var number in equation.Split(':')[1].Trim().Split(' '))

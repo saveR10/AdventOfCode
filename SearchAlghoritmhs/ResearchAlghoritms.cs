@@ -1,9 +1,14 @@
-﻿using AOC.Model;
+﻿using AOC.Documents.LINQ;
+using AOC.Model;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Policy;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,10 +17,15 @@ namespace AOC.SearchAlghoritmhs
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public class ResearchAlgorithmsAttribute : Attribute
     {
-        public ResearchAlgorithmsAttribute(TypologyEnum typology, ResolutionEnum resolution = ResolutionEnum.None)
+        public ResearchAlgorithmsAttribute(TypologyEnum typology, ResolutionEnum resolution = ResolutionEnum.None, DifficultEnum difficult = default)
         {
             Typology = typology;
             Resolution = resolution;
+            Difficult = difficult;
+        }
+        public ResearchAlgorithmsAttribute(DifficultEnum difficult = default)
+        {
+            Difficult = difficult;
         }
 
         public ResearchAlgorithmsAttribute(ResolutionEnum resolution)
@@ -25,6 +35,7 @@ namespace AOC.SearchAlghoritmhs
 
         public TypologyEnum Typology { get; }
         public ResolutionEnum Resolution { get; }
+        public DifficultEnum Difficult { get; }
 
         [Flags]
         public enum TypologyEnum
@@ -54,15 +65,35 @@ namespace AOC.SearchAlghoritmhs
         public enum ResolutionEnum
         {
             None = 0,
-            AlphaStar = 1 << 0,
+            /// <summary>
+            /// AlphaStar è un approccio euristico che, pur non essendo un algoritmo specifico, è ispirato a metodi avanzati di ricerca e ottimizzazione, in particolare a tecniche come quelle utilizzate da AlphaZero per giochi complessi come il Go. AlphaStar si basa su una combinazione di metodi di ricerca approssimativa e intelligente, come la ricerca A* o tecniche simili, che permettono di esplorare soluzioni in modo più rapido, ma non necessariamente ottimale. Caratteristiche principali di AlphaStar (basato su A):* Usa euristiche per guidare la ricerca in modo più intelligente. Non garantisce sempre la soluzione ottimale, ma può trovare soluzioni quasi ottimali in un tempo significativamente inferiore, specialmente in ambienti complessi o in spazi di ricerca vasti. È spesso utilizzato quando è necessario bilanciare il tempo di calcolo con la qualità della soluzione (ad esempio, nei giochi complessi o nei problemi di ricerca in spazi molto ampi).
+            /// </summary>
+            AlphaStar = 1 << 0,           
+            /// <summary>
+            /// L'algoritmo di Dijkstra è un algoritmo di ricerca per determinare il cammino più breve da un nodo di partenza a tutti gli altri nodi di un grafo, utilizzando un approccio greedy (avidità). Dijkstra funziona così: Ogni nodo viene visitato esattamente una volta. I nodi vengono esplorati in ordine crescente di distanza (costo) dal nodo di partenza. È garantito che, al momento in cui un nodo viene visitato, il cammino per quel nodo è il più corto possibile. Caratteristiche principali di Dijkstra: Funziona con grafi a pesatura non negativa (cioè, i pesi degli archi devono essere ≥ 0). È ottimale e trova sempre la soluzione migliore(il cammino più breve). Viene usato per risolvere problemi di percorso in situazioni dove l'ottimalità è importante. La differenza principale tra AlphaStar e Dijkstra sta nell'approccio che adottano per risolvere un problema di ricerca, in particolare nei contesti di algoritmi di percorso o ottimizzazione.       La principale differenza: Dijkstra garantisce sempre la soluzione ottimale (cammino più breve), ma può essere lento per grafi di grandi dimensioni. AlphaStar, invece, è un approccio approssimativo che può ridurre il tempo di calcolo sfruttando euristiche intelligenti per trovare soluzioni "buone" o "quasi ottimali", ma non garantisce sempre la soluzione perfetta. In breve: Dijkstra è un algoritmo preciso e ottimale per trovare il percorso più breve. AlphaStar è un algoritmo approssimativo che cerca di esplorare soluzioni buone in tempi più rapidi, utilizzando strategie basate su euristiche.
+            /// </summary>
             Dijkstra = 1 << 1,
-            Drawing = 1 << 2,             // Schematizzazione visiva
+            /// <summary>
+            /// Schematizzazione visiva
+            /// </summary>
+            Drawing = 1 << 2,             
             DFS = 1 << 3,                 // Depth-First Search (DFS) DFS esplora i nodi in profondità, seguendo un percorso fino al suo termine prima di tornare indietro ed esplorare altri percorsi. Opzione con BackTracking (opzionale del BackTracking è il Pruning)
             BFS = 1 << 4,                 // Breadth-First Search (BFS) BFS esplora i nodi di un grafo o albero livello per livello, iniziando dal nodo di partenza e visitando tutti i suoi vicini prima di passare ai vicini di livello successivo
             SystemLinearEquations = 1 << 5, // Equazioni lineari
             Cache = 1 << 6,               // Ottimizzazione tramite cache
             Overflow = 1 << 7,             // Problemi di overflow numerico, richiedono considerazioni matematiche o utilizzo di strutture dati adatte
             NumberTheory = 1 << 8         //Problemi basati su proprietà matematiche dei numeri, inclusi divisori, multipli, fattorizzazione, teoria dei resti, congruenze e relazioni numeriche che richiedono ottimizzazioni o calcoli specifici legati alla struttura dei numeri stessi
+        }
+        [Flags]
+        public enum DifficultEnum
+        {
+            None = 0,
+            VeryEasy = 1 << 0,
+            Easy = 1 << 1,
+            Medium = 1 <<2,
+            Hard = 1 << 3,
+            VeryHard = 1 << 4,
+            Legend = 1 << 5,
         }
 
         public override string ToString()
