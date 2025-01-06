@@ -56,8 +56,24 @@ namespace AOC.Utilities.Map
 
         public static void ShowCharMap(char[,] Map, int dimX, int dimY)
         {
+            // Costruire l'intestazione delle colonne
+            string tensRow = "   "; // Riga delle decine
+            string unitsRow = "   "; // Riga delle unità
+
+            for (int c = 0; c < dimY; c++)
+            {
+                tensRow += (c / 10) > 0 ? (c / 10).ToString() : " "; // Decine o spazio vuoto
+                unitsRow += (c % 10).ToString();                     // Unità
+            }
+
+            // Stampare intestazione
+            Console.WriteLine(tensRow); // Riga decine
+            Console.WriteLine(unitsRow); // Riga unità
+
             for (int r = 0; r < dimX; r++)
             {
+                // Stampa l'indice di riga (con spaziatura per allineamento)
+                Console.Write(r.ToString().PadLeft(2) + " ");
                 for (int c = 0; c < dimY; c++)
                 {
                     Console.Write(Map[r, c]);

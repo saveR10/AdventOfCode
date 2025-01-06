@@ -62,7 +62,7 @@ namespace AOC
                     //RUN PUZZLES
                     //Set Year, Day, Part and Test (Yes/No). If you are going to play Test, you must set a string data test in ReaderInput.cs
                     string part = "2"; //2, 1, 1T, 2T
-                    Solver solver = new Solver(2016, 12, part);
+                    Solver solver = new Solver(2016, 13, part);
                     object input = solver.FetchInput(Model.InputType.Text);
                     solver.RunPuzzle(input);
                     Console.WriteLine();
