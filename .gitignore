@@ -10,7 +10,8 @@
 bin/
 obj/
 packages/
-.vs/
+.vs/*
+ReaderInput.cs
 
 # Packages #
 ############
