@@ -1,20 +1,9 @@
 ﻿using AOC;
-using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
-using Newtonsoft.Json.Bson;
-
-
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography;
-using System.Text;
 using System.Text.RegularExpressions;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
@@ -22,8 +11,8 @@ namespace AOC2016
 {
     [ResearchAlgorithmsAttribute(TypologyEnum.Decompressing)]
     [ResearchAlgorithmsAttribute(TypologyEnum.TextRules)]
-    [ResearchAlgorithms(TypologyEnum.Regex)]
-    [ResearchAlgorithms(ResolutionEnum.Overflow)]
+    [ResearchAlgorithms(ResolutionEnum.Regex)]
+    [ResearchAlgorithms(TypologyEnum.Overflow)]
     public class Day9 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

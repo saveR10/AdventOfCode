@@ -14,7 +14,7 @@ using static System.Net.Mime.MediaTypeNames;
 namespace AOC2023
 {
     //DA SISTEMARE
-    [ResearchAlgorithmsAttribute(TypologyEnum.Regex)]
+    [ResearchAlgorithmsAttribute(ResolutionEnum.Regex)]
     public class Day4 : Solver, IDay
     {
         private const string V = "\r\n";

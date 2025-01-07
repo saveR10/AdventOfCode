@@ -15,7 +15,7 @@ using System.Threading;
 namespace AOC2024
 {
     [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.BinaryOperation)]
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.Overflow)]
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Overflow)]
     public class Day17 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

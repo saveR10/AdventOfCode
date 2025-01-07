@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace AOC2024
 {
-    [ResearchAlgorithmsAttribute(ResearchAlgorithmsAttribute.ResolutionEnum.Overflow)]
+    [ResearchAlgorithmsAttribute(ResearchAlgorithmsAttribute.TypologyEnum.Overflow)]
     public class Day11 : Solver, IDay
     {
         public List<long> Stones = new List<long>();

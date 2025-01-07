@@ -13,7 +13,7 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.Regex)]
+    [ResearchAlgorithmsAttribute(ResolutionEnum.Regex)]
     [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Triangles)]
     public class Day3 : Solver, IDay
     {

@@ -24,7 +24,7 @@ namespace AOC2024
 {
     [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Keypad)]
     [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.Cache)]
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.Overflow)]
+    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Overflow)]
     public class Day21 : Solver, IDay
     {
         static readonly Dictionary<char, (int x, int y)> NumericKeypad = new Dictionary<char, (int x, int y)>()

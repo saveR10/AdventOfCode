@@ -48,17 +48,18 @@ namespace AOC.SearchAlghoritmhs
             Map = 1 << 4,                 // Problemi basati su mappe o grafi
             Escaping = 1 << 5,            // Gestione dei caratteri di escape
             TextRules = 1 << 6,           // Gestione delle regole di formattazione del testo
-            Cronometers = 1 << 7,         // Calcoli temporali
+            Cronometers = 1 << 7,         // Calcoli/Sincronizzazioni temporali
             Ingredients = 1 << 8,         // Problemi legati a ingredienti o oggetti
             Combinatorial = 1 << 9,       // Problemi combinatori, raggruppamenti
             Decompressing = 1 << 10,      // Algoritmi di decompressione
-            Regex = 1 << 11,              // Problemi legati a espressioni regolari
-            Reduction = 1 << 12,          // Problemi di riduzione o semplificazione
-            Recursive = 1 << 13,          // Problemi risolvibili ricorsivamente
-            MachineInstructions = 1<< 14, // Simula un sistema che esegue una serie di istruzioni su uno o più registri. Ogni istruzione modifica i registri tramite operazioni aritmetiche (come incremento, divisione, moltiplicazione) o condiziona il flusso di esecuzione (come salti condizionati in base a valori o proprietà dei registri). La simulazione prosegue eseguendo le istruzioni fino al completamento, applicando logiche di controllo basate sullo stato dei registri
-            Keypad = 1 << 15,             // Simula l'utilizzo di un keypad
-            Triangles = 1 << 16,          // Trova i triangoli
-            Gate = 1 << 17,               // Gate da cui provengono input e che producono output
+            Reduction = 1 << 11,          // Problemi di riduzione o semplificazione
+            Recursive = 1 << 12,          // Problemi risolvibili ricorsivamente
+            MachineInstructions = 1<< 13, // Simula un sistema che esegue una serie di istruzioni su uno o più registri. Ogni istruzione modifica i registri tramite operazioni aritmetiche (come incremento, divisione, moltiplicazione) o condiziona il flusso di esecuzione (come salti condizionati in base a valori o proprietà dei registri). La simulazione prosegue eseguendo le istruzioni fino al completamento, applicando logiche di controllo basate sullo stato dei registri
+            Keypad = 1 << 14,             // Simula l'utilizzo di un keypad
+            Triangles = 1 << 15,          // Trova i triangoli
+            Gate = 1 << 16,               // Gate da cui provengono input e che producono output
+            Overflow = 1 << 17,           // Problemi di overflow numerico, richiedono considerazioni matematiche o utilizzo di strutture dati adatte
+
         }
 
         [Flags]
@@ -81,9 +82,10 @@ namespace AOC.SearchAlghoritmhs
             BFS = 1 << 4,                 // Breadth-First Search (BFS) BFS esplora i nodi di un grafo o albero livello per livello, iniziando dal nodo di partenza e visitando tutti i suoi vicini prima di passare ai vicini di livello successivo
             SystemLinearEquations = 1 << 5, // Equazioni lineari
             Cache = 1 << 6,               // Ottimizzazione tramite cache
-            Overflow = 1 << 7,             // Problemi di overflow numerico, richiedono considerazioni matematiche o utilizzo di strutture dati adatte
-            NumberTheory = 1 << 8,         //Problemi basati su proprietà matematiche dei numeri, inclusi divisori, multipli, fattorizzazione, teoria dei resti, congruenze e relazioni numeriche che richiedono ottimizzazioni o calcoli specifici legati alla struttura dei numeri stessi
-            Reflection = 1 << 9,              //Utilizzo delle classi Reflection    
+            NumberTheory = 1 << 7,         //Problemi basati su proprietà matematiche dei numeri, inclusi divisori, multipli, fattorizzazione, teoria dei resti, congruenze e relazioni numeriche che richiedono ottimizzazioni o calcoli specifici legati alla struttura dei numeri stessi
+            Reflection = 1 << 8,              //Utilizzo delle classi Reflection    
+            Regex = 1 << 9,              // Problemi legati a espressioni regolari
+            ModularArithmetic = 1<<10,    //Modular arithmetic involves operations on numbers where the results "wrap around" upon reaching a certain value, called the modulus. It is often referred to informally as "clock arithmetic" because of its similarity to the way hours wrap around on a clock.
         }
         [Flags]
         public enum DifficultEnum

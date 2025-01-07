@@ -11,7 +11,7 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2024
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.Regex)]
+    [ResearchAlgorithmsAttribute(ResolutionEnum.Regex)]
     public class Day1 : Solver, IDay
     {
         List<int> firstList = new List<int>();
