@@ -142,6 +142,9 @@
     <Compile Include="Sources\2015\Day4.cs" />
     <Compile Include="Sources\2015\Day3.cs" />
     <Compile Include="Sources\2015\Day2.cs" />
+    <Compile Include="Sources\2016\Day18.cs" />
+    <Compile Include="Sources\2016\Day17.cs" />
+    <Compile Include="Sources\2016\Day16.cs" />
     <Compile Include="Sources\2016\Day15.cs" />
     <Compile Include="Sources\2016\Day14.cs" />
     <Compile Include="Sources\2016\Day13.cs" />
@@ -224,6 +227,7 @@
     <Compile Include="Sources\2024\Day10.cs" />
     <Compile Include="Sources\2024\Day11.cs" />
     <Compile Include="Sources\2024\Day1.cs" />
+    <Compile Include="Sources\2025\Day1.cs" />
     <Compile Include="Utilities\Math\LinearSolver.cs" />
     <Content Include="Input\2015\day20.txt" />
     <Content Include="Input\2015\day25.txt" />
@@ -418,6 +422,7 @@
   <ItemGroup>
     <Folder Include="Input\2020\" />
     <Folder Include="Input\2021\" />
+    <Folder Include="Input\2025\" />
     <Folder Include="Test\2022\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
