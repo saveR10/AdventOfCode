@@ -12,7 +12,7 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2025
 {
-//    [ResearchAlgorithmsAttribute(ResolutionEnum.Regex)]
+    //[ResearchAlgorithmsAttribute(ResolutionEnum.None)]
     public class Day1 : Solver, IDay
     {
         public enum Direction

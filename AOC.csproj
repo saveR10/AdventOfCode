@@ -227,6 +227,7 @@
     <Compile Include="Sources\2024\Day10.cs" />
     <Compile Include="Sources\2024\Day11.cs" />
     <Compile Include="Sources\2024\Day1.cs" />
+    <Compile Include="Sources\2025\Day3.cs" />
     <Compile Include="Sources\2025\Day2.cs" />
     <Compile Include="Sources\2025\Day1.cs" />
     <Compile Include="Utilities\Math\LinearSolver.cs" />
