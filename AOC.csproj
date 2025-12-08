@@ -66,6 +66,8 @@
     <Compile Include="DataStructures\InnerSource\SortedSet.cs" />
     <Compile Include="DataStructures\InnerSource\Stack.cs" />
     <Compile Include="DataStructures\InnerSource\Tuple.cs" />
+    <Compile Include="DataStructures\ParsingInput\Input3DPoint.cs" />
+    <Compile Include="DataStructures\ParsingInput\InputMapParser.cs" />
     <Compile Include="DataStructures\PathFinding\PathFinding.cs" />
     <Compile Include="DataStructures\PriorityQueue\Board.cs" />
     <Compile Include="DataStructures\PriorityQueue\MinPQ.cs" />
@@ -227,6 +229,14 @@
     <Compile Include="Sources\2024\Day10.cs" />
     <Compile Include="Sources\2024\Day11.cs" />
     <Compile Include="Sources\2024\Day1.cs" />
+    <Compile Include="Sources\2025\Day12.cs" />
+    <Compile Include="Sources\2025\Day11.cs" />
+    <Compile Include="Sources\2025\Day10.cs" />
+    <Compile Include="Sources\2025\Day7.cs" />
+    <Compile Include="Sources\2025\Day9.cs" />
+    <Compile Include="Sources\2025\Day8.cs" />
+    <Compile Include="Sources\2025\Day6.cs" />
+    <Compile Include="Sources\2025\Day5.cs" />
     <Compile Include="Sources\2025\Day4.cs" />
     <Compile Include="Sources\2025\Day3.cs" />
     <Compile Include="Sources\2025\Day2.cs" />

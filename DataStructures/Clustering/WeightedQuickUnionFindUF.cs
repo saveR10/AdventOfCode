@@ -71,7 +71,10 @@ namespace AOC.DataStructures.Clustering
             }
             count--;
         }
-
+        public bool IsAllConnected()
+        {
+            return size.Any(n => n == parent.Length);
+        }
         public static void Example()
         {
             long startTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
