@@ -104,7 +104,11 @@ namespace AOC.SearchAlghoritmhs
             /// - Non cerca percorsi ottimali come Dijkstra, né usa euristiche come AlphaStar:
             ///   è puro clustering gerarchico agglomerativo basato su distanze.
             /// </summary>
-            Clustering = 1 << 18
+            Clustering = 1 << 18,
+            /// <summary>
+            /// Problemi che sono apparentemente fuori scala di risoluzione!
+            /// </summary>
+            Trolling = 1 << 19 
         }
         #endregion
 
@@ -183,6 +187,34 @@ namespace AOC.SearchAlghoritmhs
             /// Dynamic Programming: nella programmazione dinamica calcolo semplicemente un valore in un determinato stato. Non mi serve aggiungere la complessità deò DFS o BFS.
             /// </summary>
             DP = 1 << 11,
+            /// <summary>
+            /// SMT / Constraint Solver (es. Z3).
+            /// 
+            /// Risoluzione del problema tramite un solver di vincoli logici e matematici
+            /// (Satisfiability Modulo Theories).
+            /// 
+            /// Il problema viene modellato dichiarando:
+            /// - variabili (intere, booleane, reali, ecc.)
+            /// - vincoli (uguaglianze, disuguaglianze, somme, limiti)
+            /// - una funzione obiettivo da minimizzare o massimizzare
+            /// 
+            /// Il solver si occupa di:
+            /// - trovare una soluzione valida se esiste
+            /// - garantire l'ottimalità se richiesto (Optimize)
+            /// 
+            /// Tipicamente usato per:
+            /// - sistemi lineari o interi
+            /// - problemi combinatori
+            /// - ottimizzazione vincolata
+            /// - ricerca globale senza esplorazione esplicita dello spazio degli stati
+            /// 
+            /// Esempi di solver:
+            /// - Z3
+            /// - CVC5
+            /// - OR-Tools (CP-SAT)
+            /// </summary>
+            SMTSolver = 1 << 12,
+
         }
         #endregion
 
