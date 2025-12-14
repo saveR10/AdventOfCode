@@ -9,10 +9,11 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.Decompressing)]
-    [ResearchAlgorithmsAttribute(TypologyEnum.TextRules)]
-    [ResearchAlgorithms(ResolutionEnum.Regex)]
-    [ResearchAlgorithms(TypologyEnum.Overflow)]
+    [ResearchAlgorithms(title: "Day 9: Explosives in Cyberspace",
+                        TypologyEnum.Overflow | TypologyEnum.TextRules | TypologyEnum.Decompressing,       // Problema basato sulla decompressione di dati secondo un formato specifico
+                        ResolutionEnum.Regex, // Parte 1 può essere risolta con iterazione semplice, Parte 2 richiede approccio ricorsivo per i marker annidati
+                        DifficultEnum.Medium,
+                        "Calcolo della lunghezza dei dati decompressi con marker di ripetizione, gestione dei marker annidati nella versione 2")]
     public class Day9 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

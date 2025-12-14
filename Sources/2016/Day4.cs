@@ -1,21 +1,18 @@
 ﻿using AOC;
-using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
- 
- 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
-using System.IO;
 using System.Linq;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.Hashing)] //Shift Cipher
-    [ResearchAlgorithmsAttribute(TypologyEnum.TextRules)]
+    [ResearchAlgorithms(title: "Day 4: Security Through Obscurity",
+                        TypologyEnum.TextRules | TypologyEnum.Hashing,        //Shift Cipher
+                        ResolutionEnum.None,           // Nessun algoritmo complesso, solo parsing e verifica lettere
+                        DifficultEnum.Medium,
+                        "Verifica della validità delle stanze tramite checksum e decrittazione con shift cipher")]
     public class Day4 : Solver, IDay
     {
         Dictionary<char, int> letters;

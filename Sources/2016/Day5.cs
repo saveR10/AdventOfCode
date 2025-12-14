@@ -1,20 +1,18 @@
 ﻿using AOC;
-using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.Hashing)]
+    [ResearchAlgorithms(title: "Day 5: How About a Nice Game of Chess?",
+                        TypologyEnum.Hashing,         // Analisi di hash MD5 e ricerca di pattern
+                        ResolutionEnum.BruteForce,    // Ricerca esaustiva incrementando l'indice finché si trova l'hash valido
+                        DifficultEnum.Medium,
+                        "Generazione password tramite hashing MD5 e ricerca del pattern 00000x per costruire la password")]
     public class Day5 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)
@@ -92,10 +90,8 @@ namespace AOC2016
                             break;
                         }
                     }
-                    
                 }
             }
         }
-
     }
 }

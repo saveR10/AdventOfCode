@@ -11,7 +11,11 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlgorithms(TypologyEnum.Keypad)]
+    [ResearchAlgorithms(title: "Day 2: Bathroom Security",
+                        TypologyEnum.Keypad,              // Simulazione di movimenti su griglia/Keypad
+                        ResolutionEnum.None,            // Nessun algoritmo complesso, solo simulazione passo-passo
+                        DifficultEnum.Easy,
+                        "Calcolo del codice del bagno seguendo istruzioni di movimento su una tastiera numerica; gestione dei bordi della griglia e sequenze multiple di istruzioni")]
     public class Day2 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

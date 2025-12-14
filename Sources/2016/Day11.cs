@@ -1,31 +1,18 @@
 ﻿using AOC;
-using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
-using Newtonsoft.Json.Bson;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Numerics;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography;
-using System.Text;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
-using static AOC2016.Day10;
-using static AOC2024.Day24;
 
 namespace AOC2016
 {
-    [ResearchAlgorithms(TypologyEnum.Game)] //River Crossing Puzzle
-    [ResearchAlgorithms(ResolutionEnum.DFS)]
-    [ResearchAlgorithms(ResolutionEnum.BFS)]
-    [ResearchAlgorithms(ResolutionEnum.AlphaStar)]
-    [ResearchAlgorithms(ResolutionEnum.Dijkstra)]
-    [ResearchAlgorithms(DifficultEnum.Legend)]
+    [ResearchAlgorithms(title: "Radioisotope Thermoelectric Generators",
+                        typology: ResearchAlgorithmsAttribute.TypologyEnum.Game, //River Crossing Puzzle
+                        resolution: ResearchAlgorithmsAttribute.ResolutionEnum.BFS | ResolutionEnum.DFS | ResolutionEnum.AlphaStar | ResolutionEnum.Dijkstra,
+                        difficult: ResearchAlgorithmsAttribute.DifficultEnum.Legend,
+                        note: "Problema di spostamento generatori e microchip con vincoli di sicurezza; BFS sullo spazio degli stati con pruning.")]
     public class Day11 : Solver, IDay
     {
         public int c = 0;

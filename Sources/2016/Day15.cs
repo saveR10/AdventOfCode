@@ -4,19 +4,16 @@ using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Security.Cryptography;
-using System.Text;
 using System.Text.RegularExpressions;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
-using static AOC2016.Day15;
 
 namespace AOC2016
 {
-    [ResearchAlgorithms(TypologyEnum.Cronometers)]
-    [ResearchAlgorithms(TypologyEnum.Overflow)]
-    [ResearchAlgorithms(ResolutionEnum.ModularArithmetic)]
-    [ResearchAlgorithms(ResolutionEnum.Regex)]
+    [ResearchAlgorithms(title: "Timing is Everything",
+                        typology: ResearchAlgorithmsAttribute.TypologyEnum.Cronometers | TypologyEnum.Overflow,
+                        resolution: ResearchAlgorithmsAttribute.ResolutionEnum.Regex | ResolutionEnum.ModularArithmetic,
+                        difficult: ResearchAlgorithmsAttribute.DifficultEnum.Medium,
+                        note: "Determinare il primo tempo t in cui una sequenza di dischi rotanti è allineata, usando posizioni modulate e offset temporali. Part 2 aggiunge un disco extra.")]
     public class Day15 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

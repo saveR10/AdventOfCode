@@ -16,7 +16,11 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlgorithms(ResolutionEnum.Drawing)]
+    [ResearchAlgorithms(title: "Day 8: Two-Factor Authentication",
+                        TypologyEnum.None,         
+                        ResolutionEnum.Drawing,            
+                        DifficultEnum.Medium,
+                        "Simulazione di un display 50x6 con operazioni di accensione pixel, rotazioni di righe e colonne; riconoscimento delle lettere risultanti")]
     public class Day8 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

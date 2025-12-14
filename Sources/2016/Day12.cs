@@ -1,28 +1,15 @@
 ﻿using AOC;
-using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
-using Newtonsoft.Json.Bson;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Numerics;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography;
-using System.Text;
-using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
-using static AOC2016.Day10;
-using static AOC2024.Day24;
 
 namespace AOC2016
 {
-    [ResearchAlgorithms(TypologyEnum.MachineInstructions)]
-    [ResearchAlgorithms(ResolutionEnum.Reflection)]
-    [ResearchAlgorithms(DifficultEnum.WarmUp)]
+    [ResearchAlgorithms(title: "Leonardo's Monorail",
+                        typology: ResearchAlgorithmsAttribute.TypologyEnum.MachineInstructions,
+                        resolution: ResearchAlgorithmsAttribute.ResolutionEnum.Reflection, // qui la soluzione è simulazione step-by-step
+                        difficult: ResearchAlgorithmsAttribute.DifficultEnum.WarmUp,
+                        note: "Esecuzione di codice assembunny: simulazione line-by-line dei registri con jump condizionale. Part2 richiede inizializzazione diversa dei registri.")]
     public class Day12 : Solver, IDay
     {
 

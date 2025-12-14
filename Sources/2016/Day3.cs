@@ -2,23 +2,22 @@
 using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
- 
+
 using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
-using System.IO;
-using System.Linq;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlgorithmsAttribute(ResolutionEnum.Regex)]
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Triangles)]
+    [ResearchAlgorithms(title: "Day 3: Squares With Three Sides",
+                        TypologyEnum.Triangles,       // Calcoli geometrici legati a triangoli
+                        ResolutionEnum.Regex,
+                        DifficultEnum.Easy,
+                        "Determinazione della validità di triangoli dati tre lati; gestione di input sia per righe sia per colonne")]
     public class Day3 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)
-        { int conta =0;
+        {
+            int conta = 0;
             string inputText = (string)input;
             foreach (string t in inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None))
             {
@@ -27,20 +26,20 @@ namespace AOC2016
                     string triangle = t.Trim();
                     int a = int.Parse(System.Text.RegularExpressions.Regex.Split(triangle, @"\s+")[0]);
                     int b = int.Parse(System.Text.RegularExpressions.Regex.Split(triangle, @"\s+")[1]);
-                    int c= int.Parse(System.Text.RegularExpressions.Regex.Split(triangle, @"\s+")[2]);
+                    int c = int.Parse(System.Text.RegularExpressions.Regex.Split(triangle, @"\s+")[2]);
 
                     if ((a + b) > c && (b + c) > a && (a + c) > b) { conta++; }
                     else { }
                 }
             }
-            solution=conta;
+            solution = conta;
         }
-        
+
         public void Part2(object input, bool test, ref object solution)
         {
             int conta = 0;
-            
-            
+
+
             string inputText = (string)input;
 
             if (test)
@@ -54,15 +53,15 @@ namespace AOC2016
 
             }
 
-            for(int i = 0; i < inputText.Split(Delimiter.delimiter_line,StringSplitOptions.None).Length; i+=3)
+            for (int i = 0; i < inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None).Length; i += 3)
             {
-                for(int j = 0; j < 3; j++)
+                for (int j = 0; j < 3; j++)
                 {
-                    
-                    var aa = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None)[i].Trim();
-                    int a= int.Parse(System.Text.RegularExpressions.Regex.Split(aa, @"\s+")[j]);
 
-                    var bb = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None)[i+1].Trim();
+                    var aa = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None)[i].Trim();
+                    int a = int.Parse(System.Text.RegularExpressions.Regex.Split(aa, @"\s+")[j]);
+
+                    var bb = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None)[i + 1].Trim();
                     int b = int.Parse(System.Text.RegularExpressions.Regex.Split(bb, @"\s+")[j]);
 
                     var cc = inputText.Split(Delimiter.delimiter_line, StringSplitOptions.None)[i + 2].Trim();
@@ -76,7 +75,7 @@ namespace AOC2016
         }
         public bool IsTriangle(int a, int b, int c)
         {
-            bool ret=false;
+            bool ret = false;
             if ((a + b) > c && (b + c) > a && (a + c) > b) { ret = true; }
             else { }
             return ret;

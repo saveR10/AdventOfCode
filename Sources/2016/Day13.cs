@@ -1,29 +1,17 @@
 ﻿using AOC;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
-using AOC.Utilities.Map;
-using Newtonsoft.Json.Bson;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Numerics;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography;
-using System.Text;
-using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
-using static AOC2016.Day10;
-using static AOC2016.Day11;
-using static AOC2024.Day24;
 
 namespace AOC2016
 {
-    [ResearchAlgorithms(TypologyEnum.Map)]
-    [ResearchAlgorithms(ResolutionEnum.AlphaStar)]
-    [ResearchAlgorithms(DifficultEnum.Hard)]
+    [ResearchAlgorithms(title: "A Maze of Twisty Little Cubicles",
+                        typology: ResearchAlgorithmsAttribute.TypologyEnum.Map,
+                        resolution: ResearchAlgorithmsAttribute.ResolutionEnum.AlphaStar,
+                        difficult: ResearchAlgorithmsAttribute.DifficultEnum.Hard,
+                        note: "Calcolo di percorso minimo in una griglia infinita con muri determinati da una formula. BFS per trovare distanza minima e tutte le posizioni raggiungibili entro un numero massimo di passi.")]
     public class Day13 : Solver, IDay
     {
         public static int[] startPosition = new int[2];

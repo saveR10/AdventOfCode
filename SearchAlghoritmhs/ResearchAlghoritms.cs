@@ -88,7 +88,10 @@ namespace AOC.SearchAlghoritmhs
         public enum TypologyEnum
         {
             None = 0,
-            Hashing = 1 << 0,             // Algoritmi di criptazione/decriptazione
+            /// <summary>
+            /// Algoritmi di criptazione/decriptazione
+            /// </summary>
+            Hashing = 1 << 0,             
             BinaryOperation = 1 << 1,     // Operazioni bitwise o confronti binari
             /// <summary>
             /// Simulazioni o ricostruzioni di giochi
@@ -97,7 +100,10 @@ namespace AOC.SearchAlghoritmhs
             JSON = 1 << 3,                // Parsing o gestione di formati JSON
             Map = 1 << 4,                 // Problemi basati su mappe, griglie o grafi
             Escaping = 1 << 5,            // Gestione dei caratteri di escape
-            TextRules = 1 << 6,           // Riconoscimento e applicazione di regole testuali
+            /// <summary>
+            /// Riconoscimento e applicazione di regole testuali
+            /// </summary>
+            TextRules = 1 << 6,           
             /// <summary>
             /// Problemi temporali o sincronizzazioni
             /// </summary>
@@ -109,8 +115,11 @@ namespace AOC.SearchAlghoritmhs
             /// <summary>
             /// Permutazioni, combinazioni, insiemi, grouping
             /// </summary>
-            Combinatorial = 1 << 9,       
-            Decompressing = 1 << 10,      // Algoritmi di decompressione
+            Combinatorial = 1 << 9,
+            /// <summary>
+            /// Algoritmi di decompressione
+            /// </summary>
+            Decompressing = 1 << 10,      
             /// <summary>
             /// Problemi risolvibili per ricorsione
             /// </summary>
@@ -124,8 +133,11 @@ namespace AOC.SearchAlghoritmhs
             /// <summary>
             /// Simulazione tastierini/keypad. Molto simile a MachineInstructions.
             /// </summary>
-            Keypad = 1 << 13,             
-            Triangles = 1 << 14,          // Calcoli geometrici legati a triangoli
+            Keypad = 1 << 13,
+            /// <summary>
+            /// Calcoli geometrici legati a triangoli
+            /// </summary>
+            Triangles = 1 << 14,          
             Gate = 1 << 15,               // Simulazione logica di gate in->out
             /// <summary>
             /// Problemi di overflow numerico, richiedono considerazioni matematiche o utilizzo di strutture dati adatte

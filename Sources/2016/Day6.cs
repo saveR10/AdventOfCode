@@ -1,22 +1,18 @@
 ﻿using AOC;
-using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
- 
- 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlgorithms(TypologyEnum.TextRules)]
+    [ResearchAlgorithms(title: "Day 6: Signals and Noise",
+                        TypologyEnum.TextRules,          // Analisi di testo e frequenze dei caratteri
+                        ResolutionEnum.None,             // Nessun algoritmo complesso, solo conteggio frequenze
+                        DifficultEnum.Easy,
+                        "Decodifica messaggi jammati scegliendo il carattere più frequente (Part 1) o meno frequente (Part 2) per ciascuna posizione")]
     public class Day6 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

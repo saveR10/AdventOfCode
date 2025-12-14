@@ -1,22 +1,18 @@
 ﻿using AOC;
-using AOC.DataStructures.Clustering;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
- 
- 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.TextRules)]
+    [ResearchAlgorithms(title: "Day 7: Internet Protocol Version 7",
+                        TypologyEnum.TextRules,          // Analisi e riconoscimento di pattern testuali specifici
+                        ResolutionEnum.None,             // Nessun algoritmo complesso, solo ricerca di pattern
+                        DifficultEnum.Medium,
+                        "Verifica IP per supporto TLS (ABBA) e SSL (ABA/BAB) distinguendo tra sequenze interne ed esterne alle parentesi quadre")]
     public class Day7 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

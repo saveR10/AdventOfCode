@@ -18,7 +18,12 @@ using static AOC2016.Day10;
 
 namespace AOC2016
 {
-    [ResearchAlgorithms(TypologyEnum.Gate)]
+    [ResearchAlgorithms(title: "Day 10: Balance Bots",
+                        TypologyEnum.Gate ,  // Gestione di gruppi di bot che scambiano microchip (simile a clustering di valori) e distribuzione di oggetti
+                        ResolutionEnum.None,       
+                        DifficultEnum.Medium,
+                        "Simulazione di un sistema di robot che scambiano microchip secondo regole logiche; identificazione del bot responsabile e calcolo dei prodotti nei contenitori di output")]
+
     public class Day10 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

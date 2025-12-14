@@ -11,10 +11,11 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlgorithms(TypologyEnum.Hashing)]
-    [ResearchAlgorithms(ResolutionEnum.Regex)]
-    [ResearchAlgorithms(ResolutionEnum.Cache)]
-    [ResearchAlgorithms(DifficultEnum.Hard)]
+    [ResearchAlgorithms(title: "One-Time Pad",
+                        typology: ResearchAlgorithmsAttribute.TypologyEnum.Hashing,
+                        resolution: ResearchAlgorithmsAttribute.ResolutionEnum.Regex | ResolutionEnum.Cache,
+                        difficult: ResearchAlgorithmsAttribute.DifficultEnum.Hard,
+                        note: "Generazione di chiavi tramite MD5 sequenziale, ricerca di triple e quintuple, con lookahead di 1000 hash. Part 2 implementa key stretching (2016 ulteriori MD5).")]
     public class Day14 : Solver, IDay
     {
         public static int keysToFind = 64;
