@@ -11,7 +11,11 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2016
 {
-    [ResearchAlgorithms(TypologyEnum.Map)]
+    [ResearchAlgorithms(title: "Day 1: No Time for a Taxicab",
+                        TypologyEnum.Map,       // Simulazione di spostamenti su griglia
+                        ResolutionEnum.None,    // Nessun algoritmo complesso, solo simulazione passo-passo
+                        DifficultEnum.WarmUp,
+                        "Calcolo della distanza di Manhattan percorsa in una griglia seguendo istruzioni di rotazione e avanzamento; ricerca della prima posizione visitata due volte")]
     public class Day1 : Solver, IDay
     {
         public enum Direction
