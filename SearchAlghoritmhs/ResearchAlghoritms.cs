@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 
 namespace AOC.SearchAlghoritmhs
 {
@@ -372,6 +373,65 @@ namespace AOC.SearchAlghoritmhs
 
             return interestedClasses;
         }
+ 
+        public static List<PuzzleInfo> SearchFolderNew(TypologyEnum? typology = null, ResolutionEnum? resolution = null)
+        {
+            var results = new List<PuzzleInfo>();
+
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+
+            foreach (var assembly in assemblies)
+            {
+                Type[] types;
+                try
+                {
+                    types = assembly.GetTypes();
+                }
+                catch
+                {
+                    continue;
+                }
+
+                foreach (var type in types)
+                {
+                    if (!typeof(IDay).IsAssignableFrom(type))
+                        continue;
+
+                    var attributes = type.GetCustomAttributes(typeof(ResearchAlgorithmsAttribute), false)
+                                         .Cast<ResearchAlgorithmsAttribute>()
+                                         .ToArray();
+
+                    foreach (var attr in attributes)
+                    {
+                        bool typologyMatch = typology == null || (attr.Typology & typology.Value) != 0;
+                        bool resolutionMatch = resolution == null || (attr.Resolution & resolution.Value) != 0;
+
+                        if (typologyMatch && resolutionMatch)
+                        {
+                            results.Add(new PuzzleInfo
+                            {
+                                Type = type,
+                                FullName = type.FullName,
+                                Title = attr.Title,
+                                Note = attr.Note
+                            });
+                            break; // basta aggiungere una volta per tipo
+                        }
+                    }
+                }
+            }
+
+            return results;
+        }
+
+
         #endregion
+        public class PuzzleInfo
+        {
+            public Type Type { get; set; }        // Tipo della classe
+            public string FullName { get; set; }  // Namespace + Nome classe
+            public string Title { get; set; }     // Titolo dall'attributo
+            public string Note { get; set; }      // Note dall'attributo
+        }
     }
 }

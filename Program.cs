@@ -53,16 +53,25 @@ namespace AOC
                     break;
                 case ConsoleKey.D2:
                     //SEARCH ALGHORITMS
-                    List<string> InterestedClasses = ResearchAlgorithmsAttribute.SearchFolder(ResearchAlgorithmsAttribute.TypologyEnum.MachineInstructions);
-                    foreach (var c in InterestedClasses) 
-                        Console.WriteLine(c);
+                    //var puzzles = ResearchAlgorithmsAttribute.SearchFolderNew(resolution: ResearchAlgorithmsAttribute.ResolutionEnum.DFS);
+                    var puzzles = ResearchAlgorithmsAttribute.SearchFolderNew(typology: ResearchAlgorithmsAttribute.TypologyEnum.Graph);
+
+                    foreach (SearchAlghoritmhs.ResearchAlgorithmsAttribute.PuzzleInfo p in puzzles)
+                    {
+                        Console.WriteLine($"Classe: {p.FullName}");
+                        Console.WriteLine($"Titolo: {p.Title}");
+                        Console.WriteLine($"Note: {p.Note}");
+                        Console.WriteLine(new string('-', 50));
+                    }
+
                     Console.ReadLine();
                     break;
                 case ConsoleKey.D3:
                     //RUN PUZZLES
                     //Set Year, Day, Part and Test (Yes/No). If you are going to play Test, you must set a string data test in ReaderInput.cs
-                    string part = "1T"; //2, 1, 1T, 2T
-                    Solver solver = new Solver(2016, 15, part);
+                    string part = "2"; //2, 1, 1T, 2T
+                    
+                    Solver solver = new Solver(2016, 17, part);
                     object input = solver.FetchInput(Model.InputType.Text);
                     solver.RunPuzzle(input);
                     Console.WriteLine();
