@@ -17,7 +17,11 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.Escaping)]
+    [ResearchAlgorithms(title: "Day 8: Matchsticks",
+                       TypologyEnum.Escaping,
+                       ResolutionEnum.Reduction | ResolutionEnum.Regex ,  //Regex opzionale ma preferibile
+                       DifficultEnum.Medium,
+                       "Analisi e trasformazione di stringhe con semantica di escaping")]
     public class Day8 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

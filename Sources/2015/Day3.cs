@@ -8,10 +8,15 @@ using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Map)]
+    [ResearchAlgorithms(title: "Day 3: Perfectly Spherical Houses in a Vacuum",
+                        TypologyEnum.Map,
+                        ResolutionEnum.None,
+                        DifficultEnum.Easy,
+                        "Non è una ricerca, è una simulazione di movimento su mappa")]
     public class Day3 : Solver, IDay
     {
         public bool[,] houses = new bool[1000, 1000];

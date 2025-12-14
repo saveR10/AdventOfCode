@@ -1,15 +1,22 @@
 ﻿using AOC;
 using AOC.DataStructures.Clustering;
 using AOC.Model;
+using AOC.SearchAlghoritmhs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
+    [ResearchAlgorithms("Day 2: I Was Told There Would Be No Math", 
+                        TypologyEnum.Ingredients, 
+                        ResolutionEnum.SystemLinearEquations,
+                        DifficultEnum.Easy,
+                        "batch processing deterministico con formule fisse")]
     public class Day2 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

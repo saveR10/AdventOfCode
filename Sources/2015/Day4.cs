@@ -13,7 +13,12 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.Hashing)] //MD5
+
+    [ResearchAlgorithms(title: "Day 4: The Ideal Stocking Stuffer", 
+                        TypologyEnum.Hashing, //MD5
+                        ResolutionEnum.None,
+                        DifficultEnum.Medium,
+                        "Brute-force incrementale su funzione di hashing")]
     public class Day4 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

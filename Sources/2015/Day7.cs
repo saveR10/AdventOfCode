@@ -18,7 +18,11 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.BinaryOperation)]
+    [ResearchAlgorithms(title: "Day 7: Some Assembly Required",
+                       TypologyEnum.Gate | TypologyEnum.BinaryOperation,
+                       ResolutionEnum.Cache,  //Opzionale ma preferibile
+                       DifficultEnum.Hard,
+                       "Una simulazione di un sistema di gate e segnali con dipendenze")]
     public class Day7 : Solver, IDay
     {
         //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/bitwise-and-shift-operators

@@ -7,10 +7,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Overflow)]
+    [ResearchAlgorithms(title: "Day 25: Let It Snow",
+                        TypologyEnum.Overflow,        // Applicazione diretta della formula ricorsiva
+                        ResolutionEnum.ModularArithmetic, // Generazione di sequenze modulari                   
+                        DifficultEnum.Medium,
+                        "Calcolo del codice per una posizione specifica in una griglia infinita, usando numeri generati ricorsivamente con moltiplicazione e modulo")]
     public class Day25 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

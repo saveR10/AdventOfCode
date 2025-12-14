@@ -4,13 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Game)] //RPG combat
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.DFS)]
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.BFS)]
+    [ResearchAlgorithms(title: "Day 22: Wizard Simulator 20XX",
+                        TypologyEnum.Game, //RPG combat
+                        ResolutionEnum.DFS | ResolutionEnum.BFS,
+                        DifficultEnum.Hard,
+                        "Simulazione di combattimento RPG per wizard; gestione di mana, effetti temporanei e ricerca del minimo consumo di mana per vincere")]
     public class Day22 : Solver, IDay
     {
         private int MinManaSpent = int.MaxValue;

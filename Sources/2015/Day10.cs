@@ -21,8 +21,11 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.Game)] //Look And Say game
-    [ResearchAlgorithmsAttribute(ResolutionEnum.Regex)] 
+    [ResearchAlgorithms(title: "Day 10: Elves Look, Elves Say",
+                   TypologyEnum.Game | TypologyEnum.TextRules,
+                   ResolutionEnum.Regex,
+                   DifficultEnum.Medium,
+                   "Look And Say game")]
     public class Day10 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

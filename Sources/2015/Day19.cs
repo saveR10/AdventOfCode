@@ -32,7 +32,12 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.Reduction)]
+    [ResearchAlgorithms(
+    title: "Day 19: Medicine for Rudolph",
+    TypologyEnum.TextRules | TypologyEnum.Combinatorial,
+    ResolutionEnum.Regex | ResolutionEnum.Reduction,
+    DifficultEnum.Hard,
+    "Generazione e manipolazione di molecole tramite regole di sostituzione; calcolo dei possibili stati e ricerca del numero minimo di passi per arrivare a un target")]
     public class Day19 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

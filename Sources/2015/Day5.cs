@@ -16,8 +16,11 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.TextRules)]
-
+    [ResearchAlgorithms(title: "Day 5: Doesn't He Have Intern-Elves For This?",
+                        TypologyEnum.TextRules, 
+                        ResolutionEnum.Regex, //Opzionale, ma preferibile in questo contesto
+                        DifficultEnum.Medium,
+                        "Pattern matching su stringhe con regole testuali")]
     public class Day5 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

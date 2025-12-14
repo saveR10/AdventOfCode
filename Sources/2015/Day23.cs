@@ -1,17 +1,18 @@
 ﻿using AOC;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
-using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Data;
 using System.Linq;
+using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.MachineInstructions)]
+    [ResearchAlgorithms(title: "Day 23: Opening the Turing Lock",
+                        TypologyEnum.MachineInstructions,          // Simulazione di CPU/registri
+                        ResolutionEnum.None,              // Nessun algoritmo complesso, solo esecuzione passo-passo
+                        DifficultEnum.Medium,
+                        "Simulazione di un piccolo linguaggio assembly con due registri; gestione di istruzioni condizionali e salti relativi per calcolare il valore finale dei registri")]
     public class Day23 : Solver, IDay
     {
         public int a = 0;

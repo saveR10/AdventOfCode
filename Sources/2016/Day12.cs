@@ -22,7 +22,7 @@ namespace AOC2016
 {
     [ResearchAlgorithms(TypologyEnum.MachineInstructions)]
     [ResearchAlgorithms(ResolutionEnum.Reflection)]
-    [ResearchAlgorithms(DifficultEnum.VeryEasy)]
+    [ResearchAlgorithms(DifficultEnum.WarmUp)]
     public class Day12 : Solver, IDay
     {
 

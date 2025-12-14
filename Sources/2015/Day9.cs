@@ -20,7 +20,11 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithmsAttribute(ResolutionEnum.Dijkstra)]
+    [ResearchAlgorithms(title: "Day 9: All in a Single Night",
+                       TypologyEnum.Graph,
+                       ResolutionEnum.Dijkstra,
+                       DifficultEnum.Medium,
+                       "Problema del commesso viaggiatore")]
     public class Day9 : Solver, IDay
     {
         public MinPQPath<Path> SearchNodes = new MinPQPath<Path>();

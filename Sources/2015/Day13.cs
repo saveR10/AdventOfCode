@@ -25,7 +25,11 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithms(ResolutionEnum.Dijkstra)]
+    [ResearchAlgorithms(title: "Day 13: Knights of the Dinner Table",
+                   TypologyEnum.Graph,
+                   ResolutionEnum.Dijkstra,
+                   DifficultEnum.Medium,
+                   "Permutazioni circolari degli ospiti per massimizzare la felicità totale usando coda di priorità")]
     public class Day13 : Solver, IDay
     {
         public Dictionary<string, List<Tuple<string, int>>> RelativeHappiness;

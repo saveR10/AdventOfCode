@@ -1,5 +1,6 @@
 ﻿using AOC.Documents.LINQ;
 using AOC.Model;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -20,6 +21,17 @@ namespace AOC.SearchAlghoritmhs
 
     public class ResearchAlgorithmsAttribute : Attribute
     {
+        /// <summary>
+        /// Costruttore canonico completo: permette di specificare titolo, tipologia, algoritmo di risoluzione, difficoltà ed eventuali note.
+        /// </summary>
+        public ResearchAlgorithmsAttribute(string title, TypologyEnum typology, ResolutionEnum resolution = ResolutionEnum.None, DifficultEnum difficult = default, string note = null)
+        {
+            Title = title;
+            Typology = typology;
+            Resolution = resolution;
+            Difficult = difficult;
+            Note = note;
+        }
         /// <summary>
         /// Costruttore completo: permette di specificare tipologia, algoritmo di risoluzione e difficoltà.
         /// </summary>
@@ -57,6 +69,14 @@ namespace AOC.SearchAlghoritmhs
         /// Stima della difficoltà percepita nel risolvere il puzzle.
         /// </summary>
         public DifficultEnum Difficult { get; }
+        /// <summary>
+        /// Titolo del puzzle
+        /// </summary>
+        public string Title { get; }
+        /// <summary>
+        /// Note sul puzzle
+        /// </summary>
+        public string Note { get; }
         #endregion
 
         #region ==== ENUM: TIPOLOGIA ====
@@ -70,27 +90,47 @@ namespace AOC.SearchAlghoritmhs
             None = 0,
             Hashing = 1 << 0,             // Algoritmi di criptazione/decriptazione
             BinaryOperation = 1 << 1,     // Operazioni bitwise o confronti binari
-            Game = 1 << 2,                // Simulazioni o ricostruzioni di giochi
+            /// <summary>
+            /// Simulazioni o ricostruzioni di giochi
+            /// </summary>
+            Game = 1 << 2,
             JSON = 1 << 3,                // Parsing o gestione di formati JSON
             Map = 1 << 4,                 // Problemi basati su mappe, griglie o grafi
             Escaping = 1 << 5,            // Gestione dei caratteri di escape
             TextRules = 1 << 6,           // Riconoscimento e applicazione di regole testuali
-            Cronometers = 1 << 7,         // Problemi temporali o sincronizzazioni
-            Ingredients = 1 << 8,         // Liste di ingredienti, oggetti, inventari
-            Combinatorial = 1 << 9,       // Permutazioni, combinazioni, insiemi, grouping
+            /// <summary>
+            /// Problemi temporali o sincronizzazioni
+            /// </summary>
+            Cronometers = 1 << 7,
+            /// <summary>
+            /// Liste di ingredienti, oggetti, inventari
+            /// </summary>
+            Ingredients = 1 << 8,
+            /// <summary>
+            /// Permutazioni, combinazioni, insiemi, grouping
+            /// </summary>
+            Combinatorial = 1 << 9,       
             Decompressing = 1 << 10,      // Algoritmi di decompressione
-            Reduction = 1 << 11,          // Semantica di riduzione / normalizzazione
-            Recursive = 1 << 12,          // Problemi risolvibili per ricorsione
+            /// <summary>
+            /// Problemi risolvibili per ricorsione
+            /// </summary>
+            Recursive = 1 << 11,
             /// <summary>
             /// Simula un sistema che esegue una serie di istruzioni su uno o più registri. 
             /// Ogni istruzione modifica i registri tramite operazioni aritmetiche (come incremento, divisione, moltiplicazione) o condiziona il flusso di esecuzione (come salti condizionati in base a valori o proprietà dei registri). 
             /// La simulazione prosegue eseguendo le istruzioni fino al completamento, applicando logiche di controllo basate sullo stato dei registri
             /// </summary>
-            MachineInstructions = 1 << 13, // Simulazione di sistemi con registri e istruzioni
-            Keypad = 1 << 14,             // Simulazione tastierini/keypad
-            Triangles = 1 << 15,          // Calcoli geometrici legati a triangoli
-            Gate = 1 << 16,               // Simulazione logica di gate in->out
-            Overflow = 1 << 17,           // Problemi di overflow numerico, richiedono considerazioni matematiche o utilizzo di strutture dati adatte
+            MachineInstructions = 1 << 12,
+            /// <summary>
+            /// Simulazione tastierini/keypad. Molto simile a MachineInstructions.
+            /// </summary>
+            Keypad = 1 << 13,             
+            Triangles = 1 << 14,          // Calcoli geometrici legati a triangoli
+            Gate = 1 << 15,               // Simulazione logica di gate in->out
+            /// <summary>
+            /// Problemi di overflow numerico, richiedono considerazioni matematiche o utilizzo di strutture dati adatte
+            /// </summary>
+            Overflow = 1 << 16,           
             /// <summary>
             /// Clustering è una famiglia di algoritmi che raggruppano elementi in insiemi (cluster)
             /// sulla base della loro vicinanza o similitudine. Nel contesto del problema Day 8,
@@ -104,11 +144,15 @@ namespace AOC.SearchAlghoritmhs
             /// - Non cerca percorsi ottimali come Dijkstra, né usa euristiche come AlphaStar:
             ///   è puro clustering gerarchico agglomerativo basato su distanze.
             /// </summary>
-            Clustering = 1 << 18,
+            Clustering = 1 << 17,
             /// <summary>
-            /// Problemi che sono apparentemente fuori scala di risoluzione!
+            /// Problemi che sono apparentemente fuori scala di risoluzione! E per risolverli c'è un modo banale e immediato.
             /// </summary>
-            Trolling = 1 << 19 
+            Trolling = 1 << 18,
+            /// <summary>
+            /// Problemi basati su grafi generali: nodi connessi da archi pesati o non pesati, esplorazione dei percorsi, cammini minimi, alberi di copertura, ecc.
+            /// </summary>
+            Graph = 1 << 19,
         }
         #endregion
 
@@ -214,7 +258,18 @@ namespace AOC.SearchAlghoritmhs
             /// - OR-Tools (CP-SAT)
             /// </summary>
             SMTSolver = 1 << 12,
-
+            /// <summary>
+            /// Semantica di riduzione / normalizzazione
+            /// </summary>
+            Reduction = 1 << 13,
+            /// <summary>
+            /// Brute Force: esplorazione esaustiva di tutte le possibili soluzioni per trovare quella ottimale.
+            /// Caratteristiche principali:
+            /// - Garantisce di trovare la soluzione ottimale se lo spazio delle soluzioni è finito e completamente esplorato.
+            /// - Inefficiente su spazi di ricerca grandi, poiché esplora ogni combinazione possibile.
+            /// - Spesso utilizzato per problemi combinatori di piccola/medio scala, come permutazioni, combinazioni o conteggi esaustivi.
+            /// </summary>
+            BruteForce = 1 << 14,
         }
         #endregion
 
@@ -227,7 +282,7 @@ namespace AOC.SearchAlghoritmhs
         public enum DifficultEnum
         {
             None = 0,
-            VeryEasy = 1 << 0,
+            WarmUp = 1 << 0,
             Easy = 1 << 1,
             Medium = 1 << 2,
             Hard = 1 << 3,

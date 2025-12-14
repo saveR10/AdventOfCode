@@ -25,7 +25,11 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.JSON)]
+    [ResearchAlgorithms(title: "Day 12: JSAbacusFramework.io",
+                   TypologyEnum.TextRules | TypologyEnum.JSON,
+                   ResolutionEnum.None,
+                   DifficultEnum.Medium,
+                   "Parsing ricorsivo di JSON con filtri per valori specifici (es. 'red')")]
     public class Day12 : Solver, IDay
     {
         long sum = 0;

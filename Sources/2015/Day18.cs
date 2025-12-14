@@ -1,36 +1,20 @@
 ﻿using AOC;
-using AOC.DataStructures.Clustering;
-using AOC.DataStructures.PriorityQueue;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
 using AOC.Utilities.Map;
-using AOC.Utilities.Math;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
 using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Runtime.Remoting.Messaging;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
-using static AOC2015.Day9;
 using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithms(TypologyEnum.Map)]
-    [ResearchAlgorithms(TypologyEnum.Game)] //Conway's Game of Life
+    [ResearchAlgorithms(title: "Day 18: Like a GIF For Your Yard",
+                        TypologyEnum.Map | TypologyEnum.Game, //Conway's Game of Life
+                        ResolutionEnum.BruteForce,
+                        DifficultEnum.Medium,
+                        "Simulazione di un automa cellulare su griglia 2D (Game of Life), aggiornamento simultaneo delle celle basato sugli stati dei vicini")]
+
     public class Day18 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)

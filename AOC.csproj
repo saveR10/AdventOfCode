@@ -462,6 +462,17 @@
     <Content Include="Test\2024\day6.txt" />
     <Content Include="Test\2024\day7.txt" />
     <Content Include="Test\2024\day8.txt" />
+    <Content Include="Test\2025\day1.txt" />
+    <Content Include="Test\2025\day10.txt" />
+    <Content Include="Test\2025\day11.txt" />
+    <Content Include="Test\2025\day2.txt" />
+    <Content Include="Test\2025\day3.txt" />
+    <Content Include="Test\2025\day4.txt" />
+    <Content Include="Test\2025\day5.txt" />
+    <Content Include="Test\2025\day6.txt" />
+    <Content Include="Test\2025\day7.txt" />
+    <Content Include="Test\2025\day8.txt" />
+    <Content Include="Test\2025\day9.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

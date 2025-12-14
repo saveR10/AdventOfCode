@@ -1,10 +1,8 @@
 ﻿using AOC;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
-using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Data;
 using System.Linq;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
@@ -12,10 +10,11 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Combinatorial)]
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Recursive)]
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.TypologyEnum.Reduction)]
-    [ResearchAlgorithms(ResearchAlgorithmsAttribute.ResolutionEnum.DFS)] //Con BackTracking e Pruning
+    [ResearchAlgorithms(title: "Day 24: It Hangs in the Balance",
+                        TypologyEnum.Combinatorial | TypologyEnum.Recursive,                   // Ottimizzazione combinatoria / subset sum
+                        ResolutionEnum.Reduction | ResolutionEnum.DFS,  //DFS con BackTracking e Pruning 
+                        DifficultEnum.Hard,
+                        "Divisione di pacchi in gruppi con lo stesso peso; trovare il gruppo iniziale con il minor numero di pacchi e il minimo quantum entanglement")]
     public class Day24 : Solver, IDay
     {
 

@@ -21,7 +21,11 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithmsAttribute(TypologyEnum.TextRules)]
+    [ResearchAlgorithms(title: "Day 11: Corporate Policy",
+                   TypologyEnum.TextRules,
+                   ResolutionEnum.None,
+                   DifficultEnum.Medium,
+                   "Generazione password secondo regole aziendali")]
     public class Day11 : Solver, IDay
     {
         public int digitNumber = 7;

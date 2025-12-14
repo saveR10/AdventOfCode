@@ -1,31 +1,18 @@
 ﻿using AOC;
-using AOC.DataStructures.Clustering;
-using AOC.DataStructures.PriorityQueue;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
 using System;
-using System.CodeDom;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Runtime.Remoting.Messaging;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 using Solver = AOC.Solver;
 
 namespace AOC2015
 {
+    [ResearchAlgorithms(title: "Day 16: Aunt Sue",
+                        TypologyEnum.Ingredients,
+                        ResolutionEnum.None,
+                        DifficultEnum.Easy,
+                        "Filtraggio delle possibili 'Aunt Sue' usando confronti diretti e condizioni sui dati")]
     public class Day16 : Solver, IDay
     {
         public Dictionary<int, Analysys> Analysyses = new Dictionary<int, Analysys>();
@@ -207,10 +194,7 @@ namespace AOC2015
                         break;
                 }
             }
-
-
             return true;
         }
-
     }
 }

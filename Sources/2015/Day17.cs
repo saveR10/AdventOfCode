@@ -27,7 +27,12 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithms(TypologyEnum.Combinatorial)]
+    [ResearchAlgorithms(title: "Day 17: No Such Thing as Too Much",
+                        TypologyEnum.Ingredients | TypologyEnum.Combinatorial,
+                        ResolutionEnum.None, //Forse BruteForce
+                        DifficultEnum.Medium,
+                        "Combinazioni di contenitori per riempire esattamente un volume target, incluso calcolo del numero minimo di contenitori")]
+
     public class Day17 : Solver, IDay
     {
         public int counter = 0;

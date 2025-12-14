@@ -26,8 +26,13 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
+    [ResearchAlgorithms(title: "Day 15: Science for Hungry People",
+           TypologyEnum.Ingredients,
+           ResolutionEnum.BruteForce,
+           DifficultEnum.Medium,
+           "Combinazioni di ingredienti per massimizzare il punteggio del cookie rispettando vincoli di quantità e calorie")]
     //Si potrebbe risolvere con un sistema lineari di equazioni; ma bisognerebbe derivare...
-    [ResearchAlgorithms(TypologyEnum.Ingredients)]
+    //Potrebbe avere senso vederlo con approccio Combinatorial...
     public class Day15 : Solver, IDay
     {
         public Dictionary<string, Ingredient> Ingredients = new Dictionary<string, Ingredient>();

@@ -1,38 +1,17 @@
 ﻿using AOC;
-using AOC.DataStructures.Clustering;
-using AOC.DataStructures.PriorityQueue;
 using AOC.Model;
 using AOC.SearchAlghoritmhs;
-using AOC.Utilities.Map;
-using AOC.Utilities.Math;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization; 
 using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Data;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Runtime.Remoting.Messaging;
-using System.Security;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
 using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
-using static AOC2015.Day19;
-using static AOC2015.Day9;
 using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithms(ResolutionEnum.NumberTheory)]
+    [ResearchAlgorithms(title: "Day 20: Infinite Elves and Infinite Houses",
+                        TypologyEnum.Combinatorial,
+                        ResolutionEnum.BruteForce | ResolutionEnum.NumberTheory,
+                        DifficultEnum.Medium,
+                        "Calcolo dei divisori di un numero per determinare i regali ricevuti dalle case; gestione dei limiti degli elfi nella consegna")]
     public class Day20 : Solver, IDay
     {
         public void Part1(object input, bool test, ref object solution)
@@ -125,5 +104,5 @@ namespace AOC2015
                 house++;
             }
         }
-        }
+    }
 }

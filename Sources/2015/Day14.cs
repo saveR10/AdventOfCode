@@ -26,7 +26,11 @@ using Solver = AOC.Solver;
 
 namespace AOC2015
 {
-    [ResearchAlgorithms(TypologyEnum.Cronometers)]
+    [ResearchAlgorithms(title: "Day 14: Reindeer Olympics",
+               TypologyEnum.Cronometers,
+               ResolutionEnum.None,
+               DifficultEnum.Medium,
+               "Simulazione passo-passo della gara dei renne con fasi di volo e riposo")]
     public class Day14 : Solver, IDay
     {
         Dictionary<string, Reindeer> Reindeers = new Dictionary<string, Reindeer>();

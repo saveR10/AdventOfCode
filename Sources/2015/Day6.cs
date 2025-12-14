@@ -17,7 +17,11 @@ using static AOC.SearchAlghoritmhs.ResearchAlgorithmsAttribute;
 
 namespace AOC2015
 {
-    [ResearchAlgorithms(TypologyEnum.Map)]
+    [ResearchAlgorithms(title: "Day 6: Probably a Fire Hazard",
+                        TypologyEnum.Map,
+                        ResolutionEnum.None,
+                        DifficultEnum.Medium,
+                        "Simulazione su matrice con update per rettangoli")]
     public class Day6 : Solver, IDay
     {
         public int n = 1000;
